@@ -1,0 +1,21 @@
+\documentclass[tikz,border=2pt]{standalone}
+\input{preamble}
+\definecolor{chot}{HTML}{C0392B}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=3 by 1, horizontal sep=12mm}, paperaxis, width=4.6cm, height=3.0cm, ybar, /pgf/bar width=4.5pt, tick label style={font=\tiny}, x tick label style={font=\scriptsize, rotate=25, anchor=north east}, label style={font=\scriptsize}, enlarge x limits=0.18, ymin=0]
+\nextgroupplot[title={modules removed, baselines}, xtick={0,1,2,3,4}, xticklabels={HOT,$-$phys.,$-$aux.,LSTM,MLP}, ylabel={reached within 20 s [\%]}, ymax=105, legend to name=ablleg, legend columns=2, legend style={font=\scriptsize, draw=none, fill=none, /tikz/every even column/.append style={column sep=4pt}}, legend image code/.code={\draw[#1] (0cm,-0.08cm) rectangle (0.25cm,0.08cm);}]
+\addplot[fill=chot!25, draw=chot] coordinates {(0,98.3) (1,40.0) (2,73.3) (3,88.3) (4,100.0)}; \addlegendentry{bare policy}
+\addplot[fill=chot, draw=chot] coordinates {(0,86.7) (1,28.3) (2,55.0) (3,80.0) (4,96.7)}; \addlegendentry{with the module}
+\panel{a}{}
+\nextgroupplot[title={violations of the bare policy}, xtick={0,1,2,3,4}, xticklabels={HOT,$-$phys.,$-$aux.,LSTM,MLP}, ylabel={samples in violation [\%]}, ymax=3.5]
+\addplot[fill=black!20, draw=black!70] coordinates {(0,1.85) (1,1.09) (2,2.76) (3,0.05) (4,0.08)};
+\panel{b}{}
+\nextgroupplot[title={reduced sizes}, xtick={0,1,2,3}, xticklabels={full,$L{=}8$,$d{=}32$,$N{=}1$}, ylabel={reached within 20 s [\%]}, ymax=105]
+\addplot[fill=chot!25, draw=chot] coordinates {(0,98.3) (1,63.3) (2,65.0) (3,58.3)};
+\addplot[fill=chot, draw=chot] coordinates {(0,86.7) (1,33.3) (2,60.0) (3,33.3)};
+\panel{c}{}
+\end{groupplot}
+\node[anchor=south, inner sep=1pt] at ($(group c1r1.north west)!0.5!(group c3r1.north east)+(0,5mm)$) {\pgfplotslegendfromname{ablleg}};
+\end{tikzpicture}
+\end{document}

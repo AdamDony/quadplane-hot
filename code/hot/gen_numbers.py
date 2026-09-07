@@ -89,6 +89,12 @@ def ab(tag, key, d=1, filt="_nf"):
     if not r: return "?"
     v = [x[key] for x in r]; v = [q for q in v if np.isfinite(q)]; return "%.*f" % (d, np.mean(v)) if v else "?"
 M.update(numAblPlants="30", ablNoPhysT=ab("hot_nophys", "t_target"), ablNoPhysViol=ab("hot_nophys", "viol_pct"), ablNoAuxT=ab("hot_noaux", "t_target"), ablBestL="32")
+def abr(tag, filt):
+    r = abl.get(tag + filt); return "%.0f" % (100 * np.mean([x["reached"] for x in r])) if r else "?"
+def abt(tag, filt):
+    r = abl.get(tag + filt); v = [x["t_target"] for x in r if np.isfinite(x["t_target"])] if r else []; return "%.1f" % np.median(v) if v else "?"
+for tag, nm in (("hot_v4", "Full"), ("hot_nophys", "NoPhys"), ("hot_noaux", "NoAux"), ("hot_L8", "Lsmall"), ("hot_d32", "Dsmall"), ("hot_b1", "Bone"), ("mlp_v2", "Mlp"), ("lstm_v2", "Lstm")):
+    M["abl" + nm + "Reached"] = abr(tag, "_nf"); M["abl" + nm + "ReachedF"] = abr(tag, "_f"); M["abl" + nm + "Tmed"] = abt(tag, "_nf"); M["abl" + nm + "Viol"] = ab(tag, "viol_pct", 1); M["abl" + nm + "Lf"] = ab(tag, "lf_min", 2)
 ipn = load(os.path.join(RES, "interp_noaux.json"))
 if ipn: M["ablNoAuxRtwo"] = "%.2f" % np.mean([v["r2"] for v in ipn["best"].values()]) if "best" in ipn else "%.2f" % np.mean(list(ipn["r2"].values()))
 out = os.path.join(ROOT, "paper", "numbers.tex")

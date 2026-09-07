@@ -1,11 +1,11 @@
 {
- "hot_eval_us": 610.3970000112895,
- "check_ms_mean": 28.963280731113628,
- "check_ms_max": 37.154042001930065,
+ "hot_eval_us": 600.1637500012293,
+ "check_ms_mean": 28.4937111340696,
+ "check_ms_max": 37.36629200284369,
  "params": 79101,
  "threads": 1,
  "machine": "Apple M2, Python",
- "threshold_us": 13.411874970188364,
- "schedule_us": 72.24250002764165,
- "gspid_us": 81.00687504338566
+ "threshold_us": 11.836249977932312,
+ "schedule_us": 68.16333501774352,
+ "gspid_us": 77.03082999796607
 }

@@ -1,0 +1,20 @@
+{
+ "iters": 500,
+ "batch": 32,
+ "tag": "hot_L8",
+ "L": 8,
+ "d": 48,
+ "blocks": 2,
+ "lr": 0.0002,
+ "nmin": 60,
+ "nmax": 300,
+ "gust": 1.0,
+ "seed": 0,
+ "no_aux": false,
+ "no_phys": false,
+ "report": 10,
+ "arch": "hot",
+ "heads": 4,
+ "lipschitz": 11487.90315015599,
+ "params": 77949
+}

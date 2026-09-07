@@ -1,3 +1,0 @@
-lstm nominal  6->15 plant  -1 seed 0: t   6.6 energy 4.16 lf_min 0.97 al_max -0.0 viol 0.0% interv 8 unver 6
-lstm nominal 15-> 6 plant  -1 seed 0: t   5.2 energy 4.87 lf_min 0.94 al_max -0.8 viol 0.0% interv 0 unver 0
-done 122 s

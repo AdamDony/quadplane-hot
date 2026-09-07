@@ -1,1 +1,2 @@
 lstm_v2 bare reached 0.88 t 6.2 viol 0.05% lf_min 0.95
+lstm_v2 filter reached 0.80 t 6.2 viol 0.00% lf_min 0.94

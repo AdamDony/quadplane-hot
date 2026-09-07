@@ -43,7 +43,7 @@ The module returns the network command when it is certified on the current plant
 \begin{equation}\label{eq:filter}
 \begin{aligned}u_k&=u_{\mathrm a}+\lambda^\star(u^{\mathrm{NN}}_k-u_{\mathrm a}),\\ \lambda^\star&=\max\{\lambda\in[0,1]:\ u_{\mathrm a}+\lambda(u^{\mathrm{NN}}_k-u_{\mathrm a})\text{ certified on }\Theta'_k\},\end{aligned}
 \end{equation}
-found by bisection, with $u_{\mathrm b}=\kappa_{\mathrm b}(x_k,u_{k-1})$ the backup command; when not even $u_{\mathrm b}$ is certified on $\Theta'_k$, the backup command is applied: it remains certified on the true plant, whose rollout is the tail of the previous certificate (Lemma~\ref{lem:rf}), even when other retained plants fail from the current state; these applications are counted in Section~\ref{sec:exp}. The plant set is contracted online by set-membership with the measurement bound $\varepsilon$,
+found by bisection, with $u_{\mathrm b}=\kappa_{\mathrm b}(x_k,u_{k-1})$ the backup command; when not even $u_{\mathrm b}$ is certified on $\Theta'_k$, the backup command is applied: it remains certified on the true plant, whose rollout is the tail of the previous certificate (Lemma~\ref{lem:rf}), even when other retained plants fail from the current state; these applications are counted in Section~\ref{sec:experiments}. The plant set is contracted online by set-membership with the measurement bound $\varepsilon$,
 \begin{equation}\label{eq:consistent}
 \Theta'_{k+1}=\{\vartheta\in\Theta'_k:\ |F(x_k,u_k;\vartheta)-x_{k+1}|\le\varepsilon\},\qquad \Theta'_0=\Theta_N,
 \end{equation}
