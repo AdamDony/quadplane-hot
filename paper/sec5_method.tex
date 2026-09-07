@@ -57,20 +57,58 @@ The policy is trained by backpropagation through rollouts of the differentiable 
 a time term (the soft indicator of not yet being at the target plus the distance to it, which carries a gradient far from the target), the energy of the identified power model, a soft barrier on the eight margins, the auxiliary plant loss, and a smoothness term with a preference for level flight ($\gamma_0=4^\circ$, $\gamma_1=2^\circ$) that keeps the learned hand-off from trading height for speed. Gradients flow through the model and the policy; backpropagation is truncated every $100$ steps and the window inputs carry the noise of the estimator. The safety module is not in the training loop, so the network learns to be safe by itself and the module intervenes at run time only where the learned policy would not be; the intervention rate is reported.
 
 \begin{algorithm}[t]\caption{Physics-informed training of HOT}\label{alg:train}\begin{algorithmic}[1]
-\State build the differentiable model $F$ of \eqref{eq:model} and the box $\Theta$; initialise $\phi$ with the hold policy \eqref{eq:bph}
-\For{iteration $=1,\dots,I$}
-\State $N\leftarrow$ curriculum length; sample plants $\vartheta\sim\mathcal U(\Theta)$, trims $\rho_0$, targets $\rho_{\mathrm t}$, gusts, noise
-\State roll out $x_{j+1}=F(x_j,\pi_\phi(\mathsf w_j+\text{noise});\vartheta)+w_j$, $j<N$, freezing diverged episodes
-\State $\phi\leftarrow\phi-\eta\nabla_\phi\mathcal J(\phi)$ by truncated backpropagation through time, gradient norm clipped
+\Require model $F$ \eqref{eq:model}, box $\Theta$, iterations $I$, batch $B$, curriculum $N(i)$, weights $(w_E,w_B,w_A,w_S)$, learning rate $\eta$, truncation $N_{\mathrm{tr}}$
+\State $\phi\leftarrow$ random weights with the last layer of the head at zero (hold policy \eqref{eq:bph}); $\phi^\star\leftarrow\phi$; $s^\star\leftarrow\infty$
+\For{$i=1,\dots,I$}
+  \State $N\leftarrow N(i)$; $\mathcal J\leftarrow0$
+  \For{$b=1,\dots,B$}
+    \State sample $\vartheta_b\sim\mathcal U(\Theta)$, $\rho_0$, $\rho_{\mathrm t}$, a gust profile $w_{0:N-1}$ and window noise $\nu_{0:N-1}$; $x_0\leftarrow x^{\mathrm t}(\rho_0)$; fill the window $\mathsf w_0$ with $(x_0,u^{\mathrm t}(\rho_0))$
+    \For{$j=0,\dots,N-1$}
+      \State $u_j\leftarrow\pi_\phi(\mathsf w_j+\nu_j)$ by \eqref{eq:bph}; $x_{j+1}\leftarrow F(x_j,u_j;\vartheta_b)+w_j$; shift $(x_{j+1},u_j)$ into $\mathsf w_{j+1}$
+      \State $\mathcal J\leftarrow\mathcal J+$ the summand of \eqref{eq:loss} at $j$; \textbf{if} $j\bmod N_{\mathrm{tr}}=0$ \textbf{then} detach $x_{j+1}$ and $\mathsf w_{j+1}$ from the graph
+      \State \textbf{if} $x_{j+1}\notin\mathcal X$ \textbf{then} freeze the episode ($x_{j'}\leftarrow x_{j+1}$ for $j'>j$)
+    \EndFor
+  \EndFor
+  \State $g\leftarrow\nabla_\phi\mathcal J/B$; $g\leftarrow g\min\{1,1/\|g\|\}$; $\phi\leftarrow\mathrm{Adam}(\phi,g,\eta_i)$ with cosine decay of $\eta_i$
+  \If{$i\ge I/4$ and $i\bmod50=0$}
+    \State $s\leftarrow$ mean time to target plus violation rate of $\pi_\phi$ on the validation set; \textbf{if} $s<s^\star$ \textbf{then} $\phi^\star\leftarrow\phi$; $s^\star\leftarrow s$
+  \EndIf
 \EndFor
-\State verify the decrease condition of Definition~\ref{def:dec} on the grid; compute the Lipschitz bound \eqref{eq:lip}
+\State \Return $\phi^\star$; compute the Lipschitz bound \eqref{eq:lip}; verify Definition~\ref{def:dec} on the grid
 \end{algorithmic}\end{algorithm}
-\begin{algorithm}[t]\caption{One sampling period of HOT with the lift-safety module}\label{alg:online}\begin{algorithmic}[1]
-\State receive $x_k$, $\dot\gamma_{\mathrm m,k}$; append $(x_k,u_{k-1})$ to the window; contract $\Theta'_k$ by \eqref{eq:consistent}
-\State $u^{\mathrm{NN}}_k\leftarrow\pi_\phi(\mathsf w_k)$ by \eqref{eq:bph}
-\State \textbf{if} $u^{\mathrm{NN}}_k$ is certified on $\Theta'_k$ by \eqref{eq:cert} \textbf{then} $u_k\leftarrow u^{\mathrm{NN}}_k$
-\State \textbf{else} $u_{\mathrm b}\leftarrow\kappa_{\mathrm b}(x_k,u_{k-1})$ by \eqref{eq:backup}; $u_k\leftarrow$ \eqref{eq:filter} by bisection ($u_{\mathrm b}$ if none certified, Lemma~\ref{lem:rf})
-\State send $\thsp$ and the rotor collective as an attitude target and the pusher command as an actuator command
+\begin{algorithm}[t]\caption{HOT with the lift-safety module, online loop}\label{alg:online}\begin{algorithmic}[1]
+\Require weights $\phi^\star$, plant set $\Theta_N$, backup $\kappa_{\mathrm b}$, horizon $H$, margins $m$, settled set $\mathcal C$, bound $\varepsilon$, bisection depth $n_{\mathrm b}$
+\Function{Cert}{$x,u^-,u,\Theta'$}\Comment{certificate \eqref{eq:cert}, vectorised over $\Theta'$}
+  \State $X\leftarrow\{F(x,u;\vartheta):\vartheta\in\Theta'\}$; $U\leftarrow u$
+  \For{$j=0,\dots,H-1$}
+    \State \textbf{if} $\min_{\vartheta}\min_i\big(c_i(X_\vartheta;\vartheta)-m_i\big)<0$ \textbf{then} \Return false
+    \State \textbf{if} $X_\vartheta\in\mathcal C$ for all $\vartheta\in\Theta'$ \textbf{then} \Return true
+    \State $U\leftarrow\kappa_{\mathrm b}(X,U)$ by \eqref{eq:backup}; $X\leftarrow\{F(X_\vartheta,U_\vartheta;\vartheta)\}$
+  \EndFor
+  \State \Return $\big[\min_{\vartheta}\min_i(c_i(X_\vartheta;\vartheta)-m_i)\ge0\big]\wedge\big[X_\vartheta\in\mathcal C\ \forall\vartheta\big]$
+\EndFunction
+\State $\Theta'_0\leftarrow\Theta_N$; $u_{-1}\leftarrow u^{\mathrm t}(\rho_0)$; fill the window with the trim
+\For{$k=0,1,2,\dots$}\Comment{one sampling period $\Delta$}
+  \State read $x_k$, $\dot\gamma_{\mathrm m,k}$, $\dot V_{\mathrm m,k}$ from the estimator
+  \State \textbf{if} $k>0$ \textbf{then} $\Theta'_k\leftarrow\{\vartheta\in\Theta'_{k-1}:\ |F(x_{k-1},u_{k-1};\vartheta)-x_k|\le\varepsilon\}$ by \eqref{eq:consistent}, kept if it has at least $n_{\min}$ elements
+  \State shift $(x_k,u_{k-1})$ into the window $\mathsf w_k$; $u^{\mathrm{NN}}_k\leftarrow\pi_{\phi^\star}(\mathsf w_k)$ by \eqref{eq:bph}
+  \If{\Call{Cert}{$x_k,u_{k-1},u^{\mathrm{NN}}_k,\Theta'_k$}}
+    \State $u_k\leftarrow u^{\mathrm{NN}}_k$
+  \Else
+    \State $u_{\mathrm b}\leftarrow\kappa_{\mathrm b}(x_k,u_{k-1})$ by \eqref{eq:backup}
+    \State \textbf{if} \Call{Cert}{$x_k,u_{k-1},u_{k-1},\Theta'_k$} \textbf{then} $u_{\mathrm a}\leftarrow u_{k-1}$ \textbf{else} $u_{\mathrm a}\leftarrow u_{\mathrm b}$\Comment{anchor of \eqref{eq:filter}}
+    \If{$u_{\mathrm a}=u_{\mathrm b}$ and not \Call{Cert}{$x_k,u_{k-1},u_{\mathrm b},\Theta'_k$}}
+      \State $u_k\leftarrow u_{\mathrm b}$\Comment{certified on the true plant by Lemma~\ref{lem:rf}}
+    \Else
+      \State $\lambda_{\mathrm{lo}}\leftarrow0$; $\lambda_{\mathrm{hi}}\leftarrow1$
+      \For{$i=1,\dots,n_{\mathrm b}$}
+        \State $\lambda\leftarrow(\lambda_{\mathrm{lo}}+\lambda_{\mathrm{hi}})/2$; \textbf{if} \Call{Cert}{$x_k,u_{k-1},u_{\mathrm a}+\lambda(u^{\mathrm{NN}}_k-u_{\mathrm a}),\Theta'_k$} \textbf{then} $\lambda_{\mathrm{lo}}\leftarrow\lambda$ \textbf{else} $\lambda_{\mathrm{hi}}\leftarrow\lambda$
+      \EndFor
+      \State $u_k\leftarrow u_{\mathrm a}+\lambda_{\mathrm{lo}}(u^{\mathrm{NN}}_k-u_{\mathrm a})$
+    \EndIf
+  \EndIf
+  \State send $\theta_{\mathrm{sp},k}$ and $T^{\mathrm c}_{\mathrm r,k}$ to the attitude loop as an attitude target with collective and $T^{\mathrm c}_{\mathrm c,k}$ to the pusher; store $u_k$
+\EndFor
 \end{algorithmic}\end{algorithm}
 \begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig02_training.pdf}
 \caption{Physics-informed training: domain randomisation over the box, gusts, noise, trims and targets; differentiable rollout of the identified model with the policy in the loop; loss terms; backpropagation through time with a horizon curriculum.}\label{fig:training}

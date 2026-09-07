@@ -14,6 +14,13 @@ M.update(numCross="100", numAR="%.2f" % (2.0 / 0.292), numKL="%.2f" % PL.KL_ROB,
          numEps="%.1f\\ \\mathrm{m/s},\\ %.0f^\\circ,\\ %.0f^\\circ,\\ %.1f\\ \\mathrm N,\\ %.0f\\ \\mathrm N" % (bsf.EPS_CONS[0], np.degrees(bsf.EPS_CONS[1]), np.degrees(bsf.EPS_CONS[2]), bsf.EPS_CONS[3], bsf.EPS_CONS[4]), numPlantsFull="1088")
 g = bsf.K_R * PL.BOX["beta_r"][1] * (1 - np.exp(-PL.BOX["lam_r"][1] * PL.DT)) / (PL.M * 4.0); M["numKrGain"] = "%.2f" % g
 M["numKcGain"] = "%.2f" % (bsf.K_C_B * PL.BOX["beta_c"][1] * (1 - np.exp(-PL.BOX["lam_c"][1] * PL.DT)) / PL.M)
+def _rho(lam_key, beta_key, k, q):
+    r = 0.0
+    for lam in np.linspace(PL.BOX[lam_key][0], PL.BOX[lam_key][1], 25):
+        for beta in np.linspace(PL.BOX[beta_key][0], PL.BOX[beta_key][1], 9):
+            a = np.exp(-lam * PL.DT); gg = q * (1 - a) * beta * k; r = max(r, max(abs(np.linalg.eigvals(np.array([[1 - gg, -q * (1 - a)], [a * beta * k, a]])))))
+    return r
+M["numKrRho"] = "%.2f" % _rho("lam_r", "beta_r", bsf.K_R, 1.0 / (PL.M * 4.0)); M["numKcRho"] = "%.2f" % _rho("lam_c", "beta_c", bsf.K_C_B, 1.0 / PL.M)
 st = load(os.path.join(DES, "settle_numbers.json"))
 if st: M.update(numSettlePairs="{:,}".format(st["pairs"]), numSettleFail=str(st["failures"]), numSettleWorst="%.3f" % (st["margin_lift"] + st["worst_margin_rel"]))
 # results
