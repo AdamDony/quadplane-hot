@@ -24,5 +24,5 @@ s.append("\\nextgroupplot[title={%s}, xtick={%s}, xticklabels={%s}, ylabel={reac
 s.append("\\addplot[fill=chot!25, draw=chot] coordinates {%s};" % " ".join("(%d,%.1f)" % (i, reached(t, "_nf")) for i, (t, _) in enumerate(present2)))
 s.append("\\addplot[fill=chot, draw=chot] coordinates {%s};" % " ".join("(%d,%.1f)" % (i, reached(t, "_f")) for i, (t, _) in enumerate(present2)))
 s.append("\\panel{c}{}")
-s += ["\\end{groupplot}", "\\node[anchor=south, inner sep=1pt] at ($(group c1r1.north west)!0.5!(group c3r1.north east)+(0,5mm)$) {\\pgfplotslegendfromname{ablleg}};", "\\end{tikzpicture}", "\\end{document}"]
+s += ["\\end{groupplot}", "\\node[anchor=south, inner sep=1pt] at ($(group c1r1.north west)!0.5!(group c3r1.north east)+(0,9mm)$) {\\pgfplotslegendfromname{ablleg}};", "\\end{tikzpicture}", "\\end{document}"]
 open(os.path.join(FS, "fig12_ablation.tex"), "w").write("\n".join(s)); print("written fig12_ablation.tex with", {k: len(v) for k, v in V.items()})
