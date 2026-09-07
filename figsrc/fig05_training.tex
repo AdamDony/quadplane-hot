@@ -1,0 +1,28 @@
+\documentclass[tikz,border=2pt]{standalone}
+\input{preamble}
+\definecolor{chot}{HTML}{C0392B}\definecolor{cmlp}{HTML}{1F5FA8}\definecolor{clstm}{HTML}{3C9D6A}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=4 by 1, horizontal sep=9mm}, paperaxis, width=3.3cm, height=2.6cm, xlabel={iteration}, xmin=0, xmax=800, tick label style={font=\tiny}, legend style={font=\tiny}]
+\nextgroupplot[ylabel={time term}, legend to name=trainleg, legend columns=3]
+\addplot[chot, line width=1pt] table[x=it, y=time] {../figdata/train_hot_v4.dat}; \addlegendentry{HOT}
+\addplot[cmlp, line width=0.8pt] table[x=it, y=time] {../figdata/train_mlp_v2.dat}; \addlegendentry{MLP}
+\IfFileExists{../figdata/train_lstm_v2.dat}{\addplot[clstm, line width=0.8pt] table[x=it, y=time] {../figdata/train_lstm_v2.dat}; \addlegendentry{LSTM}}{}
+\panel{a}{}
+\nextgroupplot[ylabel={barrier term (smoothed)}, ymode=log]
+\addplot[chot, line width=1pt] table[x=it, y=barrier] {../figdata/train_hot_v4.dat};
+\addplot[cmlp, line width=0.8pt] table[x=it, y=barrier] {../figdata/train_mlp_v2.dat};
+\IfFileExists{../figdata/train_lstm_v2.dat}{\addplot[clstm, line width=0.8pt] table[x=it, y=barrier] {../figdata/train_lstm_v2.dat};}{}
+\panel{b}{}
+\nextgroupplot[ylabel={reached fraction}, ymin=0, ymax=1]
+\addplot[chot, line width=1pt] table[x=it, y=reached] {../figdata/train_hot_v4.dat};
+\addplot[cmlp, line width=0.8pt] table[x=it, y=reached] {../figdata/train_mlp_v2.dat};
+\IfFileExists{../figdata/train_lstm_v2.dat}{\addplot[clstm, line width=0.8pt] table[x=it, y=reached] {../figdata/train_lstm_v2.dat};}{}
+\panel{c}{}
+\nextgroupplot[ylabel={plant-head loss}]
+\addplot[chot, line width=1pt] table[x=it, y=aux] {../figdata/train_hot_v4.dat};
+\panel{d}{}
+\end{groupplot}
+\node[anchor=south, inner sep=1pt] at ($(group c2r1.north)!0.5!(group c3r1.north)+(0,3mm)$) {\pgfplotslegendfromname{trainleg}};
+\end{tikzpicture}
+\end{document}

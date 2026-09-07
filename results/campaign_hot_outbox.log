@@ -1,0 +1,101 @@
+hot outbox  6->15 plant   0 seed 0: t   5.3 energy 3.95 lf_min 0.93 al_max -0.3 viol 0.0% interv 0 unver 0
+hot outbox 15-> 6 plant   0 seed 0: t   nan energy 4.50 lf_min 0.98 al_max -2.2 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant   1 seed 0: t   4.2 energy 4.27 lf_min 0.95 al_max -0.0 viol 0.0% interv 48 unver 6
+hot outbox 15-> 6 plant   1 seed 0: t   6.2 energy 4.58 lf_min 0.97 al_max -2.0 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant   2 seed 0: t  11.8 energy 3.70 lf_min 0.91 al_max -0.2 viol 0.0% interv 3 unver 0
+hot outbox 15-> 6 plant   2 seed 0: t   nan energy 4.67 lf_min 0.77 al_max 1.5 viol 0.0% interv 1 unver 1
+hot outbox  6->15 plant   3 seed 0: t   nan energy 3.89 lf_min 0.94 al_max 0.4 viol 0.0% interv 0 unver 0
+hot outbox 15-> 6 plant   3 seed 0: t   5.8 energy 4.58 lf_min 0.89 al_max 2.0 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant   4 seed 0: t   nan energy 4.47 lf_min 0.91 al_max 0.1 viol 0.0% interv 89 unver 66
+hot outbox 15-> 6 plant   4 seed 0: t   5.1 energy 4.55 lf_min 0.95 al_max -2.0 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant   5 seed 0: t   nan energy 4.82 lf_min 0.92 al_max -0.2 viol 0.0% interv 111 unver 78
+hot outbox 15-> 6 plant   5 seed 0: t   nan energy 4.46 lf_min 0.87 al_max -0.6 viol 0.0% interv 19 unver 19
+hot outbox  6->15 plant   6 seed 0: t   nan energy 4.87 lf_min 0.95 al_max -0.6 viol 0.0% interv 18 unver 0
+hot outbox 15-> 6 plant   6 seed 0: t   4.6 energy 4.74 lf_min 0.96 al_max -1.4 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant   7 seed 0: t   nan energy 4.47 lf_min 0.97 al_max -0.0 viol 0.0% interv 0 unver 0
+hot outbox 15-> 6 plant   7 seed 0: t   nan energy 3.93 lf_min 0.98 al_max -4.1 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant   8 seed 0: t   4.7 energy 4.31 lf_min 0.91 al_max -0.1 viol 0.0% interv 39 unver 6
+hot outbox 15-> 6 plant   8 seed 0: t   5.3 energy 4.24 lf_min 0.94 al_max 1.2 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant   9 seed 0: t   nan energy 5.41 lf_min 0.89 al_max -0.5 viol 3.8% interv 103 unver 65
+hot outbox 15-> 6 plant   9 seed 0: t   nan energy 4.82 lf_min 0.83 al_max -0.5 viol 0.0% interv 87 unver 86
+hot outbox  6->15 plant  10 seed 0: t   5.2 energy 4.27 lf_min 0.93 al_max -0.3 viol 0.0% interv 298 unver 272
+hot outbox 15-> 6 plant  10 seed 0: t   5.2 energy 4.88 lf_min 0.96 al_max -4.4 viol 0.0% interv 17 unver 17
+hot outbox  6->15 plant  11 seed 0: t   3.5 energy 3.75 lf_min 0.85 al_max 1.0 viol 0.0% interv 21 unver 10
+hot outbox 15-> 6 plant  11 seed 0: t   6.1 energy 4.36 lf_min 0.86 al_max 3.8 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  12 seed 0: t   nan energy 5.42 lf_min 0.95 al_max 1.7 viol 0.0% interv 17 unver 17
+hot outbox 15-> 6 plant  12 seed 0: t   nan energy 3.04 lf_min 0.99 al_max -5.5 viol 0.0% interv 395 unver 395
+hot outbox  6->15 plant  13 seed 0: t   3.5 energy 3.54 lf_min 0.94 al_max -0.2 viol 0.0% interv 0 unver 0
+hot outbox 15-> 6 plant  13 seed 0: t   nan energy 4.51 lf_min 0.82 al_max 1.0 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  14 seed 0: t   nan energy 4.55 lf_min 0.96 al_max -0.1 viol 0.0% interv 185 unver 141
+hot outbox 15-> 6 plant  14 seed 0: t  16.7 energy 4.60 lf_min 0.97 al_max -5.1 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  15 seed 0: t   3.8 energy 3.91 lf_min 0.95 al_max -0.1 viol 0.0% interv 1 unver 0
+hot outbox 15-> 6 plant  15 seed 0: t   5.1 energy 4.69 lf_min 0.85 al_max 1.9 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  16 seed 0: t   nan energy 4.65 lf_min 0.92 al_max -0.4 viol 0.0% interv 68 unver 56
+hot outbox 15-> 6 plant  16 seed 0: t  13.2 energy 4.23 lf_min 0.89 al_max 1.3 viol 0.0% interv 1 unver 1
+hot outbox  6->15 plant  17 seed 0: t   3.2 energy 3.65 lf_min 0.90 al_max -0.1 viol 0.0% interv 23 unver 12
+hot outbox 15-> 6 plant  17 seed 0: t   5.1 energy 4.34 lf_min 0.94 al_max 2.6 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  18 seed 0: t  11.2 energy 4.23 lf_min 0.93 al_max -0.3 viol 0.0% interv 0 unver 0
+hot outbox 15-> 6 plant  18 seed 0: t  17.9 energy 4.50 lf_min 0.90 al_max 1.2 viol 0.0% interv 1 unver 1
+hot outbox  6->15 plant  19 seed 0: t   nan energy 4.78 lf_min 0.99 al_max -0.3 viol 0.0% interv 42 unver 2
+hot outbox 15-> 6 plant  19 seed 0: t   nan energy 4.67 lf_min 0.96 al_max -1.5 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  20 seed 0: t   3.6 energy 3.50 lf_min 0.88 al_max -0.1 viol 0.0% interv 3 unver 0
+hot outbox 15-> 6 plant  20 seed 0: t   5.5 energy 4.50 lf_min 0.80 al_max 2.9 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  21 seed 0: t  11.4 energy 3.66 lf_min 0.89 al_max 2.4 viol 0.0% interv 0 unver 0
+hot outbox 15-> 6 plant  21 seed 0: t  17.2 energy 4.21 lf_min 0.77 al_max -0.1 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  22 seed 0: t   nan energy 4.65 lf_min 0.96 al_max -0.1 viol 0.0% interv 0 unver 0
+hot outbox 15-> 6 plant  22 seed 0: t  18.9 energy 4.15 lf_min 0.97 al_max -4.7 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  23 seed 0: t   nan energy 4.41 lf_min 0.94 al_max 1.4 viol 0.0% interv 0 unver 0
+hot outbox 15-> 6 plant  23 seed 0: t   nan energy 3.52 lf_min 0.97 al_max -4.0 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  24 seed 0: t   4.0 energy 4.15 lf_min 0.87 al_max -0.2 viol 0.0% interv 2 unver 0
+hot outbox 15-> 6 plant  24 seed 0: t  17.6 energy 4.07 lf_min 0.89 al_max 2.0 viol 0.0% interv 1 unver 1
+hot outbox  6->15 plant  25 seed 0: t   4.0 energy 4.23 lf_min 0.93 al_max -0.3 viol 0.0% interv 13 unver 7
+hot outbox 15-> 6 plant  25 seed 0: t   nan energy 4.50 lf_min 0.93 al_max -0.6 viol 0.0% interv 1 unver 1
+hot outbox  6->15 plant  26 seed 0: t   nan energy 5.04 lf_min 0.98 al_max -0.4 viol 0.0% interv 72 unver 1
+hot outbox 15-> 6 plant  26 seed 0: t   nan energy 4.65 lf_min 0.91 al_max 0.1 viol 0.0% interv 18 unver 18
+hot outbox  6->15 plant  27 seed 0: t   4.5 energy 3.89 lf_min 0.97 al_max -0.2 viol 0.0% interv 74 unver 1
+hot outbox 15-> 6 plant  27 seed 0: t   6.2 energy 4.34 lf_min 0.98 al_max -3.6 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  28 seed 0: t   4.5 energy 3.73 lf_min 0.90 al_max -0.3 viol 0.0% interv 10 unver 2
+hot outbox 15-> 6 plant  28 seed 0: t   4.7 energy 4.35 lf_min 0.94 al_max 0.9 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  29 seed 0: t   4.0 energy 4.32 lf_min 0.96 al_max -0.1 viol 0.0% interv 15 unver 4
+hot outbox 15-> 6 plant  29 seed 0: t   4.6 energy 4.39 lf_min 0.95 al_max 1.3 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  30 seed 0: t   9.2 energy 4.12 lf_min 0.91 al_max -0.3 viol 0.0% interv 1 unver 0
+hot outbox 15-> 6 plant  30 seed 0: t   4.4 energy 4.52 lf_min 0.95 al_max 1.8 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  31 seed 0: t   4.4 energy 4.17 lf_min 0.94 al_max -0.2 viol 0.0% interv 3 unver 0
+hot outbox 15-> 6 plant  31 seed 0: t   5.5 energy 4.46 lf_min 0.92 al_max 0.4 viol 0.0% interv 1 unver 1
+hot outbox  6->15 plant  32 seed 0: t   4.4 energy 3.98 lf_min 0.92 al_max -0.1 viol 0.0% interv 3 unver 0
+hot outbox 15-> 6 plant  32 seed 0: t   nan energy 4.52 lf_min 0.86 al_max 1.4 viol 0.0% interv 1 unver 1
+hot outbox  6->15 plant  33 seed 0: t   5.0 energy 4.13 lf_min 0.91 al_max -0.4 viol 0.0% interv 2 unver 0
+hot outbox 15-> 6 plant  33 seed 0: t   4.7 energy 4.53 lf_min 0.94 al_max 1.4 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  34 seed 0: t   8.1 energy 4.08 lf_min 0.96 al_max -0.1 viol 0.0% interv 80 unver 1
+hot outbox 15-> 6 plant  34 seed 0: t   nan energy 4.31 lf_min 0.99 al_max -5.1 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  35 seed 0: t   3.9 energy 3.80 lf_min 0.92 al_max -0.3 viol 0.0% interv 0 unver 0
+hot outbox 15-> 6 plant  35 seed 0: t   5.2 energy 4.53 lf_min 0.90 al_max -0.1 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  36 seed 0: t   6.6 energy 4.05 lf_min 0.95 al_max -0.1 viol 0.0% interv 0 unver 0
+hot outbox 15-> 6 plant  36 seed 0: t   6.1 energy 4.50 lf_min 0.96 al_max -1.1 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  37 seed 0: t  11.1 energy 4.10 lf_min 0.91 al_max -0.4 viol 0.0% interv 1 unver 0
+hot outbox 15-> 6 plant  37 seed 0: t   4.6 energy 4.37 lf_min 0.92 al_max 0.0 viol 0.0% interv 1 unver 1
+hot outbox  6->15 plant  38 seed 0: t   nan energy 4.85 lf_min 0.96 al_max -0.4 viol 0.0% interv 76 unver 3
+hot outbox 15-> 6 plant  38 seed 0: t   nan energy 4.47 lf_min 0.88 al_max 0.1 viol 0.0% interv 19 unver 19
+hot outbox  6->15 plant  39 seed 0: t   4.1 energy 3.88 lf_min 0.93 al_max -0.3 viol 0.0% interv 0 unver 0
+hot outbox 15-> 6 plant  39 seed 0: t   5.4 energy 4.52 lf_min 0.93 al_max 0.3 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  40 seed 0: t   4.8 energy 3.90 lf_min 0.95 al_max -0.0 viol 0.0% interv 0 unver 0
+hot outbox 15-> 6 plant  40 seed 0: t   5.6 energy 4.48 lf_min 0.95 al_max -0.7 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  41 seed 0: t   5.8 energy 3.63 lf_min 0.90 al_max -0.2 viol 0.0% interv 1 unver 0
+hot outbox 15-> 6 plant  41 seed 0: t  13.6 energy 4.51 lf_min 0.87 al_max 1.3 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  42 seed 0: t   nan energy 5.00 lf_min 0.96 al_max -0.4 viol 0.0% interv 34 unver 1
+hot outbox 15-> 6 plant  42 seed 0: t  15.7 energy 4.46 lf_min 0.91 al_max 0.1 viol 0.0% interv 1 unver 1
+hot outbox  6->15 plant  43 seed 0: t   3.5 energy 3.61 lf_min 0.92 al_max -0.2 viol 0.0% interv 0 unver 0
+hot outbox 15-> 6 plant  43 seed 0: t   5.8 energy 4.42 lf_min 0.89 al_max -0.6 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  44 seed 0: t   4.1 energy 3.75 lf_min 0.91 al_max -0.3 viol 0.0% interv 0 unver 0
+hot outbox 15-> 6 plant  44 seed 0: t   4.9 energy 4.58 lf_min 0.89 al_max 0.4 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  45 seed 0: t  10.8 energy 4.40 lf_min 0.92 al_max -0.3 viol 0.0% interv 2 unver 0
+hot outbox 15-> 6 plant  45 seed 0: t   4.6 energy 4.47 lf_min 0.90 al_max 0.9 viol 0.0% interv 1 unver 1
+hot outbox  6->15 plant  46 seed 0: t   3.9 energy 4.23 lf_min 0.96 al_max -0.2 viol 0.0% interv 10 unver 5
+hot outbox 15-> 6 plant  46 seed 0: t   nan energy 4.36 lf_min 0.95 al_max -0.5 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  47 seed 0: t   9.7 energy 4.30 lf_min 0.94 al_max -0.5 viol 0.0% interv 0 unver 0
+hot outbox 15-> 6 plant  47 seed 0: t   nan energy 4.74 lf_min 0.93 al_max -0.6 viol 0.0% interv 1 unver 1
+hot outbox  6->15 plant  48 seed 0: t   nan energy 5.25 lf_min 0.96 al_max 2.1 viol 0.0% interv 0 unver 0
+hot outbox 15-> 6 plant  48 seed 0: t   nan energy 3.41 lf_min 0.77 al_max -2.3 viol 0.0% interv 0 unver 0
+hot outbox  6->15 plant  49 seed 0: t   nan energy 4.30 lf_min 0.94 al_max -0.5 viol 0.0% interv 0 unver 0
+hot outbox 15-> 6 plant  49 seed 0: t   4.3 energy 4.71 lf_min 0.97 al_max -1.7 viol 0.0% interv 0 unver 0
+done 4780 s

@@ -1,0 +1,41 @@
+\documentclass[final,5p,times,twocolumn]{elsarticle}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{graphicx,booktabs,multirow,siunitx,enumitem,placeins,microtype,textcomp}
+\usepackage{algorithm,algpseudocode}
+\usepackage[hidelinks]{hyperref}
+\graphicspath{{figures/}}
+\sisetup{detect-all,range-phrase=--,range-units=single}
+\newtheorem{theorem}{Theorem}\newtheorem{lemma}{Lemma}\newtheorem{proposition}{Proposition}\newtheorem{definition}{Definition}\newtheorem{assumption}{Assumption}\newtheorem{fact}{Fact}
+\newcommand{\gth}{g_\theta}\newcommand{\thsp}{\theta_{\mathrm{sp}}}\newcommand{\lf}{\Lambda}
+\input{numbers}
+\journal{Neurocomputing}
+\setcounter{topnumber}{3}\setcounter{bottomnumber}{2}\setcounter{totalnumber}{5}\setcounter{dbltopnumber}{3}\renewcommand{\topfraction}{0.95}\renewcommand{\dbltopfraction}{0.95}\renewcommand{\bottomfraction}{0.6}\renewcommand{\textfraction}{0.05}\renewcommand{\floatpagefraction}{0.75}\renewcommand{\dblfloatpagefraction}{0.75}
+\begin{document}
+\begin{frontmatter}
+\title{Safe hand-off control of a quadplane VTOL across an uncertain plant family with a history-conditioned transformer}
+\author[tt]{Md Nur-A-Adam Dony\corref{cor}}
+\ead{mdony42@tntech.edu}
+\cortext[cor]{Corresponding author.}
+\affiliation[tt]{organization={Department of Electrical and Computer Engineering, Tennessee Technological University}, city={Cookeville}, state={TN}, postcode={38505}, country={USA}}
+\author[kl]{Md Azizul Islam}
+\affiliation[kl]{organization={KaiLab LLC}, city={Sugar Land}, state={TX}, postcode={77479}, country={USA}}
+\begin{abstract}
+\input{abstract}
+\end{abstract}
+\begin{keyword}
+Neural control \sep Transformer \sep Safety filter \sep Domain randomisation \sep VTOL aircraft \sep Physics-informed learning
+\end{keyword}
+\end{frontmatter}
+\input{sec1_intro}
+\input{sec2_related}
+\input{sec3_prelim}
+\input{sec4_problem}
+\input{sec5_method}
+\input{sec6_analysis}
+\input{sec7_platform}
+\input{sec8_experiments}
+\input{sec9_conclusion}
+\input{backmatter}
+\bibliographystyle{elsarticle-num}
+\input{refs}
+\end{document}

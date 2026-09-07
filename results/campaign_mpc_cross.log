@@ -1,0 +1,42 @@
+mpc cross  6->15 plant   0 seed 0: t   nan energy 3.35 lf_min 0.89 al_max 1.1 viol 0.0% 
+mpc cross 15-> 6 plant   0 seed 0: t  18.2 energy 3.63 lf_min 0.98 al_max -0.1 viol 0.0% 
+mpc cross  6->15 plant   1 seed 0: t   nan energy 3.18 lf_min 0.96 al_max 0.5 viol 0.0% 
+mpc cross 15-> 6 plant   1 seed 0: t  18.9 energy 3.56 lf_min 0.99 al_max 0.6 viol 0.0% 
+mpc cross  6->15 plant   2 seed 0: t  19.1 energy 3.43 lf_min 0.94 al_max 0.6 viol 0.0% 
+mpc cross 15-> 6 plant   2 seed 0: t  18.9 energy 3.77 lf_min 0.86 al_max 0.8 viol 0.0% 
+mpc cross  6->15 plant   3 seed 0: t  10.8 energy 3.38 lf_min 0.99 al_max 0.3 viol 0.0% 
+mpc cross 15-> 6 plant   3 seed 0: t   nan energy 3.79 lf_min 0.87 al_max 0.2 viol 0.0% 
+mpc cross  6->15 plant   4 seed 0: t  13.2 energy 3.17 lf_min 0.97 al_max 0.3 viol 0.0% 
+mpc cross 15-> 6 plant   4 seed 0: t   nan energy 3.36 lf_min 0.98 al_max 0.1 viol 0.0% 
+mpc cross  6->15 plant   5 seed 0: t   nan energy 3.53 lf_min 0.88 al_max 3.6 viol 0.0% 
+mpc cross 15-> 6 plant   5 seed 0: t  17.8 energy 3.62 lf_min 0.98 al_max 0.7 viol 0.0% 
+mpc cross  6->15 plant   6 seed 0: t   nan energy 3.06 lf_min 0.99 al_max 0.4 viol 0.0% 
+mpc cross 15-> 6 plant   6 seed 0: t  18.1 energy 3.39 lf_min 0.98 al_max 0.4 viol 0.0% 
+mpc cross  6->15 plant   7 seed 0: t  11.2 energy 3.62 lf_min 0.99 al_max 0.3 viol 0.0% 
+mpc cross 15-> 6 plant   7 seed 0: t   nan energy 3.63 lf_min 0.99 al_max -0.1 viol 0.0% 
+mpc cross  6->15 plant   8 seed 0: t  12.8 energy 2.98 lf_min 1.00 al_max 0.3 viol 0.0% 
+mpc cross 15-> 6 plant   8 seed 0: t   nan energy 3.30 lf_min 0.99 al_max 0.2 viol 0.0% 
+mpc cross  6->15 plant   9 seed 0: t   nan energy 3.32 lf_min 0.86 al_max 4.4 viol 0.0% 
+mpc cross 15-> 6 plant   9 seed 0: t  19.8 energy 3.48 lf_min 0.98 al_max 0.2 viol 0.0% 
+mpc cross  6->15 plant  10 seed 0: t   nan energy 3.52 lf_min 0.97 al_max 0.5 viol 0.0% 
+mpc cross 15-> 6 plant  10 seed 0: t  18.1 energy 3.60 lf_min 0.98 al_max 0.7 viol 0.0% 
+mpc cross  6->15 plant  11 seed 0: t  10.7 energy 3.36 lf_min 0.98 al_max 0.4 viol 0.0% 
+mpc cross 15-> 6 plant  11 seed 0: t   nan energy 3.78 lf_min 0.90 al_max 0.3 viol 0.0% 
+mpc cross  6->15 plant  12 seed 0: t   nan energy 3.48 lf_min 0.91 al_max 0.8 viol 0.0% 
+mpc cross 15-> 6 plant  12 seed 0: t  17.7 energy 3.62 lf_min 0.96 al_max 0.3 viol 0.0% 
+mpc cross  6->15 plant  13 seed 0: t   nan energy 3.29 lf_min 0.93 al_max 0.6 viol 0.0% 
+mpc cross 15-> 6 plant  13 seed 0: t  17.6 energy 3.65 lf_min 0.86 al_max 0.9 viol 0.0% 
+mpc cross  6->15 plant  14 seed 0: t  11.6 energy 3.22 lf_min 0.99 al_max 0.2 viol 0.0% 
+mpc cross 15-> 6 plant  14 seed 0: t   nan energy 3.44 lf_min 0.98 al_max -0.2 viol 0.0% 
+mpc cross  6->15 plant  15 seed 0: t  12.6 energy 3.13 lf_min 0.99 al_max 0.4 viol 0.0% 
+mpc cross 15-> 6 plant  15 seed 0: t   nan energy 3.58 lf_min 0.95 al_max 0.2 viol 0.0% 
+mpc cross  6->15 plant  16 seed 0: t   nan energy 3.14 lf_min 0.95 al_max 0.7 viol 0.0% 
+mpc cross 15-> 6 plant  16 seed 0: t   nan energy 3.33 lf_min 0.99 al_max 0.9 viol 0.0% 
+mpc cross  6->15 plant  17 seed 0: t  10.5 energy 3.80 lf_min 1.00 al_max 0.3 viol 0.0% 
+mpc cross 15-> 6 plant  17 seed 0: t   nan energy 3.77 lf_min 0.99 al_max 0.0 viol 0.0% 
+mpc cross  6->15 plant  18 seed 0: t  11.0 energy 3.33 lf_min 1.00 al_max 0.3 viol 0.0% 
+mpc cross 15-> 6 plant  18 seed 0: t   nan energy 3.71 lf_min 0.92 al_max -0.2 viol 0.0% 
+mpc cross  6->15 plant  19 seed 0: t  13.8 energy 3.00 lf_min 1.00 al_max 0.4 viol 0.0% 
+mpc cross 15-> 6 plant  19 seed 0: t   nan energy 3.41 lf_min 0.99 al_max 0.2 viol 0.0% 
+done 6133 s
+exit 0

@@ -1,0 +1,45 @@
+\documentclass[tikz,border=2pt]{standalone}
+\input{preamble}
+\definecolor{chot}{HTML}{C0392B}\definecolor{cmpcb}{HTML}{6E6E6E}\definecolor{cthr}{HTML}{2B2B2B}\definecolor{csch}{HTML}{1F5FA8}\definecolor{cpid}{HTML}{3C9D6A}\definecolor{cmlp}{HTML}{8E7CC3}\definecolor{clstm}{HTML}{E08A2E}\definecolor{cppo}{HTML}{F1C40F}
+\pgfplotsset{tr/.style={line width=0.8pt}}
+\newcommand{\curves}[2]{% #1 = direction (6to15|15to6), #2 = column
+\addplot[cthr, tr, densely dashed] table[x=t, y=#2] {../figdata/traj_threshold_#1.dat};
+\addplot[csch, tr] table[x=t, y=#2] {../figdata/traj_schedule_#1.dat};
+\addplot[cpid, tr] table[x=t, y=#2] {../figdata/traj_gspid_#1.dat};
+\addplot[cmpcb, tr] table[x=t, y=#2] {../figdata/traj_mpc_#1.dat};
+\addplot[cmlp, tr] table[x=t, y=#2] {../figdata/traj_mlp_#1.dat};
+\addplot[clstm, tr] table[x=t, y=#2] {../figdata/traj_lstm_#1.dat};
+\addplot[cppo, tr] table[x=t, y=#2] {../figdata/traj_ppo_#1.dat};
+\addplot[chot, line width=1.2pt] table[x=t, y=#2] {../figdata/traj_hot_#1.dat};}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 4, horizontal sep=8mm, vertical sep=3.5mm, xlabels at=edge bottom, xticklabels at=edge bottom, ylabels at=edge left}, paperaxis, width=3.6cm, height=1.55cm, xlabel={time [s]}, xmin=0, xmax=20, tick label style={font=\tiny}]
+\nextgroupplot[title={front transition}, ylabel={$V$ [m/s]}, ymin=4, ymax=17, legend to name=nomleg, legend columns=4, legend style={font=\scriptsize, draw=none, fill=none}]
+\draw[black!35] (axis cs:0,15) -- (axis cs:20,15);
+\addplot[cthr, tr, densely dashed] table[x=t, y=V] {../figdata/traj_threshold_6to15.dat}; \addlegendentry{THR}
+\addplot[csch, tr] table[x=t, y=V] {../figdata/traj_schedule_6to15.dat}; \addlegendentry{SCH}
+\addplot[cpid, tr] table[x=t, y=V] {../figdata/traj_gspid_6to15.dat}; \addlegendentry{GS-PID}
+\addplot[cmpcb, tr] table[x=t, y=V] {../figdata/traj_mpc_6to15.dat}; \addlegendentry{MPC}
+\addplot[cmlp, tr] table[x=t, y=V] {../figdata/traj_mlp_6to15.dat}; \addlegendentry{MLP}
+\addplot[clstm, tr] table[x=t, y=V] {../figdata/traj_lstm_6to15.dat}; \addlegendentry{LSTM}
+\addplot[cppo, tr] table[x=t, y=V] {../figdata/traj_ppo_6to15.dat}; \addlegendentry{PPO}
+\addplot[chot, line width=1.2pt] table[x=t, y=V] {../figdata/traj_hot_6to15.dat}; \addlegendentry{HOT}
+\panel{a}{}
+\nextgroupplot[title={back transition}, ymin=4, ymax=17]
+\draw[black!35] (axis cs:0,6) -- (axis cs:20,6); \curves{15to6}{V} \panel{e}{}
+\nextgroupplot[ylabel={lift fraction}, ymin=0.6, ymax=1.25]
+\fill[cband!45] (axis cs:0,0.6) rectangle (axis cs:20,0.75); \curves{6to15}{lf} \panel{b}{}
+\nextgroupplot[ymin=0.6, ymax=1.25]
+\fill[cband!45] (axis cs:0,0.6) rectangle (axis cs:20,0.75); \curves{15to6}{lf} \panel{f}{}
+\nextgroupplot[ylabel={$\alpha$ [deg]}, ymin=-12, ymax=9]
+\fill[cband!45] (axis cs:0,5) rectangle (axis cs:20,9); \curves{6to15}{alpha} \panel{c}{}
+\nextgroupplot[ymin=-12, ymax=9]
+\fill[cband!45] (axis cs:0,5) rectangle (axis cs:20,9); \curves{15to6}{alpha} \panel{g}{}
+\nextgroupplot[ylabel={$T_{\mathrm r}$ [N]}, ymin=-5, ymax=90]
+\curves{6to15}{Tr} \panel{d}{}
+\nextgroupplot[ymin=-5, ymax=90]
+\curves{15to6}{Tr} \panel{h}{}
+\end{groupplot}
+\node[anchor=south, inner sep=1pt] at ($(group c1r1.north west)!0.5!(group c2r1.north east)+(0,4mm)$) {\pgfplotslegendfromname{nomleg}};
+\end{tikzpicture}
+\end{document}

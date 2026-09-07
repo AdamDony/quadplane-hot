@@ -1,0 +1,101 @@
+hot cross  6->15 plant  50 seed 0: t   nan energy 4.80 lf_min 0.96 al_max -0.4 viol 0.0% interv 30 unver 3
+hot cross 15-> 6 plant  50 seed 0: t   4.7 energy 4.63 lf_min 0.96 al_max -1.7 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  51 seed 0: t   4.0 energy 4.08 lf_min 0.92 al_max -0.1 viol 0.0% interv 12 unver 3
+hot cross 15-> 6 plant  51 seed 0: t   5.2 energy 4.41 lf_min 0.94 al_max 2.1 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  52 seed 0: t   nan energy 4.98 lf_min 0.96 al_max -0.4 viol 0.0% interv 34 unver 0
+hot cross 15-> 6 plant  52 seed 0: t   4.2 energy 4.61 lf_min 0.95 al_max -0.8 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  53 seed 0: t   5.0 energy 3.85 lf_min 0.94 al_max -0.0 viol 0.0% interv 2 unver 0
+hot cross 15-> 6 plant  53 seed 0: t   4.9 energy 4.64 lf_min 0.87 al_max 1.5 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  54 seed 0: t   4.0 energy 4.38 lf_min 0.95 al_max -0.2 viol 0.0% interv 14 unver 8
+hot cross 15-> 6 plant  54 seed 0: t   4.9 energy 4.49 lf_min 0.95 al_max 1.1 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  55 seed 0: t   4.8 energy 3.73 lf_min 0.93 al_max -0.2 viol 0.0% interv 0 unver 0
+hot cross 15-> 6 plant  55 seed 0: t   nan energy 4.52 lf_min 0.90 al_max 0.1 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  56 seed 0: t   9.7 energy 4.04 lf_min 0.91 al_max -0.3 viol 0.0% interv 2 unver 0
+hot cross 15-> 6 plant  56 seed 0: t  17.4 energy 4.46 lf_min 0.89 al_max 1.3 viol 0.0% interv 1 unver 1
+hot cross  6->15 plant  57 seed 0: t   nan energy 4.44 lf_min 0.92 al_max -0.1 viol 0.0% interv 50 unver 41
+hot cross 15-> 6 plant  57 seed 0: t   4.9 energy 4.33 lf_min 0.93 al_max 1.3 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  58 seed 0: t   4.7 energy 3.94 lf_min 0.91 al_max -0.2 viol 0.0% interv 0 unver 0
+hot cross 15-> 6 plant  58 seed 0: t   5.0 energy 4.65 lf_min 0.90 al_max -0.7 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  59 seed 0: t   9.9 energy 4.12 lf_min 0.94 al_max -0.2 viol 0.0% interv 1 unver 0
+hot cross 15-> 6 plant  59 seed 0: t   4.9 energy 4.58 lf_min 0.95 al_max 1.4 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  60 seed 0: t  10.7 energy 4.24 lf_min 0.94 al_max -0.3 viol 0.0% interv 0 unver 0
+hot cross 15-> 6 plant  60 seed 0: t   4.6 energy 4.60 lf_min 0.96 al_max 0.2 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  61 seed 0: t   4.3 energy 3.98 lf_min 0.95 al_max -0.0 viol 0.0% interv 36 unver 0
+hot cross 15-> 6 plant  61 seed 0: t   5.5 energy 4.50 lf_min 0.93 al_max -0.1 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  62 seed 0: t   5.5 energy 3.99 lf_min 0.93 al_max -0.1 viol 0.0% interv 0 unver 0
+hot cross 15-> 6 plant  62 seed 0: t   5.2 energy 4.62 lf_min 0.90 al_max -0.0 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  63 seed 0: t   4.4 energy 3.81 lf_min 0.93 al_max -0.3 viol 0.0% interv 0 unver 0
+hot cross 15-> 6 plant  63 seed 0: t   5.4 energy 4.44 lf_min 0.96 al_max -0.8 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  64 seed 0: t   3.7 energy 3.87 lf_min 0.91 al_max -0.2 viol 0.0% interv 9 unver 3
+hot cross 15-> 6 plant  64 seed 0: t   5.2 energy 4.44 lf_min 0.93 al_max 2.2 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  65 seed 0: t   4.2 energy 4.62 lf_min 0.95 al_max -0.3 viol 0.0% interv 30 unver 2
+hot cross 15-> 6 plant  65 seed 0: t   4.9 energy 4.50 lf_min 0.95 al_max -1.0 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  66 seed 0: t   4.3 energy 4.15 lf_min 0.95 al_max 0.0 viol 0.0% interv 9 unver 3
+hot cross 15-> 6 plant  66 seed 0: t   5.0 energy 4.52 lf_min 0.95 al_max 1.9 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  67 seed 0: t   4.5 energy 4.10 lf_min 0.93 al_max -0.3 viol 0.0% interv 58 unver 11
+hot cross 15-> 6 plant  67 seed 0: t   5.5 energy 4.55 lf_min 0.98 al_max -3.7 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  68 seed 0: t   4.3 energy 3.90 lf_min 0.92 al_max -0.2 viol 0.0% interv 2 unver 0
+hot cross 15-> 6 plant  68 seed 0: t   nan energy 4.47 lf_min 0.93 al_max 0.2 viol 0.0% interv 1 unver 1
+hot cross  6->15 plant  69 seed 0: t   3.7 energy 3.97 lf_min 0.94 al_max -0.3 viol 0.0% interv 8 unver 2
+hot cross 15-> 6 plant  69 seed 0: t   nan energy 4.53 lf_min 0.92 al_max -0.3 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  70 seed 0: t   4.7 energy 4.56 lf_min 0.96 al_max -0.2 viol 0.0% interv 0 unver 0
+hot cross 15-> 6 plant  70 seed 0: t   4.8 energy 4.54 lf_min 0.97 al_max -1.1 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  71 seed 0: t   4.6 energy 4.23 lf_min 0.97 al_max -0.1 viol 0.0% interv 0 unver 0
+hot cross 15-> 6 plant  71 seed 0: t   4.9 energy 4.44 lf_min 0.97 al_max -1.1 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  72 seed 0: t   4.3 energy 4.20 lf_min 0.95 al_max -0.2 viol 0.0% interv 10 unver 3
+hot cross 15-> 6 plant  72 seed 0: t   nan energy 4.41 lf_min 0.96 al_max -0.8 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  73 seed 0: t   nan energy 4.65 lf_min 0.95 al_max -0.3 viol 0.0% interv 38 unver 0
+hot cross 15-> 6 plant  73 seed 0: t   4.7 energy 4.66 lf_min 0.98 al_max -3.1 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  74 seed 0: t   5.4 energy 4.06 lf_min 0.94 al_max -0.1 viol 0.0% interv 0 unver 0
+hot cross 15-> 6 plant  74 seed 0: t   5.2 energy 4.59 lf_min 0.96 al_max -1.3 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  75 seed 0: t   nan energy 4.03 lf_min 0.92 al_max -0.2 viol 0.0% interv 2 unver 0
+hot cross 15-> 6 plant  75 seed 0: t  16.6 energy 4.44 lf_min 0.92 al_max 1.5 viol 0.0% interv 1 unver 1
+hot cross  6->15 plant  76 seed 0: t   4.5 energy 4.37 lf_min 0.93 al_max -0.4 viol 0.0% interv 1 unver 0
+hot cross 15-> 6 plant  76 seed 0: t   nan energy 4.47 lf_min 0.92 al_max -0.2 viol 0.0% interv 1 unver 1
+hot cross  6->15 plant  77 seed 0: t   4.0 energy 4.51 lf_min 0.93 al_max -0.3 viol 0.0% interv 41 unver 28
+hot cross 15-> 6 plant  77 seed 0: t   4.6 energy 4.67 lf_min 0.96 al_max -1.8 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  78 seed 0: t   6.2 energy 4.36 lf_min 0.94 al_max -0.3 viol 0.0% interv 0 unver 0
+hot cross 15-> 6 plant  78 seed 0: t   4.4 energy 4.61 lf_min 0.97 al_max -1.1 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  79 seed 0: t  11.7 energy 4.08 lf_min 0.95 al_max -0.1 viol 0.0% interv 3 unver 0
+hot cross 15-> 6 plant  79 seed 0: t   4.6 energy 4.57 lf_min 0.96 al_max 0.7 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  80 seed 0: t   4.2 energy 4.25 lf_min 0.92 al_max -0.3 viol 0.0% interv 0 unver 0
+hot cross 15-> 6 plant  80 seed 0: t   4.8 energy 4.61 lf_min 0.97 al_max -1.5 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  81 seed 0: t   4.9 energy 4.60 lf_min 0.96 al_max -0.3 viol 0.0% interv 1 unver 0
+hot cross 15-> 6 plant  81 seed 0: t   5.2 energy 4.56 lf_min 0.94 al_max -0.2 viol 0.0% interv 1 unver 1
+hot cross  6->15 plant  82 seed 0: t  13.2 energy 4.70 lf_min 0.95 al_max -0.3 viol 0.0% interv 9 unver 0
+hot cross 15-> 6 plant  82 seed 0: t   4.5 energy 4.65 lf_min 0.97 al_max -0.6 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  83 seed 0: t   4.0 energy 4.30 lf_min 0.94 al_max -0.2 viol 0.0% interv 12 unver 0
+hot cross 15-> 6 plant  83 seed 0: t   4.7 energy 4.38 lf_min 0.94 al_max 1.4 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  84 seed 0: t  10.3 energy 4.10 lf_min 0.92 al_max -0.2 viol 0.0% interv 4 unver 0
+hot cross 15-> 6 plant  84 seed 0: t  16.2 energy 4.43 lf_min 0.91 al_max 1.3 viol 0.0% interv 1 unver 1
+hot cross  6->15 plant  85 seed 0: t   nan energy 4.79 lf_min 0.95 al_max -0.4 viol 0.0% interv 21 unver 0
+hot cross 15-> 6 plant  85 seed 0: t   4.7 energy 4.59 lf_min 0.93 al_max -0.9 viol 0.0% interv 1 unver 1
+hot cross  6->15 plant  86 seed 0: t   4.4 energy 4.33 lf_min 0.94 al_max -0.2 viol 0.0% interv 24 unver 2
+hot cross 15-> 6 plant  86 seed 0: t   4.8 energy 4.36 lf_min 0.95 al_max 0.2 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  87 seed 0: t   4.2 energy 4.31 lf_min 0.94 al_max -0.2 viol 0.0% interv 2 unver 0
+hot cross 15-> 6 plant  87 seed 0: t   4.5 energy 4.42 lf_min 0.95 al_max 1.2 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  88 seed 0: t   4.9 energy 3.92 lf_min 0.94 al_max -0.2 viol 0.0% interv 0 unver 0
+hot cross 15-> 6 plant  88 seed 0: t   5.2 energy 4.59 lf_min 0.91 al_max 0.5 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  89 seed 0: t   3.8 energy 4.45 lf_min 0.94 al_max -0.3 viol 0.0% interv 11 unver 6
+hot cross 15-> 6 plant  89 seed 0: t   4.9 energy 4.56 lf_min 0.96 al_max -1.3 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  90 seed 0: t   nan energy 4.81 lf_min 0.95 al_max -0.3 viol 0.0% interv 39 unver 0
+hot cross 15-> 6 plant  90 seed 0: t   4.4 energy 4.56 lf_min 0.96 al_max -1.8 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  91 seed 0: t   4.9 energy 4.39 lf_min 0.95 al_max -0.2 viol 0.0% interv 32 unver 3
+hot cross 15-> 6 plant  91 seed 0: t   4.9 energy 4.38 lf_min 0.95 al_max -1.4 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  92 seed 0: t   4.3 energy 3.88 lf_min 0.93 al_max -0.1 viol 0.0% interv 3 unver 0
+hot cross 15-> 6 plant  92 seed 0: t   4.9 energy 4.61 lf_min 0.88 al_max 1.6 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  93 seed 0: t   nan energy 4.45 lf_min 0.92 al_max -0.2 viol 0.0% interv 21 unver 13
+hot cross 15-> 6 plant  93 seed 0: t   4.5 energy 4.33 lf_min 0.94 al_max 1.3 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  94 seed 0: t   4.4 energy 4.19 lf_min 0.93 al_max -0.4 viol 0.0% interv 12 unver 3
+hot cross 15-> 6 plant  94 seed 0: t   4.4 energy 4.49 lf_min 0.95 al_max -0.8 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  95 seed 0: t   4.4 energy 4.53 lf_min 0.94 al_max -0.3 viol 0.0% interv 35 unver 10
+hot cross 15-> 6 plant  95 seed 0: t   4.5 energy 4.65 lf_min 0.96 al_max -2.0 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  96 seed 0: t   4.5 energy 4.11 lf_min 0.91 al_max -0.1 viol 0.0% interv 13 unver 1
+hot cross 15-> 6 plant  96 seed 0: t   5.3 energy 4.40 lf_min 0.95 al_max 2.4 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  97 seed 0: t  11.0 energy 4.36 lf_min 0.93 al_max -0.4 viol 0.0% interv 1 unver 0
+hot cross 15-> 6 plant  97 seed 0: t   4.4 energy 4.48 lf_min 0.94 al_max 0.2 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  98 seed 0: t   4.5 energy 4.17 lf_min 0.93 al_max -0.2 viol 0.0% interv 3 unver 0
+hot cross 15-> 6 plant  98 seed 0: t   4.4 energy 4.42 lf_min 0.95 al_max 0.9 viol 0.0% interv 0 unver 0
+hot cross  6->15 plant  99 seed 0: t   8.5 energy 4.46 lf_min 0.93 al_max -0.3 viol 0.0% interv 1 unver 0
+hot cross 15-> 6 plant  99 seed 0: t   4.4 energy 4.49 lf_min 0.94 al_max 0.6 viol 0.0% interv 0 unver 0
+done 5225 s

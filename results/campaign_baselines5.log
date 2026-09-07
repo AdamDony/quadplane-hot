@@ -1,0 +1,10 @@
+threshold replay_front  6->15 plant  -1 seed 0: t   3.5 energy 2.96 lf_min 0.84 al_max -0.3 viol 0.0% 
+threshold replay_back 15-> 6 plant  -1 seed 0: t  15.1 energy 2.69 lf_min 0.82 al_max 7.1 viol 15.0% 
+done 1 s
+schedule replay_front  6->15 plant  -1 seed 0: t   6.1 energy 3.30 lf_min 0.96 al_max -0.6 viol 0.0% 
+schedule replay_back 15-> 6 plant  -1 seed 0: t  10.6 energy 3.97 lf_min 0.85 al_max 0.7 viol 0.0% 
+done 1 s
+gspid replay_front  6->15 plant  -1 seed 0: t   4.2 energy 3.23 lf_min 0.90 al_max -0.2 viol 0.0% 
+gspid replay_back 15-> 6 plant  -1 seed 0: t  13.8 energy 3.76 lf_min 0.83 al_max -0.0 viol 0.0% 
+done 1 s
+done

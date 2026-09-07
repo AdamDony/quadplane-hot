@@ -1,0 +1,6 @@
+hot nominal  6->15 plant  -1 seed 0: t   4.5 energy 4.21 lf_min 0.94 al_max -0.2 viol 0.0% interv 2 unver 0
+hot nominal 15-> 6 plant  -1 seed 0: t   4.7 energy 4.51 lf_min 0.96 al_max 0.6 viol 0.0% interv 0 unver 0
+hot replay_front  6->15 plant  -1 seed 0: t   nan energy 5.00 lf_min 0.97 al_max -1.1 viol 0.0% interv 21 unver 0
+hot replay_back 15-> 6 plant  -1 seed 0: t   4.8 energy 4.46 lf_min 0.83 al_max 2.5 viol 0.0% interv 3 unver 3
+done 236 s
+campaign hot done

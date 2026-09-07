@@ -1,0 +1,15 @@
+\documentclass[tikz,border=2pt]{standalone}
+\input{preamble}
+\setlength{\pw}{4.1cm}
+\input{../figdata/photo_trims}
+\begin{document}
+\begin{tikzpicture}
+\matrix (m) [matrix of nodes, nodes={inner sep=0pt, anchor=center}, column sep=1.2mm, row sep=1.2mm] {
+\photoA & \photoB & \photoC & \photoD \\
+\photoE & \photoF & \photoG & \photoH \\
+};
+\foreach \n/\t in {1-1/{(a) airframe: 2 m wing, twin boom, H-tail}, 1-2/{(b) battery, power and autopilot bay}, 1-3/{(c) ground checks before flight}, 1-4/{(d) hover on the four lift rotors},
+                   2-1/{(e) cruise on the wing, rotors stopped}, 2-2/{(f) cruise, pusher only}, 2-3/{(g) top view over the field}, 2-4/{(h) landing}}{
+  \node[anchor=south west, font=\scriptsize, fill=white, fill opacity=0.8, text opacity=1, inner sep=1.5pt] at (m-\n.south west) {\t};}
+\end{tikzpicture}
+\end{document}

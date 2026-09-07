@@ -1,0 +1,151 @@
+diff --git a/src/modules/simulation/simulator_sih/aero.hpp b/src/modules/simulation/simulator_sih/aero.hpp
+index 498acd9..90d0fa9 100644
+--- a/src/modules/simulation/simulator_sih/aero.hpp
++++ b/src/modules/simulation/simulator_sih/aero.hpp
+@@ -89,7 +89,7 @@ private:
+ 	static constexpr const float TEMP_GRADIENT  = -6.5e-3f;    // _temperature gradient in degrees per metre
+ 
+ 	static constexpr const float KV = M_PI_F; 	// total vortex lift parameter
+-	static constexpr float CD0 = 0.04f; 		// no lift drag coefficient
++	static constexpr float CD0 = 0.10f; 		// no lift drag coefficient
+ 	static constexpr float CD90 = 1.98f; 		// 90 deg angle of attack drag coefficient
+ 	static constexpr float AF_DOT_MAX = M_PI_F / 2.0f;
+ 	static constexpr float ALPHA_BLEND = M_PI_F / 18.0f; 	// 10 degrees
+@@ -111,7 +111,7 @@ private:
+ 	float _tau_te, _tau_le, _fte, _fle; 	// leading and trailing edge functions
+ 	float _rho = 1.225f; 	// air density at current altitude [kg/m^3]
+ 	float _kD;		// for parabolic drag model
+-	const float K0 = 0.87f;	// Oswald efficiency factor
++	const float K0 = 0.77f;	// Oswald efficiency factor of the identified polar
+ 	// variables for flap model
+ 	float _eta_f;		// flap effectiveness
+ 	float _def_a;		// absolute value of the deflection angle
+@@ -132,6 +132,9 @@ private:
+ 	float _pressure; 	// pressure in Pa at current altitude
+ 	float _temperature;	// temperature in K at current altitude
+ 	float _prop_radius;	// propeller radius [m], used to create the slipstream
++	// optional linear polar of an identified wing (TCST quadplane): C_L = cl0 + cla*alpha, C_D = cd0 + k*C_L^2 below the stall angle,
++	// blended into the flat-plate post-stall law beyond it
++	bool _lin_polar{false}; float _lp_cl0{0.f}, _lp_cla{0.f}, _lp_cd0{0.f}, _lp_k{0.f}, _lp_stall{0.f};
+ 	// float _v_slipstream;	// slipstream velocity [m/s], computed from momentum theory
+ 
+ 	matrix::Vector3f _Fa;	// aerodynamic force
+@@ -206,6 +209,11 @@ public:
+ 	AeroSeg() : AeroSeg(1.0f, 0.2f, 0.0f, matrix::Vector3f())
+ 	{}
+ 
++	void set_linear_polar(float cl0, float cla, float cd0, float k, float stall_deg)
++	{
++		_lin_polar = true; _lp_cl0 = cl0; _lp_cla = cla; _lp_cd0 = cd0; _lp_k = k; _lp_stall = math::radians(stall_deg);
++	}
++
+ 	/** aerodynamic force and moments of a generic flate plate segment
+ 	 * void update_aero(matrix::Vector3f v_B, matrix::Vector3f w_B, float alt = 0.0f,
+ 	 *                  float def = 0.0f, float thrust=0.0f, float dt = -1.0f)
+@@ -243,12 +251,24 @@ public:
+ 			return;
+ 		}
+ 
+-		_alpha = matrix::wrap_pi(atan2f(_v_S(2), _v_S(0)) - _alpha_0);
+-		// _alpha = atan2f(_v_S(2), _v_S(0));
++		const float alpha_flow = atan2f(_v_S(2), _v_S(0));	// angle of the flow to the segment chord
++		_alpha = matrix::wrap_pi(alpha_flow - _alpha_0);	// effective angle from the zero-lift line (coefficients)
+ 		aoa_coeff(_alpha, sqrtf(vxz2), def);
+-		_Fa = _C_BS * (0.5f * _rho * vxz2 * _span * _mac) * matrix::Vector3f(_CL * sinf(_alpha) - _CD * cosf(_alpha),
++
++		if (_lin_polar) {	// identified linear polar below the stall angle, flat-plate post-stall coefficients beyond it
++			const float cl_lin = _lp_cl0 + _lp_cla * alpha_flow;
++			const float cd_lin = _lp_cd0 + _lp_k * cl_lin * cl_lin;
++			const float f = 0.5f * (1.0f - tanhf(4.0f * (fabsf(alpha_flow) - _lp_stall) / ALPHA_BLEND));
++			high_aoa_coeff(alpha_flow, def);	// sets _CL, _CD, _CM to the flat-plate high-angle values
++			_CL = f * cl_lin + (1.0f - f) * _CL;
++			_CD = f * cd_lin + (1.0f - f) * _CD;
++		}
++
++		// lift perpendicular and drag parallel to the flow (the original code decomposed about the zero-lift line, which
++		// for a cambered section turns part of the lift into a chordwise force)
++		_Fa = _C_BS * (0.5f * _rho * vxz2 * _span * _mac) * matrix::Vector3f(_CL * sinf(alpha_flow) - _CD * cosf(alpha_flow),
+ 				0.0f,
+-				-_CL * cosf(_alpha) - _CD * sinf(_alpha));
++				-_CL * cosf(alpha_flow) - _CD * sinf(alpha_flow));
+ 		_Ma = _C_BS * (0.5f * _rho * vxz2 * _span * _mac * _mac) * matrix::Vector3f(0.0f, _CM,
+ 				0.0f) + _p_B % _Fa; 	// computed at vehicle _CM
+ 	}
+@@ -328,8 +348,8 @@ private:
+ 		// compute the aerodynamic coefficients
+ 		high_aoa_coeff(_alpha_eff, def);
+ 		_CL_ = fCL(_alpha_eff);
+-		_CD_ = CD0 + fabsf(_CL * tanf(_alpha_eff));
+-		// _CD_ = CD0 + _kD*_CL_*_CL_; 	// alternative method
++		_CD_ = CD0 + _kD*_CL_*_CL_; 	// parabolic polar (Oswald factor K0), as in the identified model of the quadplane
++		// _CD_ = CD0 + fabsf(_CL * tanf(_alpha_eff));	// original flat-plate law
+ 		_CM_ = -fCM(_alpha_eff);
+ 
+ 		// blending function
+diff --git a/src/modules/simulation/simulator_sih/sih.cpp b/src/modules/simulation/simulator_sih/sih.cpp
+index d6227ed..4e19bf3 100644
+--- a/src/modules/simulation/simulator_sih/sih.cpp
++++ b/src/modules/simulation/simulator_sih/sih.cpp
+@@ -239,6 +239,10 @@ void Sih::sensor_step()
+ 
+ void Sih::parameters_updated()
+ {
++	// identified polar of the quadplane wing (TCST article, Table II): C_L = 1.141 + 3.12 alpha, C_D = 0.115 + 0.060 C_L^2, stall at 8 deg
++	// the wing carries 0.075 of the aircraft C_D0 = 0.133; the fuselage, tail and fin plates of the simulator carry the rest
++	_wing_l.set_linear_polar(1.141f, 3.12f, 0.075f, 0.060f, 10.0f);
++	_wing_r.set_linear_polar(1.141f, 3.12f, 0.075f, 0.060f, 10.0f);
+ 	_T_MAX = _sih_t_max.get();
+ 	_Q_MAX = _sih_q_max.get();
+ 	_L_ROLL = _sih_l_roll.get();
+@@ -313,7 +317,8 @@ void Sih::read_motors(const float dt)
+ 
+ 			} else {
+ 				float u_sp = actuators_out.output[i];
+-				_u[i] = _u[i] + dt / _T_TAU * (u_sp - _u[i]); // first order transfer function with time constant tau
++				const float tau = (_vehicle == VehicleType::StandardVTOL && i == 7) ? 0.5f : _T_TAU; // pusher of the quadplane: 0.5 s lag
++				_u[i] = _u[i] + dt / tau * (u_sp - _u[i]); // first order transfer function with time constant tau
+ 			}
+ 		}
+ 	}
+diff --git a/src/modules/simulation/simulator_sih/sih.hpp b/src/modules/simulation/simulator_sih/sih.hpp
+index bda4484..8779d4e 100644
+--- a/src/modules/simulation/simulator_sih/sih.hpp
++++ b/src/modules/simulation/simulator_sih/sih.hpp
+@@ -140,9 +140,9 @@ private:
+ 	static constexpr float TEMP_GRADIENT = -6.5f / 1000.0f;    // temperature gradient in degrees per metre
+ 	// Aerodynamic coefficients
+ 	static constexpr float RHO = 1.225f; 		// air density at sea level [kg/m^3]
+-	static constexpr float SPAN = 0.86f; 	// wing span [m]
+-	static constexpr float MAC = 0.21f; 	// wing mean aerodynamic chord [m]
+-	static constexpr float RP = 0.1f; 	// radius of the propeller [m]
++	static constexpr float SPAN = 2.0f; 	// wing span [m] (quadplane of the TCST article)
++	static constexpr float MAC = 0.292f; 	// wing mean aerodynamic chord [m]
++	static constexpr float RP = 0.19f; 	// radius of the propeller [m]
+ 	static constexpr float FLAP_MAX = M_PI_F / 12.0f; // 15 deg, maximum control surface deflection
+ 
+ 	void init_variables();
+@@ -225,13 +225,17 @@ private:
+ 	VehicleType _vehicle = VehicleType::Quadcopter;
+ 
+ 	// aerodynamic segments for the fixedwing
+-	AeroSeg _wing_l = AeroSeg(SPAN / 2.0f, MAC, -4.0f, matrix::Vector3f(0.0f, -SPAN / 4.0f, 0.0f), 3.0f,
+-				  SPAN / MAC, MAC / 3.0f);
+-	AeroSeg _wing_r = AeroSeg(SPAN / 2.0f, MAC, -4.0f, matrix::Vector3f(0.0f, SPAN / 4.0f, 0.0f), -3.0f,
+-				  SPAN / MAC, MAC / 3.0f);
+-	AeroSeg _tailplane = AeroSeg(0.3f, 0.1f, 0.0f, matrix::Vector3f(-0.4f, 0.0f, 0.0f), 0.0f, -1.0f, 0.05f, RP);
+-	AeroSeg _fin = AeroSeg(0.25, 0.18, 0.0f, matrix::Vector3f(-0.45f, 0.0f, -0.1f), -90.0f, -1.0f, 0.12f, RP);
+-	AeroSeg _fuselage = AeroSeg(0.2, 0.8, 0.0f, matrix::Vector3f(0.0f, 0.0f, 0.0f), -90.0f);
++	// S1223 wing of the 8 kg quadplane: C_L(0) = 1.14, C_L_alpha = 3.12/rad (finite wing), stall well above the +5 deg bound
++	// zero-lift angle -21.7 deg and section slope 3.155/rad give, through the flat-plate lift law with its vortex term,
++	// C_L(0) = 1.141 and dC_L/dalpha = 3.12/rad at alpha = 0 (within 0.015 of the identified linear polar for |alpha| <= 5 deg)
++	// the wing segments carry the identified linear polar (set in parameters_updated), the flat-plate law only beyond stall
++	AeroSeg _wing_l = AeroSeg(SPAN / 2.0f, MAC, -4.0f, matrix::Vector3f(-0.03f, -SPAN / 4.0f, 0.0f), 2.0f,
++				  SPAN / MAC, MAC / 4.0f);
++	AeroSeg _wing_r = AeroSeg(SPAN / 2.0f, MAC, -4.0f, matrix::Vector3f(-0.03f, SPAN / 4.0f, 0.0f), -2.0f,
++				  SPAN / MAC, MAC / 4.0f);
++	AeroSeg _tailplane = AeroSeg(0.50f, 0.16f, 0.0f, matrix::Vector3f(-0.95f, 0.0f, 0.0f), 0.0f, -1.0f, 0.06f, RP);
++	AeroSeg _fin = AeroSeg(0.35f, 0.25f, 0.0f, matrix::Vector3f(-1.0f, 0.0f, -0.15f), -90.0f, -1.0f, 0.10f, RP);
++	AeroSeg _fuselage = AeroSeg(0.22f, 1.4f, 0.0f, matrix::Vector3f(0.0f, 0.0f, 0.0f), -90.0f);
+ 
+ 	// aerodynamic segments for the tailsitter
+ 	static constexpr const int NB_TS_SEG = 11;

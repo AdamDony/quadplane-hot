@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+paper/*.aux
+paper/*.out
+paper/*.log
+paper/*.spl
+paper/*.synctex.gz
+figsrc/*.aux
+figsrc/*.log
+submission/*.aux
+submission/*.log
+.DS_Store

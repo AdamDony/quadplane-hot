@@ -1,0 +1,35 @@
+\section{Problem formulation}\label{sec:problem}
+\subsection{Plant family}
+With $\bar q=\tfrac12\rho V^2$, $C_L=C_{L0}+C_{L\alpha}\alpha$, $L=\bar qSC_L$ and $D=\bar qS(C_{D0}+kC_L^2)$, the state $x=(V,\gamma,\theta,T_{\mathrm c},T_{\mathrm r})$ and the input $u=(\thsp,T^{\mathrm c}_{\mathrm c},T^{\mathrm c}_{\mathrm r})$ obey
+\begin{subequations}\label{eq:model}
+\begin{align}
+m\dot V&=T_{\mathrm c}\cos\alpha-D-T_{\mathrm r}\sin\alpha-mg\sin\gamma,\label{eq:V}\\
+mV\dot\gamma&=L+T_{\mathrm c}\sin\alpha+T_{\mathrm r}\cos\alpha-mg\cos\gamma,\label{eq:gam}\\
+\dot\theta&=\kappa(\gth\thsp-\theta),\qquad\dot T_i=\lambda_i(\beta_iT^{\mathrm c}_i-T_i),\ i\in\{\mathrm c,\mathrm r\}.\label{eq:fast}
+\end{align}
+\end{subequations}
+The parameter vector $\vartheta=(C_{L0},C_{L\alpha},C_{D0},k,\kappa,\gth,\lambda_{\mathrm c},\lambda_{\mathrm r},\beta_{\mathrm c},\beta_{\mathrm r})$ is unknown to the controller and lies in the box $\Theta=\prod_i[\underline\vartheta_i,\overline\vartheta_i]$ identified from the flight log (Section~\ref{sec:platform}, Table~\ref{tab:box}); it may differ from one airframe or one flight to the next but is constant during a hand-off. The commands are sampled every $\Delta=\SI{50}{ms}$ and held; $F(x,u;\vartheta)$ denotes the exact one-step map of \eqref{eq:model}. A vertical gust $w$ enters as an angle-of-attack perturbation $\arctan(w/V)$ and the autopilot delivers the state with bounded error $|e_k|\le\varepsilon$.
+
+\subsection{Constraints and the lift fraction}
+The operating region and the input set are
+\begin{align}
+\mathcal X&=\{x:\ V\ge V_{\min},\ \gamma\in[\underline\gamma,\overline\gamma],\ \theta\in[\underline\theta,\overline\theta],\ \alpha\le\bar\alpha\},\label{eq:X}\\
+\mathcal U&=[-\bar\theta_{\mathrm{sp}},\bar\theta_{\mathrm{sp}}]\times[0,\overline T_{\mathrm c}]\times[0,\overline T_{\mathrm r}],\nonumber\\ \mathcal U_k&=\{u\in\mathcal U:\ |u_i-u_{i,k-1}|\le\bar\delta_i\},\label{eq:U}
+\end{align}
+the step bounds $\bar\delta$ expressing the rate limits of the attitude setpoint and of the two thrust commands. The lift fraction
+\begin{equation}\label{eq:lf}
+\lf(x;\vartheta)=\frac{L+T_{\mathrm c}\sin\alpha+T_{\mathrm r}\cos\alpha}{mg\cos\gamma}
+\end{equation}
+is the share of the weight carried by wing and rotors together; the hand-off is safe when $\lf\ge1-K_L$ at every sampling instant, with $K_L$ the largest transient deficit tolerated, and the sink rate $\dot\gamma$ from \eqref{eq:gam} stays above $-\dot\gamma_{\lim}$. The eight margins
+\begin{equation}\label{eq:c}
+\begin{aligned}c(x;\vartheta)=\big(&\lf-(1-K_L),\ \bar\alpha-\alpha,\ \overline\theta-\theta,\ \theta-\underline\theta,\\ &\overline\gamma-\gamma,\ \gamma-\underline\gamma,\ \dot\gamma+\dot\gamma_{\lim},\ V-V_{\min}\big)\end{aligned}
+\end{equation}
+collect the constraints; $c\ge0$ means all of them hold.
+
+\subsection{Objectives}
+A hand-off is a change of the target airspeed $\rho_{\mathrm t}$ from the hover-exit value $\rho_0$ to the cruise value $\rho_{\mathrm c}$ (front transition) or back, with the trim $x^{\mathrm t}(\rho_{\mathrm t})$ of the nominal plant as the destination. The controller reads the window $\mathsf w_k=(x_{k-L+1},u_{k-L},\dots,x_k,u_{k-1})$ and the target, and must, for every $\vartheta\in\Theta$:
+\begin{enumerate}[label=P\arabic*,leftmargin=2.2em]
+\item keep $c(x_k;\vartheta)\ge0$ and $u_k\in\mathcal U_k$ at every sampling instant (safety for the whole family);
+\item drive $V_k$ to within $\pm\SI{0.3}{m/s}$ of $\rho_{\mathrm t}$ and $x_k$ to a neighbourhood of $x^{\mathrm t}(\rho_{\mathrm t})$ (convergence);
+\item do so with a single set of weights, without being told $\vartheta$ and without online identification (generalisation across the family), in a time and with an energy competitive with controllers that know the plant.
+\end{enumerate}

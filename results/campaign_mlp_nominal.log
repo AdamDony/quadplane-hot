@@ -1,0 +1,3 @@
+mlp nominal  6->15 plant  -1 seed 0: t   3.8 energy 4.02 lf_min 0.92 al_max -0.1 viol 0.0% interv 5 unver 3
+mlp nominal 15-> 6 plant  -1 seed 0: t   6.9 energy 4.51 lf_min 0.92 al_max 1.9 viol 0.0% interv 2 unver 2
+done 112 s

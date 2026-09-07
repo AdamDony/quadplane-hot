@@ -1,0 +1,28 @@
+\documentclass[tikz,border=2pt]{standalone}
+\input{preamble}
+\definecolor{chot}{HTML}{C0392B}\definecolor{cmpcb}{HTML}{6E6E6E}\definecolor{cthr}{HTML}{2B2B2B}\definecolor{cpid}{HTML}{3C9D6A}\definecolor{cmlp}{HTML}{8E7CC3}\definecolor{clstm}{HTML}{E08A2E}\definecolor{cppo}{HTML}{F1C40F}
+\pgfplotsset{sw/.style={paperaxis, width=3.4cm, height=2.6cm, tick label style={font=\tiny}, error bars/y dir=both, error bars/y explicit, error bars/error mark=none}}
+\newcommand{\sweep}[3]{% #1 file, #2 y, #3 yerr
+\addplot[cthr, densely dashed, mark=*, mark size=1pt] table[x=level, y=#2, y error=#3, discard if not={ctrl}{threshold}] {../figdata/#1};
+\addplot[csch, mark=square*, mark size=1pt] table[x=level, y=#2, y error=#3, discard if not={ctrl}{schedule}] {../figdata/#1};
+\addplot[cpid, mark=triangle*, mark size=1.2pt] table[x=level, y=#2, y error=#3, discard if not={ctrl}{gspid}] {../figdata/#1};
+\addplot[chot, line width=1.1pt, mark=*, mark size=1.4pt] table[x=level, y=#2, y error=#3, discard if not={ctrl}{hot}] {../figdata/#1};}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=4 by 1, horizontal sep=9mm}, sw]
+\nextgroupplot[xlabel={gust std [m/s]}, xtick={0.25,0.5,1,1.5}, xticklabels={0.25,0.5,1,1.5}, xmin=0.1, xmax=1.65, ylabel={time to target [s]}, legend to name=swleg, legend columns=6, legend style={font=\scriptsize, draw=none, fill=none}]
+\addplot[cthr, densely dashed, mark=*, mark size=1pt] table[x=level, y=t_mean, y error=t_std, discard if not={ctrl}{threshold}] {../figdata/sweep_gust.dat}; \addlegendentry{THR}
+\addplot[csch, mark=square*, mark size=1pt] table[x=level, y=t_mean, y error=t_std, discard if not={ctrl}{schedule}] {../figdata/sweep_gust.dat}; \addlegendentry{SCH}
+\addplot[cpid, mark=triangle*, mark size=1.2pt] table[x=level, y=t_mean, y error=t_std, discard if not={ctrl}{gspid}] {../figdata/sweep_gust.dat}; \addlegendentry{GS-PID}
+\addplot[chot, line width=1.1pt, mark=*, mark size=1.4pt] table[x=level, y=t_mean, y error=t_std, discard if not={ctrl}{hot}] {../figdata/sweep_gust.dat}; \addlegendentry{HOT}
+\panel{a}{}
+\nextgroupplot[xlabel={gust std [m/s]}, xtick={0.25,0.5,1,1.5}, xticklabels={0.25,0.5,1,1.5}, xmin=0.1, xmax=1.65, ylabel={min.\ lift fraction}]
+\draw[cmpc, dotted, line width=0.8pt] (axis cs:0.2,0.75) -- (axis cs:1.6,0.75); \sweep{sweep_gust.dat}{lf_mean}{lf_std} \panel{b}{}
+\nextgroupplot[xlabel={noise level}, ylabel={time to target [s]}]
+\sweep{sweep_noise.dat}{t_mean}{t_std} \panel{c}{}
+\nextgroupplot[xlabel={noise level}, ylabel={min.\ lift fraction}]
+\draw[cmpc, dotted, line width=0.8pt] (axis cs:0.25,0.75) -- (axis cs:2.25,0.75); \sweep{sweep_noise.dat}{lf_mean}{lf_std} \panel{d}{}
+\end{groupplot}
+\node[anchor=south, inner sep=1pt] at ($(group c2r1.north)!0.5!(group c3r1.north)+(0,3mm)$) {\pgfplotslegendfromname{swleg}};
+\end{tikzpicture}
+\end{document}

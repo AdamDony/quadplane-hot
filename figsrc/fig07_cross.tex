@@ -1,0 +1,52 @@
+\documentclass[tikz,border=2pt]{standalone}
+\input{preamble}
+\usepgfplotslibrary{statistics}
+\definecolor{chot}{HTML}{C0392B}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=4 by 1, horizontal sep=9mm}, paperaxis, width=3.4cm, height=2.7cm, xmin=0.4, xmax=8.6, xtick={1,...,8}, xticklabels={THR,SCH,PID,MPC,H$-$L,PPO,SAC,HOT}, x tick label style={rotate=60, anchor=east, font=\tiny}, tick label style={font=\tiny}, boxplot/draw direction=y, boxplot/box extend=0.55]
+\nextgroupplot[ylabel={time to target [s]}, ymin=0]
+\addplot[boxplot prepared={draw position=1, lower whisker=3.6500, lower quartile=4.4500, median=5.9500, upper quartile=11.2000, upper whisker=18.1500}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=2, lower whisker=4.5500, lower quartile=7.0625, median=9.1500, upper quartile=10.9875, upper whisker=19.3000}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=3, lower whisker=3.9000, lower quartile=5.3500, median=10.1250, upper quartile=13.3000, upper whisker=19.2500}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=4, lower whisker=10.5000, lower quartile=11.4750, median=15.7000, upper quartile=18.1000, upper whisker=19.7500}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=5, lower whisker=3.5000, lower quartile=4.3000, median=4.6500, upper quartile=5.0000, upper whisker=15.3500}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=6, lower whisker=6.5500, lower quartile=7.3375, median=8.1000, upper quartile=8.9500, upper whisker=11.6500}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=7, lower whisker=3.9000, lower quartile=4.7500, median=5.2000, upper quartile=6.1000, upper whisker=14.0500}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=8, lower whisker=3.6500, lower quartile=4.4500, median=4.7500, upper quartile=5.2000, upper whisker=17.4000}, chot, fill=chot!20] coordinates {};
+\panel{a}{}
+\nextgroupplot[ylabel={energy [Wh]}, ymin=0]
+\addplot[boxplot prepared={draw position=1, lower whisker=0.3140, lower quartile=2.9177, median=3.2736, upper quartile=3.5854, upper whisker=4.0848}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=2, lower whisker=2.2899, lower quartile=3.3018, median=3.6130, upper quartile=3.8920, upper whisker=4.6569}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=3, lower whisker=2.7943, lower quartile=3.2337, median=3.4992, upper quartile=3.7703, upper whisker=4.1555}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=4, lower whisker=2.9830, lower quartile=3.3132, median=3.4353, upper quartile=3.6188, upper whisker=3.8049}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=5, lower whisker=3.6172, lower quartile=4.2350, median=4.4513, upper quartile=4.5821, upper whisker=5.2020}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=6, lower whisker=3.6636, lower quartile=4.0371, median=6.0077, upper quartile=9.0158, upper whisker=10.1108}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=7, lower whisker=2.5287, lower quartile=2.9746, median=3.8050, upper quartile=4.2993, upper whisker=4.4965}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=8, lower whisker=3.6172, lower quartile=4.2331, median=4.4404, upper quartile=4.5443, upper whisker=4.9844}, chot, fill=chot!20] coordinates {};
+\panel{b}{}
+\nextgroupplot[ylabel={minimum lift fraction}, ymin=0, ymax=1.25, restrict y to domain=-1:2]
+\draw[cmpc, dotted, line width=0.8pt] (axis cs:0.4,0.75) -- (axis cs:8.6,0.75);
+\addplot[boxplot prepared={draw position=1, lower whisker=0.7338, lower quartile=0.8203, median=0.8897, upper quartile=0.9362, upper whisker=0.9632}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=2, lower whisker=0.8388, lower quartile=0.9619, median=0.9798, upper quartile=0.9886, upper whisker=0.9975}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=3, lower whisker=0.8318, lower quartile=0.9582, median=0.9733, upper quartile=0.9816, upper whisker=0.9924}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=4, lower whisker=0.8598, lower quartile=0.9373, median=0.9807, upper quartile=0.9887, upper whisker=0.9992}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=5, lower whisker=0.5499, lower quartile=0.9281, median=0.9432, upper quartile=0.9528, upper whisker=0.9820}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=6, lower whisker=-0.0277, lower quartile=0.3256, median=0.6007, upper quartile=0.9109, upper whisker=0.9645}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=7, lower whisker=0.8221, lower quartile=0.8959, median=0.9172, upper quartile=0.9300, upper whisker=0.9485}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=8, lower whisker=0.8264, lower quartile=0.9278, median=0.9430, upper quartile=0.9534, upper whisker=0.9820}, chot, fill=chot!20] coordinates {};
+\panel{c}{}
+\nextgroupplot[ylabel={maximum $\alpha$ [deg]}, ymin=-12, ymax=22, restrict y to domain=-30:40]
+\draw[cmpc, dotted, line width=0.8pt] (axis cs:0.4,5) -- (axis cs:8.6,5);
+\addplot[boxplot prepared={draw position=1, lower whisker=-0.1145, lower quartile=0.1397, median=0.7948, upper quartile=2.7405, upper whisker=7.7314}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=2, lower whisker=-1.8580, lower quartile=-0.0492, median=0.7796, upper quartile=2.0594, upper whisker=7.6893}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=3, lower whisker=-0.6432, lower quartile=-0.0446, median=-0.0325, upper quartile=0.0391, upper whisker=0.8764}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=4, lower whisker=-0.1588, lower quartile=0.2203, median=0.3548, upper quartile=0.6352, upper whisker=4.3732}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=5, lower whisker=-3.6651, lower quartile=-0.3336, median=-0.1822, upper quartile=0.1801, upper whisker=2.8674}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=6, lower whisker=-0.5957, lower quartile=2.4785, median=3.1579, upper quartile=3.9996, upper whisker=10.9229}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=7, lower whisker=-0.9213, lower quartile=-0.1772, median=3.2627, upper quartile=4.3301, upper whisker=5.9870}, black, fill=black!10] coordinates {};
+\addplot[boxplot prepared={draw position=8, lower whisker=-3.6651, lower quartile=-0.3336, median=-0.1822, upper quartile=0.1400, upper whisker=2.8674}, chot, fill=chot!20] coordinates {};
+\panel{d}{}
+\end{groupplot}
+\end{tikzpicture}
+\end{document}

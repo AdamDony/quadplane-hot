@@ -1,0 +1,445 @@
+sac nominal  6->15 plant  -1 seed 0: t   7.3 energy 3.01 lf_min 0.91 al_max -0.3 viol 0.0% 
+sac nominal 15-> 6 plant  -1 seed 0: t   4.9 energy 4.30 lf_min 0.94 al_max 4.7 viol 0.0% 
+sac cross  6->15 plant   0 seed 0: t   4.8 energy 3.33 lf_min 0.92 al_max -0.3 viol 0.0% 
+sac cross 15-> 6 plant   0 seed 0: t   5.1 energy 4.28 lf_min 0.95 al_max 4.2 viol 0.0% 
+sac cross  6->15 plant   1 seed 0: t   5.2 energy 2.94 lf_min 0.90 al_max -0.5 viol 0.0% 
+sac cross 15-> 6 plant   1 seed 0: t   5.5 energy 4.29 lf_min 0.92 al_max 4.9 viol 0.0% 
+sac cross  6->15 plant   2 seed 0: t   8.6 energy 2.70 lf_min 0.91 al_max 1.3 viol 0.0% 
+sac cross 15-> 6 plant   2 seed 0: t   5.2 energy 4.38 lf_min 0.85 al_max 5.1 viol 1.2% 
+sac cross  6->15 plant   3 seed 0: t   4.8 energy 2.83 lf_min 0.88 al_max 1.0 viol 0.0% 
+sac cross 15-> 6 plant   3 seed 0: t   5.8 energy 4.25 lf_min 0.82 al_max 4.5 viol 0.0% 
+sac cross  6->15 plant   4 seed 0: t   5.9 energy 3.42 lf_min 0.92 al_max -0.4 viol 0.0% 
+sac cross 15-> 6 plant   4 seed 0: t   4.8 energy 4.27 lf_min 0.93 al_max 4.0 viol 0.0% 
+sac cross  6->15 plant   5 seed 0: t   nan energy 2.73 lf_min 0.91 al_max 0.2 viol 0.0% 
+sac cross 15-> 6 plant   5 seed 0: t   4.5 energy 4.31 lf_min 0.92 al_max 3.6 viol 0.0% 
+sac cross  6->15 plant   6 seed 0: t   nan energy 2.95 lf_min 0.91 al_max 0.8 viol 0.0% 
+sac cross 15-> 6 plant   6 seed 0: t   4.7 energy 4.38 lf_min 0.94 al_max 4.4 viol 0.0% 
+sac cross  6->15 plant   7 seed 0: t   6.7 energy 2.85 lf_min 0.86 al_max -0.7 viol 0.0% 
+sac cross 15-> 6 plant   7 seed 0: t   4.9 energy 4.20 lf_min 0.93 al_max 3.9 viol 0.0% 
+sac cross  6->15 plant   8 seed 0: t   9.1 energy 3.19 lf_min 0.89 al_max -0.2 viol 0.0% 
+sac cross 15-> 6 plant   8 seed 0: t   4.9 energy 4.35 lf_min 0.94 al_max 5.1 viol 1.2% 
+sac cross  6->15 plant   9 seed 0: t   7.5 energy 3.28 lf_min 0.88 al_max -0.5 viol 0.0% 
+sac cross 15-> 6 plant   9 seed 0: t   4.6 energy 4.26 lf_min 0.93 al_max 3.8 viol 0.0% 
+sac cross  6->15 plant  10 seed 0: t   6.5 energy 2.89 lf_min 0.90 al_max -0.9 viol 0.0% 
+sac cross 15-> 6 plant  10 seed 0: t   5.2 energy 4.17 lf_min 0.93 al_max 3.4 viol 0.0% 
+sac cross  6->15 plant  11 seed 0: t   6.2 energy 2.78 lf_min 0.90 al_max 2.2 viol 0.0% 
+sac cross 15-> 6 plant  11 seed 0: t   5.7 energy 4.36 lf_min 0.92 al_max 5.7 viol 5.5% 
+sac cross  6->15 plant  12 seed 0: t   3.9 energy 3.31 lf_min 0.90 al_max -0.9 viol 0.0% 
+sac cross 15-> 6 plant  12 seed 0: t   5.2 energy 4.21 lf_min 0.93 al_max 3.5 viol 0.0% 
+sac cross  6->15 plant  13 seed 0: t   nan energy 2.54 lf_min 0.86 al_max 3.3 viol 0.0% 
+sac cross 15-> 6 plant  13 seed 0: t   5.2 energy 4.46 lf_min 0.91 al_max 6.0 viol 4.8% 
+sac cross  6->15 plant  14 seed 0: t   6.3 energy 2.89 lf_min 0.88 al_max -0.7 viol 0.0% 
+sac cross 15-> 6 plant  14 seed 0: t   5.2 energy 4.17 lf_min 0.93 al_max 3.5 viol 0.0% 
+sac cross  6->15 plant  15 seed 0: t   6.5 energy 2.74 lf_min 0.88 al_max 1.7 viol 0.0% 
+sac cross 15-> 6 plant  15 seed 0: t   5.5 energy 4.30 lf_min 0.92 al_max 4.8 viol 0.0% 
+sac cross  6->15 plant  16 seed 0: t   nan energy 2.97 lf_min 0.87 al_max -0.3 viol 0.0% 
+sac cross 15-> 6 plant  16 seed 0: t   4.3 energy 4.35 lf_min 0.93 al_max 3.6 viol 0.0% 
+sac cross  6->15 plant  17 seed 0: t   5.0 energy 3.35 lf_min 0.88 al_max -0.7 viol 0.0% 
+sac cross 15-> 6 plant  17 seed 0: t   5.2 energy 4.26 lf_min 0.92 al_max 4.5 viol 0.0% 
+sac cross  6->15 plant  18 seed 0: t   nan energy 2.89 lf_min 0.89 al_max 1.8 viol 0.0% 
+sac cross 15-> 6 plant  18 seed 0: t   5.0 energy 4.41 lf_min 0.92 al_max 4.4 viol 0.0% 
+sac cross  6->15 plant  19 seed 0: t   8.8 energy 3.22 lf_min 0.86 al_max 0.3 viol 0.0% 
+sac cross 15-> 6 plant  19 seed 0: t   4.9 energy 4.46 lf_min 0.93 al_max 5.2 viol 2.0% 
+sac cross  6->15 plant  20 seed 0: t   nan energy 2.88 lf_min 0.88 al_max 2.1 viol 0.0% 
+sac cross 15-> 6 plant  20 seed 0: t   5.0 energy 4.50 lf_min 0.91 al_max 5.7 viol 3.5% 
+sac cross  6->15 plant  21 seed 0: t   5.4 energy 2.72 lf_min 0.84 al_max 0.3 viol 0.0% 
+sac cross 15-> 6 plant  21 seed 0: t   5.7 energy 4.26 lf_min 0.91 al_max 5.2 viol 2.8% 
+sac cross  6->15 plant  22 seed 0: t   7.5 energy 2.82 lf_min 0.90 al_max -0.4 viol 0.0% 
+sac cross 15-> 6 plant  22 seed 0: t   5.2 energy 4.22 lf_min 0.93 al_max 3.7 viol 0.0% 
+sac cross  6->15 plant  23 seed 0: t   4.4 energy 3.07 lf_min 0.91 al_max -0.2 viol 0.0% 
+sac cross 15-> 6 plant  23 seed 0: t   5.6 energy 4.09 lf_min 0.95 al_max 4.0 viol 0.0% 
+sac cross  6->15 plant  24 seed 0: t   nan energy 3.15 lf_min 0.86 al_max -0.3 viol 0.0% 
+sac cross 15-> 6 plant  24 seed 0: t   4.5 energy 4.42 lf_min 0.93 al_max 4.6 viol 0.0% 
+sac cross  6->15 plant  25 seed 0: t  13.8 energy 2.74 lf_min 0.86 al_max 1.6 viol 0.0% 
+sac cross 15-> 6 plant  25 seed 0: t   5.1 energy 4.34 lf_min 0.92 al_max 4.9 viol 0.0% 
+sac cross  6->15 plant  26 seed 0: t  11.2 energy 2.85 lf_min 0.91 al_max -0.7 viol 0.0% 
+sac cross 15-> 6 plant  26 seed 0: t   4.7 energy 4.21 lf_min 0.93 al_max 3.2 viol 0.0% 
+sac cross  6->15 plant  27 seed 0: t   9.5 energy 2.91 lf_min 0.92 al_max -0.2 viol 0.0% 
+sac cross 15-> 6 plant  27 seed 0: t   5.0 energy 4.17 lf_min 0.92 al_max 3.5 viol 0.0% 
+sac cross  6->15 plant  28 seed 0: t   5.2 energy 3.47 lf_min 0.90 al_max -0.2 viol 0.0% 
+sac cross 15-> 6 plant  28 seed 0: t   4.8 energy 4.28 lf_min 0.95 al_max 4.6 viol 0.0% 
+sac cross  6->15 plant  29 seed 0: t   6.1 energy 3.08 lf_min 0.92 al_max -0.6 viol 0.0% 
+sac cross 15-> 6 plant  29 seed 0: t   5.2 energy 4.23 lf_min 0.94 al_max 4.1 viol 0.0% 
+sac cross  6->15 plant  30 seed 0: t   8.0 energy 3.30 lf_min 0.87 al_max -0.4 viol 0.0% 
+sac cross 15-> 6 plant  30 seed 0: t   4.5 energy 4.37 lf_min 0.94 al_max 4.5 viol 0.0% 
+sac cross  6->15 plant  31 seed 0: t   4.5 energy 3.08 lf_min 0.91 al_max -0.5 viol 0.0% 
+sac cross 15-> 6 plant  31 seed 0: t   5.2 energy 4.30 lf_min 0.93 al_max 4.4 viol 0.0% 
+sac cross  6->15 plant  32 seed 0: t  10.1 energy 2.72 lf_min 0.88 al_max 2.0 viol 0.0% 
+sac cross 15-> 6 plant  32 seed 0: t   5.2 energy 4.37 lf_min 0.90 al_max 4.7 viol 0.0% 
+sac cross  6->15 plant  33 seed 0: t   nan energy 2.67 lf_min 0.89 al_max 0.1 viol 0.0% 
+sac cross 15-> 6 plant  33 seed 0: t   4.9 energy 4.27 lf_min 0.93 al_max 4.0 viol 0.0% 
+sac cross  6->15 plant  34 seed 0: t   6.1 energy 2.82 lf_min 0.90 al_max -0.4 viol 0.0% 
+sac cross 15-> 6 plant  34 seed 0: t   5.8 energy 4.16 lf_min 0.93 al_max 4.0 viol 0.0% 
+sac cross  6->15 plant  35 seed 0: t   7.5 energy 3.03 lf_min 0.84 al_max 0.4 viol 0.0% 
+sac cross 15-> 6 plant  35 seed 0: t   5.0 energy 4.43 lf_min 0.92 al_max 4.8 viol 0.0% 
+sac cross  6->15 plant  36 seed 0: t  10.0 energy 2.56 lf_min 0.85 al_max 0.8 viol 0.0% 
+sac cross 15-> 6 plant  36 seed 0: t   5.0 energy 4.26 lf_min 0.93 al_max 4.3 viol 0.0% 
+sac cross  6->15 plant  37 seed 0: t  11.7 energy 3.23 lf_min 0.89 al_max -0.3 viol 0.0% 
+sac cross 15-> 6 plant  37 seed 0: t   4.4 energy 4.30 lf_min 0.94 al_max 4.1 viol 0.0% 
+sac cross  6->15 plant  38 seed 0: t   9.8 energy 2.95 lf_min 0.93 al_max -0.4 viol 0.0% 
+sac cross 15-> 6 plant  38 seed 0: t   4.8 energy 4.19 lf_min 0.94 al_max 3.6 viol 0.0% 
+sac cross  6->15 plant  39 seed 0: t   nan energy 3.09 lf_min 0.90 al_max 0.5 viol 0.0% 
+sac cross 15-> 6 plant  39 seed 0: t   4.7 energy 4.46 lf_min 0.92 al_max 5.1 viol 0.8% 
+sac cross  6->15 plant  40 seed 0: t   5.2 energy 2.96 lf_min 0.91 al_max -0.6 viol 0.0% 
+sac cross 15-> 6 plant  40 seed 0: t   5.6 energy 4.17 lf_min 0.93 al_max 4.1 viol 0.0% 
+sac cross  6->15 plant  41 seed 0: t   nan energy 3.00 lf_min 0.92 al_max 1.6 viol 0.0% 
+sac cross 15-> 6 plant  41 seed 0: t   4.8 energy 4.46 lf_min 0.94 al_max 4.8 viol 0.0% 
+sac cross  6->15 plant  42 seed 0: t   nan energy 2.80 lf_min 0.84 al_max 1.4 viol 0.0% 
+sac cross 15-> 6 plant  42 seed 0: t   4.5 energy 4.40 lf_min 0.92 al_max 4.1 viol 0.0% 
+sac cross  6->15 plant  43 seed 0: t   8.3 energy 2.91 lf_min 0.85 al_max 1.1 viol 0.0% 
+sac cross 15-> 6 plant  43 seed 0: t   5.2 energy 4.37 lf_min 0.92 al_max 5.0 viol 0.5% 
+sac cross  6->15 plant  44 seed 0: t   nan energy 2.67 lf_min 0.93 al_max 2.0 viol 0.0% 
+sac cross 15-> 6 plant  44 seed 0: t   4.7 energy 4.42 lf_min 0.93 al_max 4.9 viol 0.0% 
+sac cross  6->15 plant  45 seed 0: t   5.5 energy 3.25 lf_min 0.87 al_max -0.6 viol 0.0% 
+sac cross 15-> 6 plant  45 seed 0: t   5.0 energy 4.19 lf_min 0.93 al_max 3.3 viol 0.0% 
+sac cross  6->15 plant  46 seed 0: t   5.4 energy 3.08 lf_min 0.90 al_max -0.4 viol 0.0% 
+sac cross 15-> 6 plant  46 seed 0: t   5.3 energy 4.35 lf_min 0.93 al_max 5.2 viol 3.5% 
+sac cross  6->15 plant  47 seed 0: t  12.8 energy 3.18 lf_min 0.91 al_max -0.5 viol 0.0% 
+sac cross 15-> 6 plant  47 seed 0: t   4.5 energy 4.38 lf_min 0.93 al_max 4.3 viol 0.0% 
+sac cross  6->15 plant  48 seed 0: t   5.1 energy 2.72 lf_min 0.90 al_max 0.4 viol 0.0% 
+sac cross 15-> 6 plant  48 seed 0: t   5.8 energy 4.24 lf_min 0.91 al_max 5.0 viol 0.8% 
+sac cross  6->15 plant  49 seed 0: t   9.3 energy 3.36 lf_min 0.87 al_max -0.1 viol 0.0% 
+sac cross 15-> 6 plant  49 seed 0: t   4.2 energy 4.39 lf_min 0.94 al_max 4.4 viol 0.0% 
+sac cross  6->15 plant  50 seed 0: t   nan energy 2.67 lf_min 0.92 al_max 0.6 viol 0.0% 
+sac cross 15-> 6 plant  50 seed 0: t   4.7 energy 4.27 lf_min 0.93 al_max 4.1 viol 0.0% 
+sac cross  6->15 plant  51 seed 0: t   5.4 energy 2.87 lf_min 0.84 al_max -0.0 viol 0.0% 
+sac cross 15-> 6 plant  51 seed 0: t   5.7 energy 4.27 lf_min 0.91 al_max 4.7 viol 0.0% 
+sac cross  6->15 plant  52 seed 0: t  10.0 energy 3.52 lf_min 0.91 al_max -0.6 viol 0.0% 
+sac cross 15-> 6 plant  52 seed 0: t   4.4 energy 4.35 lf_min 0.93 al_max 4.0 viol 0.0% 
+sac cross  6->15 plant  53 seed 0: t   nan energy 2.80 lf_min 0.87 al_max 2.6 viol 0.0% 
+sac cross 15-> 6 plant  53 seed 0: t   5.1 energy 4.45 lf_min 0.87 al_max 5.1 viol 2.8% 
+sac cross  6->15 plant  54 seed 0: t   4.9 energy 3.09 lf_min 0.90 al_max -0.5 viol 0.0% 
+sac cross 15-> 6 plant  54 seed 0: t   5.4 energy 4.28 lf_min 0.93 al_max 4.8 viol 0.0% 
+sac cross  6->15 plant  55 seed 0: t   9.8 energy 2.53 lf_min 0.90 al_max 2.3 viol 0.0% 
+sac cross 15-> 6 plant  55 seed 0: t   5.4 energy 4.33 lf_min 0.91 al_max 4.8 viol 0.0% 
+sac cross  6->15 plant  56 seed 0: t   nan energy 3.02 lf_min 0.86 al_max 0.9 viol 0.0% 
+sac cross 15-> 6 plant  56 seed 0: t   4.7 energy 4.42 lf_min 0.92 al_max 4.3 viol 0.0% 
+sac cross  6->15 plant  57 seed 0: t   7.9 energy 3.03 lf_min 0.86 al_max -0.3 viol 0.0% 
+sac cross 15-> 6 plant  57 seed 0: t   5.2 energy 4.23 lf_min 0.93 al_max 4.4 viol 0.0% 
+sac cross  6->15 plant  58 seed 0: t   7.2 energy 2.98 lf_min 0.92 al_max 0.4 viol 0.0% 
+sac cross 15-> 6 plant  58 seed 0: t   5.0 energy 4.40 lf_min 0.89 al_max 4.7 viol 0.0% 
+sac cross  6->15 plant  59 seed 0: t   nan energy 2.70 lf_min 0.88 al_max 3.5 viol 0.0% 
+sac cross 15-> 6 plant  59 seed 0: t   5.2 energy 4.44 lf_min 0.91 al_max 5.8 viol 5.0% 
+sac cross  6->15 plant  60 seed 0: t   nan energy 2.77 lf_min 0.91 al_max 2.2 viol 0.0% 
+sac cross 15-> 6 plant  60 seed 0: t   4.6 energy 4.44 lf_min 0.93 al_max 5.0 viol 0.5% 
+sac cross  6->15 plant  61 seed 0: t   5.6 energy 2.91 lf_min 0.92 al_max -0.1 viol 0.0% 
+sac cross 15-> 6 plant  61 seed 0: t   5.5 energy 4.28 lf_min 0.93 al_max 5.1 viol 1.8% 
+sac cross  6->15 plant  62 seed 0: t   nan energy 2.87 lf_min 0.90 al_max 1.7 viol 0.0% 
+sac cross 15-> 6 plant  62 seed 0: t   5.1 energy 4.44 lf_min 0.90 al_max 5.1 viol 1.2% 
+sac cross  6->15 plant  63 seed 0: t   7.1 energy 2.73 lf_min 0.89 al_max 0.1 viol 0.0% 
+sac cross 15-> 6 plant  63 seed 0: t   5.4 energy 4.20 lf_min 0.93 al_max 3.7 viol 0.0% 
+sac cross  6->15 plant  64 seed 0: t   4.8 energy 2.93 lf_min 0.85 al_max -0.2 viol 0.0% 
+sac cross 15-> 6 plant  64 seed 0: t   5.8 energy 4.23 lf_min 0.92 al_max 4.3 viol 0.0% 
+sac cross  6->15 plant  65 seed 0: t   4.6 energy 3.30 lf_min 0.91 al_max -0.5 viol 0.0% 
+sac cross 15-> 6 plant  65 seed 0: t   5.5 energy 4.19 lf_min 0.93 al_max 3.9 viol 0.0% 
+sac cross  6->15 plant  66 seed 0: t   7.4 energy 2.91 lf_min 0.88 al_max 0.6 viol 0.0% 
+sac cross 15-> 6 plant  66 seed 0: t   5.2 energy 4.37 lf_min 0.93 al_max 5.4 viol 3.0% 
+sac cross  6->15 plant  67 seed 0: t   4.5 energy 3.15 lf_min 0.93 al_max -0.3 viol 0.0% 
+sac cross 15-> 6 plant  67 seed 0: t   5.2 energy 4.09 lf_min 0.95 al_max 3.5 viol 0.0% 
+sac cross  6->15 plant  68 seed 0: t   8.8 energy 2.89 lf_min 0.90 al_max 1.0 viol 0.0% 
+sac cross 15-> 6 plant  68 seed 0: t   4.9 energy 4.37 lf_min 0.93 al_max 4.4 viol 0.0% 
+sac cross  6->15 plant  69 seed 0: t   4.2 energy 2.77 lf_min 0.92 al_max -0.6 viol 0.0% 
+sac cross 15-> 6 plant  69 seed 0: t   6.4 energy 4.22 lf_min 0.93 al_max 4.4 viol 0.0% 
+sac cross  6->15 plant  70 seed 0: t   6.0 energy 3.36 lf_min 0.91 al_max -0.3 viol 0.0% 
+sac cross 15-> 6 plant  70 seed 0: t   4.7 energy 4.32 lf_min 0.94 al_max 4.5 viol 0.0% 
+sac cross  6->15 plant  71 seed 0: t   7.3 energy 3.33 lf_min 0.89 al_max 0.3 viol 0.0% 
+sac cross 15-> 6 plant  71 seed 0: t   4.5 energy 4.27 lf_min 0.95 al_max 3.9 viol 0.0% 
+sac cross  6->15 plant  72 seed 0: t   6.2 energy 2.79 lf_min 0.90 al_max -0.0 viol 0.0% 
+sac cross 15-> 6 plant  72 seed 0: t   5.6 energy 4.19 lf_min 0.93 al_max 4.3 viol 0.0% 
+sac cross  6->15 plant  73 seed 0: t   nan energy 2.77 lf_min 0.93 al_max 0.1 viol 0.0% 
+sac cross 15-> 6 plant  73 seed 0: t   4.5 energy 4.30 lf_min 0.95 al_max 4.2 viol 0.0% 
+sac cross  6->15 plant  74 seed 0: t   nan energy 3.10 lf_min 0.92 al_max -0.2 viol 0.0% 
+sac cross 15-> 6 plant  74 seed 0: t   4.9 energy 4.38 lf_min 0.95 al_max 4.3 viol 0.0% 
+sac cross  6->15 plant  75 seed 0: t   nan energy 2.92 lf_min 0.88 al_max 2.1 viol 0.0% 
+sac cross 15-> 6 plant  75 seed 0: t   4.7 energy 4.45 lf_min 0.92 al_max 4.3 viol 0.0% 
+sac cross  6->15 plant  76 seed 0: t   5.5 energy 3.29 lf_min 0.90 al_max -0.7 viol 0.0% 
+sac cross 15-> 6 plant  76 seed 0: t   4.8 energy 4.34 lf_min 0.93 al_max 4.0 viol 0.0% 
+sac cross  6->15 plant  77 seed 0: t   4.5 energy 3.37 lf_min 0.93 al_max -0.5 viol 0.0% 
+sac cross 15-> 6 plant  77 seed 0: t   4.9 energy 4.21 lf_min 0.94 al_max 3.4 viol 0.0% 
+sac cross  6->15 plant  78 seed 0: t   nan energy 3.17 lf_min 0.93 al_max -0.4 viol 0.0% 
+sac cross 15-> 6 plant  78 seed 0: t   4.2 energy 4.35 lf_min 0.94 al_max 3.8 viol 0.0% 
+sac cross  6->15 plant  79 seed 0: t   nan energy 2.88 lf_min 0.90 al_max 1.2 viol 0.0% 
+sac cross 15-> 6 plant  79 seed 0: t   4.5 energy 4.39 lf_min 0.94 al_max 4.7 viol 0.0% 
+sac cross  6->15 plant  80 seed 0: t   5.0 energy 3.22 lf_min 0.92 al_max -0.5 viol 0.0% 
+sac cross 15-> 6 plant  80 seed 0: t   5.0 energy 4.23 lf_min 0.94 al_max 3.8 viol 0.0% 
+sac cross  6->15 plant  81 seed 0: t   6.3 energy 3.27 lf_min 0.93 al_max -0.5 viol 0.0% 
+sac cross 15-> 6 plant  81 seed 0: t   5.1 energy 4.34 lf_min 0.93 al_max 4.6 viol 0.0% 
+sac cross  6->15 plant  82 seed 0: t   nan energy 3.15 lf_min 0.91 al_max 0.4 viol 0.0% 
+sac cross 15-> 6 plant  82 seed 0: t   4.5 energy 4.44 lf_min 0.94 al_max 4.6 viol 0.0% 
+sac cross  6->15 plant  83 seed 0: t   5.1 energy 3.24 lf_min 0.87 al_max -0.3 viol 0.0% 
+sac cross 15-> 6 plant  83 seed 0: t   5.0 energy 4.20 lf_min 0.93 al_max 4.1 viol 0.0% 
+sac cross  6->15 plant  84 seed 0: t   nan energy 2.99 lf_min 0.87 al_max 1.3 viol 0.0% 
+sac cross 15-> 6 plant  84 seed 0: t   4.6 energy 4.44 lf_min 0.92 al_max 4.6 viol 0.0% 
+sac cross  6->15 plant  85 seed 0: t  13.2 energy 3.26 lf_min 0.91 al_max -0.7 viol 0.0% 
+sac cross 15-> 6 plant  85 seed 0: t   4.7 energy 4.35 lf_min 0.93 al_max 4.3 viol 0.0% 
+sac cross  6->15 plant  86 seed 0: t   6.1 energy 3.08 lf_min 0.87 al_max -0.4 viol 0.0% 
+sac cross 15-> 6 plant  86 seed 0: t   5.1 energy 4.20 lf_min 0.93 al_max 4.1 viol 0.0% 
+sac cross  6->15 plant  87 seed 0: t   6.1 energy 3.37 lf_min 0.86 al_max -0.4 viol 0.0% 
+sac cross 15-> 6 plant  87 seed 0: t   4.5 energy 4.30 lf_min 0.94 al_max 3.7 viol 0.0% 
+sac cross  6->15 plant  88 seed 0: t   nan energy 2.78 lf_min 0.90 al_max 2.4 viol 0.0% 
+sac cross 15-> 6 plant  88 seed 0: t   5.1 energy 4.43 lf_min 0.92 al_max 5.0 viol 1.0% 
+sac cross  6->15 plant  89 seed 0: t   4.2 energy 3.20 lf_min 0.92 al_max -0.6 viol 0.0% 
+sac cross 15-> 6 plant  89 seed 0: t   5.2 energy 4.21 lf_min 0.93 al_max 3.7 viol 0.0% 
+sac cross  6->15 plant  90 seed 0: t   6.4 energy 3.40 lf_min 0.91 al_max -0.4 viol 0.0% 
+sac cross 15-> 6 plant  90 seed 0: t   4.7 energy 4.24 lf_min 0.94 al_max 4.2 viol 0.0% 
+sac cross  6->15 plant  91 seed 0: t   9.1 energy 2.82 lf_min 0.90 al_max -0.4 viol 0.0% 
+sac cross 15-> 6 plant  91 seed 0: t   4.9 energy 4.14 lf_min 0.94 al_max 3.8 viol 0.0% 
+sac cross  6->15 plant  92 seed 0: t   7.5 energy 2.79 lf_min 0.90 al_max 1.7 viol 0.0% 
+sac cross 15-> 6 plant  92 seed 0: t   5.2 energy 4.40 lf_min 0.89 al_max 5.5 viol 4.5% 
+sac cross  6->15 plant  93 seed 0: t  14.1 energy 2.98 lf_min 0.85 al_max -0.5 viol 0.0% 
+sac cross 15-> 6 plant  93 seed 0: t   4.6 energy 4.33 lf_min 0.93 al_max 4.2 viol 0.0% 
+sac cross  6->15 plant  94 seed 0: t   7.4 energy 3.17 lf_min 0.90 al_max -0.6 viol 0.0% 
+sac cross 15-> 6 plant  94 seed 0: t   4.5 energy 4.26 lf_min 0.93 al_max 3.4 viol 0.0% 
+sac cross  6->15 plant  95 seed 0: t   4.7 energy 3.47 lf_min 0.92 al_max -0.5 viol 0.0% 
+sac cross 15-> 6 plant  95 seed 0: t   4.9 energy 4.22 lf_min 0.94 al_max 3.6 viol 0.0% 
+sac cross  6->15 plant  96 seed 0: t   6.9 energy 2.65 lf_min 0.85 al_max 2.1 viol 0.0% 
+sac cross 15-> 6 plant  96 seed 0: t   5.5 energy 4.33 lf_min 0.92 al_max 5.6 viol 5.2% 
+sac cross  6->15 plant  97 seed 0: t  13.3 energy 3.14 lf_min 0.89 al_max -0.8 viol 0.0% 
+sac cross 15-> 6 plant  97 seed 0: t   4.6 energy 4.26 lf_min 0.93 al_max 3.4 viol 0.0% 
+sac cross  6->15 plant  98 seed 0: t   7.9 energy 3.17 lf_min 0.87 al_max -0.4 viol 0.0% 
+sac cross 15-> 6 plant  98 seed 0: t   4.5 energy 4.26 lf_min 0.94 al_max 3.8 viol 0.0% 
+sac cross  6->15 plant  99 seed 0: t   7.5 energy 3.34 lf_min 0.88 al_max -0.6 viol 0.0% 
+sac cross 15-> 6 plant  99 seed 0: t   4.7 energy 4.31 lf_min 0.93 al_max 3.7 viol 0.0% 
+sac outbox  6->15 plant   0 seed 0: t   8.1 energy 2.72 lf_min 0.91 al_max -0.3 viol 0.0% 
+sac outbox 15-> 6 plant   0 seed 0: t   5.1 energy 4.19 lf_min 0.95 al_max 3.8 viol 0.0% 
+sac outbox  6->15 plant   1 seed 0: t   3.9 energy 3.13 lf_min 0.90 al_max -0.1 viol 0.0% 
+sac outbox 15-> 6 plant   1 seed 0: t   6.1 energy 4.20 lf_min 0.94 al_max 4.8 viol 0.0% 
+sac outbox  6->15 plant   2 seed 0: t   nan energy 2.58 lf_min 0.89 al_max 3.2 viol 0.0% 
+sac outbox 15-> 6 plant   2 seed 0: t   5.5 energy 4.50 lf_min 0.79 al_max 5.1 viol 2.8% 
+sac outbox  6->15 plant   3 seed 0: t   nan energy 2.70 lf_min 0.86 al_max 2.9 viol 0.0% 
+sac outbox 15-> 6 plant   3 seed 0: t   5.0 energy 4.65 lf_min 0.87 al_max 5.0 viol 1.0% 
+sac outbox  6->15 plant   4 seed 0: t   6.1 energy 3.05 lf_min 0.92 al_max -0.6 viol 0.0% 
+sac outbox 15-> 6 plant   4 seed 0: t   5.2 energy 4.09 lf_min 0.93 al_max 3.6 viol 0.0% 
+sac outbox  6->15 plant   5 seed 0: t   4.5 energy 3.96 lf_min 0.92 al_max -0.7 viol 0.0% 
+sac outbox 15-> 6 plant   5 seed 0: t   4.5 energy 4.23 lf_min 0.92 al_max 3.7 viol 0.0% 
+sac outbox  6->15 plant   6 seed 0: t   nan energy 2.76 lf_min 0.89 al_max 0.9 viol 0.0% 
+sac outbox 15-> 6 plant   6 seed 0: t   4.5 energy 4.38 lf_min 0.92 al_max 4.0 viol 0.0% 
+sac outbox  6->15 plant   7 seed 0: t  12.2 energy 3.40 lf_min 0.89 al_max 3.8 viol 0.0% 
+sac outbox 15-> 6 plant   7 seed 0: t  10.5 energy 3.84 lf_min 0.94 al_max 2.4 viol 0.0% 
+sac outbox  6->15 plant   8 seed 0: t   7.5 energy 2.65 lf_min 0.85 al_max -0.4 viol 0.0% 
+sac outbox 15-> 6 plant   8 seed 0: t   5.2 energy 4.23 lf_min 0.93 al_max 4.7 viol 0.0% 
+sac outbox  6->15 plant   9 seed 0: t   7.3 energy 4.43 lf_min 0.91 al_max -0.7 viol 0.0% 
+sac outbox 15-> 6 plant   9 seed 0: t   4.7 energy 4.19 lf_min 0.92 al_max 3.7 viol 0.0% 
+sac outbox  6->15 plant  10 seed 0: t   4.6 energy 3.76 lf_min 0.92 al_max -0.3 viol 0.0% 
+sac outbox 15-> 6 plant  10 seed 0: t   4.9 energy 4.25 lf_min 0.93 al_max 4.0 viol 0.0% 
+sac outbox  6->15 plant  11 seed 0: t   3.8 energy 2.63 lf_min 0.80 al_max 0.6 viol 0.5% 
+sac outbox 15-> 6 plant  11 seed 0: t   6.8 energy 4.21 lf_min 0.86 al_max 5.8 viol 7.0% 
+sac outbox  6->15 plant  12 seed 0: t   nan energy 3.35 lf_min 0.88 al_max 4.5 viol 0.0% 
+sac outbox 15-> 6 plant  12 seed 0: t   nan energy 2.61 lf_min 0.90 al_max -2.7 viol 0.0% 
+sac outbox  6->15 plant  13 seed 0: t   4.5 energy 2.63 lf_min 0.90 al_max 0.7 viol 0.0% 
+sac outbox 15-> 6 plant  13 seed 0: t   6.2 energy 4.32 lf_min 0.84 al_max 5.1 viol 1.8% 
+sac outbox  6->15 plant  14 seed 0: t   7.1 energy 3.77 lf_min 0.91 al_max 2.1 viol 0.0% 
+sac outbox 15-> 6 plant  14 seed 0: t   6.8 energy 4.25 lf_min 0.92 al_max 3.6 viol 0.0% 
+sac outbox  6->15 plant  15 seed 0: t   4.7 energy 3.04 lf_min 0.93 al_max -0.2 viol 0.0% 
+sac outbox 15-> 6 plant  15 seed 0: t   5.8 energy 4.34 lf_min 0.86 al_max 5.1 viol 1.2% 
+sac outbox  6->15 plant  16 seed 0: t   6.5 energy 3.81 lf_min 0.85 al_max -0.8 viol 0.0% 
+sac outbox 15-> 6 plant  16 seed 0: t   4.4 energy 4.36 lf_min 0.92 al_max 3.9 viol 0.0% 
+sac outbox  6->15 plant  17 seed 0: t   4.2 energy 2.99 lf_min 0.85 al_max -0.1 viol 0.0% 
+sac outbox 15-> 6 plant  17 seed 0: t   5.5 energy 4.18 lf_min 0.93 al_max 4.0 viol 0.0% 
+sac outbox  6->15 plant  18 seed 0: t   nan energy 3.03 lf_min 0.87 al_max 2.8 viol 0.0% 
+sac outbox 15-> 6 plant  18 seed 0: t   4.8 energy 4.53 lf_min 0.91 al_max 5.1 viol 2.5% 
+sac outbox  6->15 plant  19 seed 0: t   5.2 energy 2.86 lf_min 0.94 al_max 0.2 viol 0.0% 
+sac outbox 15-> 6 plant  19 seed 0: t   6.2 energy 4.17 lf_min 0.94 al_max 4.4 viol 0.0% 
+sac outbox  6->15 plant  20 seed 0: t   4.7 energy 2.70 lf_min 0.82 al_max 0.7 viol 0.0% 
+sac outbox 15-> 6 plant  20 seed 0: t   5.8 energy 4.35 lf_min 0.84 al_max 5.7 viol 6.0% 
+sac outbox  6->15 plant  21 seed 0: t   6.6 energy 2.68 lf_min 0.84 al_max 2.7 viol 0.0% 
+sac outbox 15-> 6 plant  21 seed 0: t   5.7 energy 4.36 lf_min 0.77 al_max 5.5 viol 6.0% 
+sac outbox  6->15 plant  22 seed 0: t  19.6 energy 3.47 lf_min 0.91 al_max 3.7 viol 0.0% 
+sac outbox 15-> 6 plant  22 seed 0: t   9.5 energy 3.99 lf_min 0.94 al_max 2.3 viol 0.0% 
+sac outbox  6->15 plant  23 seed 0: t   nan energy 2.94 lf_min 0.87 al_max 3.8 viol 0.0% 
+sac outbox 15-> 6 plant  23 seed 0: t  12.9 energy 3.41 lf_min 0.92 al_max 3.2 viol 0.0% 
+sac outbox  6->15 plant  24 seed 0: t   6.1 energy 3.07 lf_min 0.82 al_max 0.1 viol 0.0% 
+sac outbox 15-> 6 plant  24 seed 0: t   4.9 energy 4.32 lf_min 0.92 al_max 4.3 viol 0.0% 
+sac outbox  6->15 plant  25 seed 0: t   5.5 energy 2.96 lf_min 0.91 al_max -0.2 viol 0.0% 
+sac outbox 15-> 6 plant  25 seed 0: t   5.2 energy 4.33 lf_min 0.92 al_max 4.7 viol 0.0% 
+sac outbox  6->15 plant  26 seed 0: t  16.1 energy 3.63 lf_min 0.93 al_max -0.7 viol 0.0% 
+sac outbox 15-> 6 plant  26 seed 0: t   4.2 energy 4.34 lf_min 0.93 al_max 3.7 viol 0.0% 
+sac outbox  6->15 plant  27 seed 0: t   4.9 energy 3.25 lf_min 0.91 al_max -0.0 viol 0.0% 
+sac outbox 15-> 6 plant  27 seed 0: t   4.6 energy 4.15 lf_min 0.93 al_max 3.8 viol 0.0% 
+sac outbox  6->15 plant  28 seed 0: t   9.9 energy 2.55 lf_min 0.85 al_max -0.6 viol 0.0% 
+sac outbox 15-> 6 plant  28 seed 0: t   4.8 energy 4.21 lf_min 0.93 al_max 3.7 viol 0.0% 
+sac outbox  6->15 plant  29 seed 0: t   5.5 energy 3.20 lf_min 0.87 al_max -0.2 viol 0.0% 
+sac outbox 15-> 6 plant  29 seed 0: t   4.8 energy 4.24 lf_min 0.94 al_max 4.7 viol 0.0% 
+sac outbox  6->15 plant  30 seed 0: t   nan energy 2.94 lf_min 0.90 al_max -0.7 viol 0.0% 
+sac outbox 15-> 6 plant  30 seed 0: t   4.4 energy 4.35 lf_min 0.93 al_max 4.0 viol 0.0% 
+sac outbox  6->15 plant  31 seed 0: t   6.2 energy 2.99 lf_min 0.91 al_max -0.2 viol 0.0% 
+sac outbox 15-> 6 plant  31 seed 0: t   5.3 energy 4.31 lf_min 0.93 al_max 4.8 viol 0.0% 
+sac outbox  6->15 plant  32 seed 0: t   6.7 energy 3.01 lf_min 0.87 al_max 0.4 viol 0.0% 
+sac outbox 15-> 6 plant  32 seed 0: t   5.1 energy 4.46 lf_min 0.86 al_max 5.7 viol 5.0% 
+sac outbox  6->15 plant  33 seed 0: t   9.1 energy 3.21 lf_min 0.89 al_max -0.8 viol 0.0% 
+sac outbox 15-> 6 plant  33 seed 0: t   5.2 energy 4.28 lf_min 0.92 al_max 3.8 viol 0.0% 
+sac outbox  6->15 plant  34 seed 0: t   6.0 energy 3.23 lf_min 0.92 al_max 1.8 viol 0.0% 
+sac outbox 15-> 6 plant  34 seed 0: t   7.2 energy 4.08 lf_min 0.95 al_max 4.9 viol 0.0% 
+sac outbox  6->15 plant  35 seed 0: t   5.5 energy 2.78 lf_min 0.90 al_max 0.4 viol 0.0% 
+sac outbox 15-> 6 plant  35 seed 0: t   5.4 energy 4.30 lf_min 0.91 al_max 4.4 viol 0.0% 
+sac outbox  6->15 plant  36 seed 0: t   nan energy 2.97 lf_min 0.91 al_max 0.3 viol 0.0% 
+sac outbox 15-> 6 plant  36 seed 0: t   4.8 energy 4.38 lf_min 0.94 al_max 4.0 viol 0.0% 
+sac outbox  6->15 plant  37 seed 0: t   nan energy 2.81 lf_min 0.88 al_max -0.6 viol 0.0% 
+sac outbox 15-> 6 plant  37 seed 0: t   4.0 energy 4.34 lf_min 0.93 al_max 3.4 viol 0.0% 
+sac outbox  6->15 plant  38 seed 0: t   nan energy 2.86 lf_min 0.91 al_max 1.2 viol 0.0% 
+sac outbox 15-> 6 plant  38 seed 0: t   4.2 energy 4.33 lf_min 0.93 al_max 4.1 viol 0.0% 
+sac outbox  6->15 plant  39 seed 0: t   5.4 energy 2.91 lf_min 0.89 al_max -0.2 viol 0.0% 
+sac outbox 15-> 6 plant  39 seed 0: t   5.5 energy 4.32 lf_min 0.91 al_max 4.0 viol 0.0% 
+sac outbox  6->15 plant  40 seed 0: t   6.2 energy 3.09 lf_min 0.88 al_max 0.8 viol 0.0% 
+sac outbox 15-> 6 plant  40 seed 0: t   5.6 energy 4.16 lf_min 0.94 al_max 4.3 viol 0.0% 
+sac outbox  6->15 plant  41 seed 0: t   nan energy 2.56 lf_min 0.84 al_max 2.3 viol 0.0% 
+sac outbox 15-> 6 plant  41 seed 0: t   5.0 energy 4.37 lf_min 0.90 al_max 4.3 viol 0.0% 
+sac outbox  6->15 plant  42 seed 0: t   5.1 energy 3.80 lf_min 0.90 al_max -0.7 viol 0.0% 
+sac outbox 15-> 6 plant  42 seed 0: t   4.7 energy 4.37 lf_min 0.93 al_max 4.7 viol 0.0% 
+sac outbox  6->15 plant  43 seed 0: t   4.2 energy 2.69 lf_min 0.90 al_max -0.4 viol 0.0% 
+sac outbox 15-> 6 plant  43 seed 0: t   6.1 energy 4.13 lf_min 0.90 al_max 4.1 viol 0.0% 
+sac outbox  6->15 plant  44 seed 0: t   8.6 energy 2.89 lf_min 0.89 al_max 1.0 viol 0.0% 
+sac outbox 15-> 6 plant  44 seed 0: t   4.8 energy 4.40 lf_min 0.92 al_max 4.0 viol 0.0% 
+sac outbox  6->15 plant  45 seed 0: t   9.0 energy 3.54 lf_min 0.89 al_max -0.7 viol 0.0% 
+sac outbox 15-> 6 plant  45 seed 0: t   4.5 energy 4.35 lf_min 0.92 al_max 3.7 viol 0.0% 
+sac outbox  6->15 plant  46 seed 0: t   4.7 energy 2.65 lf_min 0.89 al_max 0.8 viol 0.0% 
+sac outbox 15-> 6 plant  46 seed 0: t   7.2 energy 4.08 lf_min 0.92 al_max 4.8 viol 0.0% 
+sac outbox  6->15 plant  47 seed 0: t   nan energy 3.05 lf_min 0.92 al_max 0.2 viol 0.0% 
+sac outbox 15-> 6 plant  47 seed 0: t   4.2 energy 4.50 lf_min 0.92 al_max 3.8 viol 0.0% 
+sac outbox  6->15 plant  48 seed 0: t   nan energy 3.01 lf_min 0.84 al_max 4.6 viol 0.0% 
+sac outbox 15-> 6 plant  48 seed 0: t   nan energy 2.94 lf_min 0.76 al_max -0.4 viol 0.0% 
+sac outbox  6->15 plant  49 seed 0: t   nan energy 2.71 lf_min 0.90 al_max 0.4 viol 0.0% 
+sac outbox 15-> 6 plant  49 seed 0: t   4.0 energy 4.39 lf_min 0.92 al_max 3.4 viol 0.0% 
+sac gust0.25  6->15 plant  -1 seed 0: t   7.5 energy 3.00 lf_min 0.90 al_max -0.3 viol 0.0% 
+sac gust0.25 15-> 6 plant  -1 seed 0: t   4.8 energy 4.30 lf_min 0.89 al_max 4.4 viol 0.0% 
+sac gust0.25  6->15 plant  -1 seed 1: t   7.2 energy 2.94 lf_min 0.91 al_max 0.0 viol 0.0% 
+sac gust0.25 15-> 6 plant  -1 seed 1: t   5.0 energy 4.37 lf_min 0.95 al_max 5.1 viol 0.8% 
+sac gust0.25  6->15 plant  -1 seed 2: t   7.2 energy 2.95 lf_min 0.92 al_max 0.1 viol 0.0% 
+sac gust0.25 15-> 6 plant  -1 seed 2: t   5.0 energy 4.37 lf_min 0.92 al_max 4.9 viol 0.0% 
+sac gust0.25  6->15 plant  -1 seed 3: t   7.2 energy 2.97 lf_min 0.92 al_max 0.4 viol 0.0% 
+sac gust0.25 15-> 6 plant  -1 seed 3: t   5.1 energy 4.34 lf_min 0.97 al_max 5.1 viol 1.2% 
+sac gust0.25  6->15 plant  -1 seed 4: t   7.4 energy 3.15 lf_min 0.83 al_max -0.4 viol 0.0% 
+sac gust0.25 15-> 6 plant  -1 seed 4: t   4.8 energy 4.17 lf_min 0.91 al_max 4.8 viol 0.0% 
+sac gust0.25  6->15 plant  -1 seed 5: t   7.6 energy 3.07 lf_min 0.86 al_max 0.1 viol 0.0% 
+sac gust0.25 15-> 6 plant  -1 seed 5: t   5.0 energy 4.25 lf_min 0.92 al_max 5.2 viol 2.0% 
+sac gust0.25  6->15 plant  -1 seed 6: t   6.9 energy 3.03 lf_min 0.83 al_max 1.1 viol 0.0% 
+sac gust0.25 15-> 6 plant  -1 seed 6: t   4.9 energy 4.30 lf_min 0.91 al_max 4.3 viol 0.0% 
+sac gust0.25  6->15 plant  -1 seed 7: t   7.2 energy 3.01 lf_min 0.91 al_max 0.3 viol 0.0% 
+sac gust0.25 15-> 6 plant  -1 seed 7: t   5.1 energy 4.32 lf_min 0.94 al_max 5.4 viol 4.5% 
+sac gust0.25  6->15 plant  -1 seed 8: t   7.3 energy 2.96 lf_min 0.92 al_max 0.4 viol 0.0% 
+sac gust0.25 15-> 6 plant  -1 seed 8: t   5.0 energy 4.33 lf_min 0.90 al_max 5.4 viol 1.8% 
+sac gust0.25  6->15 plant  -1 seed 9: t   6.8 energy 3.14 lf_min 0.86 al_max -0.4 viol 0.0% 
+sac gust0.25 15-> 6 plant  -1 seed 9: t   4.9 energy 4.22 lf_min 0.93 al_max 4.7 viol 0.0% 
+sac gust0.5  6->15 plant  -1 seed 0: t   7.7 energy 2.99 lf_min 0.86 al_max 0.2 viol 0.0% 
+sac gust0.5 15-> 6 plant  -1 seed 0: t   4.5 energy 4.30 lf_min 0.82 al_max 4.7 viol 0.0% 
+sac gust0.5  6->15 plant  -1 seed 1: t   7.1 energy 2.90 lf_min 0.89 al_max 0.4 viol 0.0% 
+sac gust0.5 15-> 6 plant  -1 seed 1: t   5.0 energy 4.44 lf_min 0.95 al_max 5.4 viol 1.5% 
+sac gust0.5  6->15 plant  -1 seed 2: t   7.0 energy 2.90 lf_min 0.90 al_max 0.9 viol 0.0% 
+sac gust0.5 15-> 6 plant  -1 seed 2: t   5.0 energy 4.46 lf_min 0.90 al_max 5.0 viol 0.2% 
+sac gust0.5  6->15 plant  -1 seed 3: t   6.1 energy 2.98 lf_min 0.85 al_max 0.3 viol 0.0% 
+sac gust0.5 15-> 6 plant  -1 seed 3: t   5.2 energy 4.40 lf_min 0.94 al_max 5.7 viol 2.8% 
+sac gust0.5  6->15 plant  -1 seed 4: t   7.5 energy 3.51 lf_min 0.67 al_max -0.5 viol 15.8% 
+sac gust0.5 15-> 6 plant  -1 seed 4: t   4.7 energy 4.14 lf_min 0.89 al_max 4.8 viol 0.0% 
+sac gust0.5  6->15 plant  -1 seed 5: t   7.8 energy 3.12 lf_min 0.75 al_max 1.0 viol 0.5% 
+sac gust0.5 15-> 6 plant  -1 seed 5: t   5.1 energy 4.24 lf_min 0.89 al_max 5.7 viol 4.2% 
+sac gust0.5  6->15 plant  -1 seed 6: t   5.8 energy 3.07 lf_min 0.72 al_max 2.2 viol 2.0% 
+sac gust0.5 15-> 6 plant  -1 seed 6: t   4.8 energy 4.33 lf_min 0.88 al_max 3.9 viol 0.0% 
+sac gust0.5  6->15 plant  -1 seed 7: t   7.2 energy 3.02 lf_min 0.83 al_max 0.9 viol 0.0% 
+sac gust0.5 15-> 6 plant  -1 seed 7: t   5.2 energy 4.36 lf_min 0.91 al_max 6.4 viol 6.0% 
+sac gust0.5  6->15 plant  -1 seed 8: t   7.2 energy 2.94 lf_min 0.85 al_max 1.1 viol 0.0% 
+sac gust0.5 15-> 6 plant  -1 seed 8: t   5.1 energy 4.38 lf_min 0.87 al_max 6.0 viol 3.0% 
+sac gust0.5  6->15 plant  -1 seed 9: t   6.5 energy 3.24 lf_min 0.76 al_max -0.5 viol 0.0% 
+sac gust0.5 15-> 6 plant  -1 seed 9: t   4.8 energy 4.16 lf_min 0.87 al_max 4.6 viol 0.0% 
+sac gust1.0  6->15 plant  -1 seed 0: t   7.8 energy 3.00 lf_min 0.73 al_max 1.5 viol 3.0% 
+sac gust1.0 15-> 6 plant  -1 seed 0: t   4.4 energy 4.35 lf_min 0.82 al_max 5.2 viol 1.5% 
+sac gust1.0  6->15 plant  -1 seed 1: t   6.5 energy 2.87 lf_min 0.80 al_max 2.3 viol 0.0% 
+sac gust1.0 15-> 6 plant  -1 seed 1: t   5.1 energy 4.59 lf_min 0.91 al_max 6.0 viol 3.0% 
+sac gust1.0  6->15 plant  -1 seed 2: t   6.5 energy 2.87 lf_min 0.82 al_max 3.8 viol 0.0% 
+sac gust1.0 15-> 6 plant  -1 seed 2: t   5.1 energy 4.59 lf_min 0.85 al_max 5.3 viol 3.5% 
+sac gust1.0  6->15 plant  -1 seed 3: t   4.7 energy 3.05 lf_min 0.75 al_max 2.7 viol 0.0% 
+sac gust1.0 15-> 6 plant  -1 seed 3: t   5.6 energy 4.53 lf_min 0.88 al_max 6.9 viol 12.2% 
+sac gust1.0  6->15 plant  -1 seed 4: t   7.8 energy 3.99 lf_min 0.39 al_max 1.4 viol 56.2% 
+sac gust1.0 15-> 6 plant  -1 seed 4: t   4.4 energy 4.30 lf_min 0.84 al_max 4.8 viol 0.0% 
+sac gust1.0  6->15 plant  -1 seed 5: t   8.2 energy 3.39 lf_min 0.49 al_max 1.5 viol 17.8% 
+sac gust1.0 15-> 6 plant  -1 seed 5: t   5.2 energy 4.28 lf_min 0.86 al_max 7.0 viol 5.5% 
+sac gust1.0  6->15 plant  -1 seed 6: t   5.5 energy 3.26 lf_min 0.51 al_max 4.2 viol 11.0% 
+sac gust1.0 15-> 6 plant  -1 seed 6: t   4.6 energy 4.45 lf_min 0.82 al_max 4.2 viol 0.0% 
+sac gust1.0  6->15 plant  -1 seed 7: t   6.7 energy 3.07 lf_min 0.73 al_max 2.7 viol 1.2% 
+sac gust1.0 15-> 6 plant  -1 seed 7: t   5.4 energy 4.45 lf_min 0.89 al_max 7.3 viol 6.5% 
+sac gust1.0  6->15 plant  -1 seed 8: t   5.9 energy 2.99 lf_min 0.76 al_max 4.0 viol 0.0% 
+sac gust1.0 15-> 6 plant  -1 seed 8: t   5.2 energy 4.45 lf_min 0.85 al_max 7.4 viol 5.8% 
+sac gust1.0  6->15 plant  -1 seed 9: t   6.7 energy 3.79 lf_min 0.46 al_max -0.6 viol 40.0% 
+sac gust1.0 15-> 6 plant  -1 seed 9: t   4.7 energy 4.22 lf_min 0.77 al_max 4.5 viol 0.0% 
+sac gust1.5  6->15 plant  -1 seed 0: t   5.5 energy 3.22 lf_min 0.60 al_max 3.4 viol 14.8% 
+sac gust1.5 15-> 6 plant  -1 seed 0: t   4.6 energy 4.41 lf_min 0.82 al_max 6.6 viol 4.2% 
+sac gust1.5  6->15 plant  -1 seed 1: t   5.7 energy 2.88 lf_min 0.73 al_max 3.3 viol 1.0% 
+sac gust1.5 15-> 6 plant  -1 seed 1: t   5.2 energy 4.68 lf_min 0.91 al_max 6.7 viol 4.2% 
+sac gust1.5  6->15 plant  -1 seed 2: t   5.8 energy 2.90 lf_min 0.77 al_max 4.9 viol 0.0% 
+sac gust1.5 15-> 6 plant  -1 seed 2: t   5.2 energy 4.65 lf_min 0.81 al_max 5.6 viol 7.0% 
+sac gust1.5  6->15 plant  -1 seed 3: t   4.5 energy 3.36 lf_min 0.62 al_max 2.3 viol 7.2% 
+sac gust1.5 15-> 6 plant  -1 seed 3: t   5.8 energy 4.63 lf_min 0.90 al_max 8.1 viol 17.0% 
+sac gust1.5  6->15 plant  -1 seed 4: t   9.7 energy 4.50 lf_min 0.22 al_max 2.0 viol 70.0% 
+sac gust1.5 15-> 6 plant  -1 seed 4: t   4.5 energy 4.61 lf_min 0.83 al_max 4.8 viol 0.0% 
+sac gust1.5  6->15 plant  -1 seed 5: t   5.7 energy 3.76 lf_min 0.35 al_max 1.3 viol 31.8% 
+sac gust1.5 15-> 6 plant  -1 seed 5: t   5.2 energy 4.41 lf_min 0.81 al_max 8.1 viol 9.0% 
+sac gust1.5  6->15 plant  -1 seed 6: t   5.6 energy 3.27 lf_min 0.27 al_max 6.1 viol 14.5% 
+sac gust1.5 15-> 6 plant  -1 seed 6: t   4.5 energy 4.58 lf_min 0.74 al_max 4.8 viol 0.8% 
+sac gust1.5  6->15 plant  -1 seed 7: t   6.5 energy 3.20 lf_min 0.63 al_max 3.8 viol 9.8% 
+sac gust1.5 15-> 6 plant  -1 seed 7: t   5.6 energy 4.55 lf_min 0.89 al_max 7.8 viol 5.5% 
+sac gust1.5  6->15 plant  -1 seed 8: t   5.4 energy 3.11 lf_min 0.65 al_max 5.4 viol 5.8% 
+sac gust1.5 15-> 6 plant  -1 seed 8: t   5.4 energy 4.51 lf_min 0.86 al_max 8.6 viol 7.2% 
+sac gust1.5  6->15 plant  -1 seed 9: t   7.9 energy 4.05 lf_min 0.34 al_max -0.3 viol 49.2% 
+sac gust1.5 15-> 6 plant  -1 seed 9: t   4.7 energy 4.40 lf_min 0.65 al_max 4.6 viol 3.5% 
+sac noise0.5  6->15 plant  -1 seed 0: t   7.2 energy 3.03 lf_min 0.90 al_max -0.3 viol 0.0% 
+sac noise0.5 15-> 6 plant  -1 seed 0: t   4.9 energy 4.29 lf_min 0.92 al_max 4.9 viol 0.0% 
+sac noise0.5  6->15 plant  -1 seed 1: t   7.2 energy 3.01 lf_min 0.91 al_max -0.3 viol 0.0% 
+sac noise0.5 15-> 6 plant  -1 seed 1: t   4.9 energy 4.29 lf_min 0.93 al_max 4.7 viol 0.0% 
+sac noise0.5  6->15 plant  -1 seed 2: t   7.3 energy 3.02 lf_min 0.91 al_max -0.2 viol 0.0% 
+sac noise0.5 15-> 6 plant  -1 seed 2: t   5.0 energy 4.29 lf_min 0.93 al_max 4.6 viol 0.0% 
+sac noise0.5  6->15 plant  -1 seed 3: t   7.2 energy 3.01 lf_min 0.91 al_max -0.3 viol 0.0% 
+sac noise0.5 15-> 6 plant  -1 seed 3: t   4.9 energy 4.29 lf_min 0.93 al_max 4.9 viol 0.0% 
+sac noise0.5  6->15 plant  -1 seed 4: t   7.2 energy 3.01 lf_min 0.91 al_max -0.3 viol 0.0% 
+sac noise0.5 15-> 6 plant  -1 seed 4: t   4.9 energy 4.30 lf_min 0.93 al_max 4.9 viol 0.0% 
+sac noise0.5  6->15 plant  -1 seed 5: t   7.2 energy 3.02 lf_min 0.91 al_max -0.3 viol 0.0% 
+sac noise0.5 15-> 6 plant  -1 seed 5: t   4.9 energy 4.29 lf_min 0.92 al_max 4.8 viol 0.0% 
+sac noise0.5  6->15 plant  -1 seed 6: t   7.2 energy 3.02 lf_min 0.90 al_max -0.3 viol 0.0% 
+sac noise0.5 15-> 6 plant  -1 seed 6: t   4.9 energy 4.30 lf_min 0.93 al_max 4.7 viol 0.0% 
+sac noise0.5  6->15 plant  -1 seed 7: t   7.4 energy 3.01 lf_min 0.91 al_max -0.3 viol 0.0% 
+sac noise0.5 15-> 6 plant  -1 seed 7: t   4.9 energy 4.30 lf_min 0.94 al_max 4.6 viol 0.0% 
+sac noise0.5  6->15 plant  -1 seed 8: t   7.2 energy 3.02 lf_min 0.91 al_max -0.3 viol 0.0% 
+sac noise0.5 15-> 6 plant  -1 seed 8: t   5.0 energy 4.29 lf_min 0.93 al_max 4.7 viol 0.0% 
+sac noise0.5  6->15 plant  -1 seed 9: t   7.2 energy 3.01 lf_min 0.90 al_max -0.3 viol 0.0% 
+sac noise0.5 15-> 6 plant  -1 seed 9: t   5.0 energy 4.29 lf_min 0.93 al_max 4.6 viol 0.0% 
+sac noise1.0  6->15 plant  -1 seed 0: t   6.9 energy 3.04 lf_min 0.90 al_max -0.3 viol 0.0% 
+sac noise1.0 15-> 6 plant  -1 seed 0: t   4.9 energy 4.29 lf_min 0.91 al_max 5.1 viol 0.5% 
+sac noise1.0  6->15 plant  -1 seed 1: t   7.2 energy 3.02 lf_min 0.91 al_max -0.2 viol 0.0% 
+sac noise1.0 15-> 6 plant  -1 seed 1: t   4.9 energy 4.29 lf_min 0.93 al_max 4.6 viol 0.0% 
+sac noise1.0  6->15 plant  -1 seed 2: t   7.2 energy 3.03 lf_min 0.91 al_max -0.3 viol 0.0% 
+sac noise1.0 15-> 6 plant  -1 seed 2: t   5.0 energy 4.29 lf_min 0.90 al_max 4.6 viol 0.0% 
+sac noise1.0  6->15 plant  -1 seed 3: t   7.1 energy 3.01 lf_min 0.91 al_max -0.2 viol 0.0% 
+sac noise1.0 15-> 6 plant  -1 seed 3: t   4.9 energy 4.30 lf_min 0.92 al_max 5.1 viol 0.5% 
+sac noise1.0  6->15 plant  -1 seed 4: t   7.2 energy 3.02 lf_min 0.91 al_max -0.2 viol 0.0% 
+sac noise1.0 15-> 6 plant  -1 seed 4: t   4.9 energy 4.30 lf_min 0.92 al_max 5.0 viol 0.2% 
+sac noise1.0  6->15 plant  -1 seed 5: t   7.2 energy 3.02 lf_min 0.91 al_max -0.3 viol 0.0% 
+sac noise1.0 15-> 6 plant  -1 seed 5: t   5.0 energy 4.29 lf_min 0.90 al_max 4.9 viol 0.0% 
+sac noise1.0  6->15 plant  -1 seed 6: t   7.1 energy 3.03 lf_min 0.88 al_max -0.3 viol 0.0% 
+sac noise1.0 15-> 6 plant  -1 seed 6: t   4.9 energy 4.30 lf_min 0.91 al_max 4.6 viol 0.0% 
+sac noise1.0  6->15 plant  -1 seed 7: t   7.5 energy 3.01 lf_min 0.92 al_max -0.2 viol 0.0% 
+sac noise1.0 15-> 6 plant  -1 seed 7: t   4.9 energy 4.30 lf_min 0.92 al_max 4.6 viol 0.0% 
+sac noise1.0  6->15 plant  -1 seed 8: t   6.9 energy 3.03 lf_min 0.91 al_max -0.3 viol 0.0% 
+sac noise1.0 15-> 6 plant  -1 seed 8: t   5.0 energy 4.30 lf_min 0.93 al_max 4.7 viol 0.0% 
+sac noise1.0  6->15 plant  -1 seed 9: t   6.9 energy 3.02 lf_min 0.88 al_max -0.3 viol 0.0% 
+sac noise1.0 15-> 6 plant  -1 seed 9: t   5.0 energy 4.29 lf_min 0.93 al_max 4.5 viol 0.0% 
+sac noise2.0  6->15 plant  -1 seed 0: t   6.5 energy 3.08 lf_min 0.89 al_max -0.3 viol 0.0% 
+sac noise2.0 15-> 6 plant  -1 seed 0: t   4.9 energy 4.28 lf_min 0.88 al_max 5.3 viol 0.8% 
+sac noise2.0  6->15 plant  -1 seed 1: t   6.9 energy 3.03 lf_min 0.91 al_max -0.3 viol 0.0% 
+sac noise2.0 15-> 6 plant  -1 seed 1: t   5.0 energy 4.30 lf_min 0.91 al_max 4.7 viol 0.0% 
+sac noise2.0  6->15 plant  -1 seed 2: t   6.9 energy 3.05 lf_min 0.91 al_max -0.3 viol 0.0% 
+sac noise2.0 15-> 6 plant  -1 seed 2: t   5.0 energy 4.30 lf_min 0.87 al_max 4.9 viol 0.0% 
+sac noise2.0  6->15 plant  -1 seed 3: t   6.7 energy 3.03 lf_min 0.88 al_max -0.4 viol 0.0% 
+sac noise2.0 15-> 6 plant  -1 seed 3: t   5.0 energy 4.30 lf_min 0.89 al_max 5.6 viol 1.5% 
+sac noise2.0  6->15 plant  -1 seed 4: t   6.7 energy 3.05 lf_min 0.90 al_max -0.3 viol 0.0% 
+sac noise2.0 15-> 6 plant  -1 seed 4: t   4.8 energy 4.31 lf_min 0.88 al_max 5.3 viol 1.5% 
+sac noise2.0  6->15 plant  -1 seed 5: t   6.8 energy 3.05 lf_min 0.91 al_max -0.3 viol 0.0% 
+sac noise2.0 15-> 6 plant  -1 seed 5: t   5.0 energy 4.30 lf_min 0.87 al_max 5.0 viol 0.5% 
+sac noise2.0  6->15 plant  -1 seed 6: t   6.9 energy 3.06 lf_min 0.87 al_max -0.3 viol 0.0% 
+sac noise2.0 15-> 6 plant  -1 seed 6: t   4.9 energy 4.30 lf_min 0.89 al_max 4.5 viol 0.0% 
+sac noise2.0  6->15 plant  -1 seed 7: t   7.5 energy 3.04 lf_min 0.90 al_max -0.3 viol 0.0% 
+sac noise2.0 15-> 6 plant  -1 seed 7: t   4.9 energy 4.32 lf_min 0.88 al_max 4.9 viol 0.0% 
+sac noise2.0  6->15 plant  -1 seed 8: t   5.9 energy 3.08 lf_min 0.90 al_max -0.3 viol 0.0% 
+sac noise2.0 15-> 6 plant  -1 seed 8: t   5.0 energy 4.31 lf_min 0.88 al_max 4.7 viol 0.0% 
+sac noise2.0  6->15 plant  -1 seed 9: t   6.4 energy 3.05 lf_min 0.87 al_max -0.3 viol 0.0% 
+sac noise2.0 15-> 6 plant  -1 seed 9: t   5.0 energy 4.30 lf_min 0.91 al_max 4.4 viol 0.0% 
+sac replay_front  6->15 plant  -1 seed 0: t   4.9 energy 3.07 lf_min 0.68 al_max -0.7 viol 2.0% 
+sac replay_back 15-> 6 plant  -1 seed 0: t   5.0 energy 4.35 lf_min 0.84 al_max 5.1 viol 1.5% 
+done 329 s

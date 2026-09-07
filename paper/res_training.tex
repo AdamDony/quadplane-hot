@@ -1,0 +1,4 @@
+Fig.~\ref{fig:train} shows the training of HOT, the feed-forward and the recurrent policy under the same procedure: the time term, the barrier term, the fraction of episodes that reach the target within the horizon and the plant-head loss over the iterations. The barrier term falls by \trainBarrierDrop{} over the training and the reached fraction rises to \trainReached{} at the final horizon of \SI{15}{s}; the plant-head loss falls to \trainAux{}, i.e.\ the context token has learned to carry the plant. Training took \trainWallMin{}~min on four processor cores.
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig05_training.pdf}
+\caption{Training curves under the physics-informed procedure: (a) time term; (b) barrier term; (c) fraction of episodes that reach the target within the curriculum horizon; (d) plant-head loss of HOT.}\label{fig:train}
+\end{figure*}

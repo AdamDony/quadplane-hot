@@ -1,0 +1,32 @@
+\documentclass[tikz,border=2pt]{standalone}
+\input{preamble}
+\definecolor{chot}{HTML}{C0392B}\definecolor{ckap}{HTML}{27AE60}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=5 by 1, horizontal sep=9mm}, paperaxis, width=2.9cm, height=2.5cm, tick label style={font=\tiny}, label style={font=\scriptsize}]
+\nextgroupplot[xlabel={sample lag}, ylabel={attention [\%]}, ymin=0, ymax=7, xmin=-31, xmax=0, legend style={font=\tiny, at={(0.03,0.97)}, anchor=north west, draw=none, fill=none}]
+\draw[black!40, dashed] (axis cs:-31,3.125) -- (axis cs:0,3.125);
+\addplot[chot, line width=1pt] table[x=lag, y expr=100*\thisrow{front}] {../figdata/ctx_attention.dat}; \addlegendentry{front}
+\addplot[csch, line width=1pt] table[x=lag, y expr=100*\thisrow{back}] {../figdata/ctx_attention.dat}; \addlegendentry{back}
+\node[font=\tiny, black!60, anchor=south west] at (axis cs:-30,3.2) {$1/L$};
+\panel{a}{}
+\nextgroupplot[xlabel={time [s]}, ylabel={$R^2$ of the estimate}, ymin=0, ymax=1, xmin=0, xmax=15, title={front}, legend to name=intleg, legend columns=4, legend style={font=\scriptsize, draw=none, fill=none, /tikz/every even column/.append style={column sep=4pt}}]
+\addplot[chot, line width=1pt] table[x=t, y=CL0_front] {../figdata/ctx_r2_time.dat}; \addlegendentry{$C_{L0}$}
+\addplot[csch, line width=1pt] table[x=t, y=CLa_front] {../figdata/ctx_r2_time.dat}; \addlegendentry{$C_{L\alpha}$}
+\addplot[ckap, line width=1pt] table[x=t, y=kappa_front] {../figdata/ctx_r2_time.dat}; \addlegendentry{$\kappa$}
+\addplot[black, line width=1pt] table[x=t, y=beta_r_front] {../figdata/ctx_r2_time.dat}; \addlegendentry{$\beta_{\mathrm r}$}
+\panel{b}{}
+\nextgroupplot[xlabel={time [s]}, ymin=0, ymax=1, xmin=0, xmax=15, title={back}]
+\addplot[chot, line width=1pt] table[x=t, y=CL0_back] {../figdata/ctx_r2_time.dat};
+\addplot[csch, line width=1pt] table[x=t, y=CLa_back] {../figdata/ctx_r2_time.dat};
+\addplot[ckap, line width=1pt] table[x=t, y=kappa_back] {../figdata/ctx_r2_time.dat};
+\addplot[black, line width=1pt] table[x=t, y=beta_r_back] {../figdata/ctx_r2_time.dat};
+\panel{c}{}
+\nextgroupplot[xlabel={true $C_{L0}$ (std.)}, ylabel={estimate (std.)}, xmin=-1.1, xmax=1.1, ymin=-3, ymax=3]
+\addplot[only marks, mark=*, mark size=0.8pt, chot, opacity=0.7] table[x=truth_n, y=est_n, discard if not={param}{CL0}] {../figdata/ctx_estimates.dat}; \panel{d}{}
+\nextgroupplot[xlabel={true $\beta_{\mathrm r}$ (std.)}, xmin=-1.1, xmax=1.1, ymin=-3, ymax=3]
+\addplot[only marks, mark=*, mark size=0.8pt, chot, opacity=0.7] table[x=truth_n, y=est_n, discard if not={param}{beta_r}] {../figdata/ctx_estimates.dat}; \panel{e}{}
+\end{groupplot}
+\node[anchor=south, inner sep=1pt] at ($(group c2r1.north west)!0.5!(group c3r1.north east)+(0,4.5mm)$) {\pgfplotslegendfromname{intleg}};
+\end{tikzpicture}
+\end{document}

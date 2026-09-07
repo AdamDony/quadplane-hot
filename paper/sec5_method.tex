@@ -1,0 +1,77 @@
+\section{HOT: architecture, training and the lift-safety module}\label{sec:method}
+Fig.~\ref{fig:hot} shows the controller. Four modules process the window: the sliding-window encoder (SWE) turns the last $L$ samples into tokens with physics features, the plant-inference attention (PIA) mixes them with a context token that carries the plant estimate, the bounded policy head (BPH) turns the context and the current-state token into a command inside the input box and the step bounds, and the lift-safety module (LSM) certifies the command against a backup manoeuvre over the plant family.
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig01_hot.pdf}
+\caption{HOT. The window of the last $L$ autopilot samples is embedded with physics features (SWE); a transformer with a context token infers the plant (PIA) and provides the context and the current-state token to the bounded head (BPH), whose outputs respect the input box and the rate bounds by construction; the lift-safety module (LSM) rolls a backup manoeuvre out from the predicted next state over the plant set and returns the network command when every rollout is safe, otherwise the closest certified command towards the backup. The command goes to the attitude loop, the rotors and the pusher of the autopilot, and the next state enters the window.}\label{fig:hot}
+\end{figure*}
+
+\subsection{Sliding-window encoder}
+Each sample $(x_j,u_{j-1})$ of the window is scaled and augmented with four physics features, the dynamic pressure $\bar q_j$, the wing lift fraction of the nominal polar $L(V_j,\alpha_j;\hat\vartheta)/(mg)$, the lift fraction \eqref{eq:lf} evaluated with the nominal polar, and $\alpha_j$; a linear layer maps the $12$ numbers to a token $e_j\in\mathbb R^d$ and a learned position code is added. A learned context token $e_{\mathrm{ctx}}$ is prepended, giving the sequence $(e_{\mathrm{ctx}},e_{k-L+1},\dots,e_k)$.
+
+\subsection{Plant-inference attention}
+$N$ transformer blocks, each a multi-head self-attention layer and a feed-forward layer with residual connections and pre-layer normalisation~\cite{Vaswani2017}, act on the sequence. The output at the context position, $z_{\mathrm{ctx}}$, and at the last position, $z_L$, are read out. An auxiliary head maps $z_{\mathrm{ctx}}$ to a plant estimate inside the box,
+\begin{equation}\label{eq:aux}
+\hat\vartheta=\underline\vartheta+(\overline\vartheta-\underline\vartheta)\odot\sigma(\mathrm{MLP}_{\mathrm{aux}}(z_{\mathrm{ctx}})),
+\end{equation}
+supervised during training to the sampled parameters; it is not used by the command at run time, but it makes the context token an interpretable, testable estimate (Proposition~\ref{prop:id} and Section~\ref{sec:interp}).
+
+\subsection{Bounded policy head}
+The head receives $z_{\mathrm{ctx}}$, $z_L$, the target $\rho_{\mathrm t}$ and the previous command $u_{k-1}$ and returns
+\begin{equation}\label{eq:bph}
+u^{\mathrm{NN}}_k=\mathrm{sat}_{\mathcal U}\big(u_{k-1}+\bar\delta\odot\tanh(\mathrm{MLP}(z_{\mathrm{ctx}},z_L,\rho_{\mathrm t},u_{k-1}))\big),
+\end{equation}
+so that $u^{\mathrm{NN}}_k\in\mathcal U_k$ for every value of the weights: the box and the step bounds of all three commands, the pitch setpoint included, hold by construction. The last layer is initialised at zero, so training starts from the hold policy $u_k=u_{k-1}$.
+
+\subsection{Lift-safety module}\label{sec:lsm}
+The module uses a backup law $\kappa_{\mathrm b}$ built from measured quantities only: the flight-path angle, the measured flight-path rate $\dot\gamma_{\mathrm m}$ and acceleration $\dot V_{\mathrm m}$, the airspeed and the previous command,
+\begin{subequations}\label{eq:backup}
+\begin{align}
+\thsp&=\gamma+\tau_{\mathrm b}\min\{r(\gamma),0\}+\alpha_{\mathrm b}(V),\qquad r(\gamma)=\mathrm{sat}_{[\underline r,\overline r]}(-k_\gamma\gamma),\label{eq:bk_th}\\
+T^{\mathrm c}_{\mathrm r}&=T^{\mathrm c}_{\mathrm r,k-1}+\mathrm{sat}_{[-\bar\delta_{\mathrm r},\bar\delta_{\mathrm r}]}\big(k_{\mathrm r}(r(\gamma)-\dot\gamma_{\mathrm m})\big),\label{eq:bk_r}\\
+T^{\mathrm c}_{\mathrm c}&=T^{\mathrm c}_{\mathrm c,k-1}+\mathrm{sat}_{[-\bar\delta_{\mathrm c},\bar\delta_{\mathrm c}]}\big(k_{\mathrm c}(a(V)-\dot V_{\mathrm m})\big),\label{eq:bk_c}\\
+a(V)&=\mathrm{sat}_{[-\bar a,\bar a]}\big(k_V(\mathrm{proj}_{[\underline V_{\mathrm b},\overline V_{\mathrm b}]}(V)-V)\big),\nonumber
+\end{align}
+\end{subequations}
+each saturated to the input box: the pitch setpoint places the wing at the nominal-trim angle of attack of the current airspeed $\alpha_{\mathrm b}(V)$ and, when levelling off from a climb, leads the flight path by $\tau_{\mathrm b}$ seconds of the reference rate $r(\gamma)$, so that a slow attitude loop does not overshoot the angle of attack while the rotors flatten the flight path; the rotors act as a rate-limited integral controller that drives the flight-path rate to the level-off reference; the pusher is the same kind of controller on the measured acceleration, with a reference that is zero inside the airspeed corridor $[\underline V_{\mathrm b},\overline V_{\mathrm b}]$ and pulls the airspeed back from outside, so the backup holds the current airspeed rather than accelerating through the corridor. Nothing in \eqref{eq:backup} depends on $\vartheta$. Let $\Theta_N\subset\Theta$ be a finite plant set containing the vertices of the box and a sample of its interior, $m\in\mathbb R^8_{>0}$ verification margins and $\mathcal C$ the settled neighbourhood of level flight, a band of lift fraction, flight-path angle and rate, angle of attack, airspeed and acceleration.
+\begin{definition}[Certified command, safe set]\label{def:cert}
+For $x$, the previous command $u^-$, a candidate $u$ and a plant $\vartheta$, the backup rollout is $x^{(0)}=F(x,u;\vartheta)$, $x^{(j+1)}=F(x^{(j)},\kappa_{\mathrm b}(x^{(j)},u^{(j)});\vartheta)$ with $u^{(j)}$ the backup commands. The candidate is certified on $\Theta'\subseteq\Theta_N$ if
+\begin{equation}\label{eq:cert}
+c(x^{(j)};\vartheta)\ge m\ \ (j=0,\dots,H_j),\qquad x^{(H_j)}\in\mathcal C\qquad\forall\vartheta\in\Theta',
+\end{equation}
+where $H_j\le H$ is the first step at which every plant is settled. The safe set is $\mathcal S(\Theta')=\{(x,u^-):\ \kappa_{\mathrm b}(x,u^-)\text{ is certified on }\Theta'\}$.
+\end{definition}
+The module returns the network command when it is certified on the current plant set $\Theta'_k$, and otherwise the certified point closest to it on the segment towards an anchor $u_{\mathrm a}$, the hold command $u_{k-1}$ when that is certified (the mildest intervention) and the backup command otherwise,
+\begin{equation}\label{eq:filter}
+\begin{aligned}u_k&=u_{\mathrm a}+\lambda^\star(u^{\mathrm{NN}}_k-u_{\mathrm a}),\\ \lambda^\star&=\max\{\lambda\in[0,1]:\ u_{\mathrm a}+\lambda(u^{\mathrm{NN}}_k-u_{\mathrm a})\text{ certified on }\Theta'_k\},\end{aligned}
+\end{equation}
+found by bisection, with $u_{\mathrm b}=\kappa_{\mathrm b}(x_k,u_{k-1})$ the backup command; when not even $u_{\mathrm b}$ is certified on $\Theta'_k$, the backup command is applied: it remains certified on the true plant, whose rollout is the tail of the previous certificate (Lemma~\ref{lem:rf}), even when other retained plants fail from the current state; these applications are counted in Section~\ref{sec:exp}. The plant set is contracted online by set-membership with the measurement bound $\varepsilon$,
+\begin{equation}\label{eq:consistent}
+\Theta'_{k+1}=\{\vartheta\in\Theta'_k:\ |F(x_k,u_k;\vartheta)-x_{k+1}|\le\varepsilon\},\qquad \Theta'_0=\Theta_N,
+\end{equation}
+so that plants inconsistent with the observed motion stop constraining the command. Algorithm~\ref{alg:online} lists one sampling period.
+
+\subsection{Physics-informed training}
+The policy is trained by backpropagation through rollouts of the differentiable model \eqref{eq:model}, Fig.~\ref{fig:training} and Algorithm~\ref{alg:train}. Each episode draws a plant $\vartheta\sim\mathcal U(\Theta)$, an initial trim $\rho_0$, a target $\rho_{\mathrm t}$ (front, back or an arbitrary pair), a gust profile (first-order coloured noise plus an offset) and sensor noise on the window; the rollout $x_{j+1}=F(x_j,\pi_\phi(\mathsf w_j);\vartheta)+w_j$ runs for $N$ steps, $N$ growing from \SI{3}{s} to \SI{15}{s} over the training (curriculum), and the loss is
+\begin{equation}\label{eq:loss}
+\begin{aligned}\mathcal J(\phi)=\sum_{j}\Big[&\sigma\big(\tfrac{|V_j-\rho_{\mathrm t}|-0.3}{0.2}\big)+|V_j-\rho_{\mathrm t}|+w_E\tfrac{P(T_{\mathrm c,j},T_{\mathrm r,j})}{P_0}\\ &+w_B\sum_{i}\mathrm{softplus}\big(-\tfrac{c_i(x_j;\vartheta)}{\epsilon_i}\big)+w_A\|\hat\vartheta_j-\vartheta\|_{\Sigma^{-1}}^2\\ &+w_S\big(\|u_j-u_{j-1}\|_R^2+\mathrm{softplus}(\tfrac{|\gamma_j|-\gamma_0}{\gamma_1})\big)\Big]\Delta,\end{aligned}
+\end{equation}
+a time term (the soft indicator of not yet being at the target plus the distance to it, which carries a gradient far from the target), the energy of the identified power model, a soft barrier on the eight margins, the auxiliary plant loss, and a smoothness term with a preference for level flight ($\gamma_0=4^\circ$, $\gamma_1=2^\circ$) that keeps the learned hand-off from trading height for speed. Gradients flow through the model and the policy; backpropagation is truncated every $100$ steps and the window inputs carry the noise of the estimator. The safety module is not in the training loop, so the network learns to be safe by itself and the module intervenes at run time only where the learned policy would not be; the intervention rate is reported.
+
+\begin{algorithm}[t]\caption{Physics-informed training of HOT}\label{alg:train}\begin{algorithmic}[1]
+\State build the differentiable model $F$ of \eqref{eq:model} and the box $\Theta$; initialise $\phi$ with the hold policy \eqref{eq:bph}
+\For{iteration $=1,\dots,I$}
+\State $N\leftarrow$ curriculum length; sample plants $\vartheta\sim\mathcal U(\Theta)$, trims $\rho_0$, targets $\rho_{\mathrm t}$, gusts, noise
+\State roll out $x_{j+1}=F(x_j,\pi_\phi(\mathsf w_j+\text{noise});\vartheta)+w_j$, $j<N$, freezing diverged episodes
+\State $\phi\leftarrow\phi-\eta\nabla_\phi\mathcal J(\phi)$ by truncated backpropagation through time, gradient norm clipped
+\EndFor
+\State verify the decrease condition of Definition~\ref{def:dec} on the grid; compute the Lipschitz bound \eqref{eq:lip}
+\end{algorithmic}\end{algorithm}
+\begin{algorithm}[t]\caption{One sampling period of HOT with the lift-safety module}\label{alg:online}\begin{algorithmic}[1]
+\State receive $x_k$, $\dot\gamma_{\mathrm m,k}$; append $(x_k,u_{k-1})$ to the window; contract $\Theta'_k$ by \eqref{eq:consistent}
+\State $u^{\mathrm{NN}}_k\leftarrow\pi_\phi(\mathsf w_k)$ by \eqref{eq:bph}
+\State \textbf{if} $u^{\mathrm{NN}}_k$ is certified on $\Theta'_k$ by \eqref{eq:cert} \textbf{then} $u_k\leftarrow u^{\mathrm{NN}}_k$
+\State \textbf{else} $u_{\mathrm b}\leftarrow\kappa_{\mathrm b}(x_k,u_{k-1})$ by \eqref{eq:backup}; $u_k\leftarrow$ \eqref{eq:filter} by bisection ($u_{\mathrm b}$ if none certified, Lemma~\ref{lem:rf})
+\State send $\thsp$ and the rotor collective as an attitude target and the pusher command as an actuator command
+\end{algorithmic}\end{algorithm}
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig02_training.pdf}
+\caption{Physics-informed training: domain randomisation over the box, gusts, noise, trims and targets; differentiable rollout of the identified model with the policy in the loop; loss terms; backpropagation through time with a horizon curriculum.}\label{fig:training}
+\end{figure*}

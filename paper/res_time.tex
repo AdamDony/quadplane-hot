@@ -1,0 +1,11 @@
+Table~\ref{tab:time} lists the update times on one core of the development computer in interpreted Python. The network evaluates in \hotEvalMs{}~ms; the safety check takes \hotCheckMs{}~ms on average and \hotCheckMaxMs{}~ms at most with the online plant set, most of it in the rollouts of the backup, and it is skipped when the network command has already been certified at the previous step for a state that has not moved; the nominal-model MPC needs \mpcStepMs{}~ms per update.
+\begin{table}[t]\centering\footnotesize
+\caption{Update time per controller (one core, interpreted code).}\label{tab:time}
+\begin{tabular}{lc}\toprule
+controller & time per update\\\midrule
+threshold rule & \thrUs{}~\si{\micro\second}\\
+schedule, GS-PID & \schUs{}~\si{\micro\second}, \pidUs{}~\si{\micro\second}\\
+MPC (sequential conic programming) & \mpcStepMs{}~ms\\
+HOT network & \hotEvalMs{}~ms\\
+HOT safety check (mean, max) & \hotCheckMs{}, \hotCheckMaxMs{}~ms\\
+\bottomrule\end{tabular}\end{table}

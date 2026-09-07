@@ -1,0 +1,31 @@
+\documentclass[tikz,border=2pt]{standalone}
+\input{preamble}
+\definecolor{chot}{HTML}{C0392B}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 3, horizontal sep=7mm, vertical sep=3.5mm, xlabels at=edge bottom, xticklabels at=edge bottom, ylabels at=edge left}, paperaxis, label style={font=\scriptsize}, tick label style={font=\tiny}, width=3.6cm, height=1.3cm, xlabel={time [s]}, xmin=0, xmax=24]
+\nextgroupplot[title={front transition}, ylabel={$V$ [m/s]}, ymin=4, ymax=17, legend to name=silleg2, legend columns=5, legend style={draw=none, fill=none, font=\scriptsize}]
+\draw[black!35] (axis cs:0,15) -- (axis cs:24,15);
+\addplot[chot, line width=1pt] table[x=t, y=V] {../figdata/sil_hot_front.dat}; \addlegendentry{airspeed, PX4 estimator}
+\addlegendimage{csch, dashed, line width=0.8pt} \addlegendentry{setpoint $\theta_{\mathrm{sp}}$}
+\addlegendimage{black, line width=0.8pt} \addlegendentry{pitch $\theta$}
+\addlegendimage{chot, line width=1pt} \addlegendentry{angle of attack $\alpha$}
+\addlegendimage{area legend, fill=cband!45, draw=none} \addlegendentry{$\alpha>\bar\alpha$ excluded}
+\panel{a}{}
+\nextgroupplot[title={back transition}, ymin=4, ymax=17]
+\draw[black!35] (axis cs:0,6) -- (axis cs:24,6); \addplot[chot, line width=1pt] table[x=t, y=V] {../figdata/sil_hot_back.dat}; \panel{d}{}
+\nextgroupplot[ylabel={$\theta$, $\alpha$ [deg]}, ymin=-12, ymax=14]
+\fill[cband!45] (axis cs:0,5) rectangle (axis cs:24,14); \draw[cmpc, dotted, line width=0.8pt] (axis cs:0,5) -- (axis cs:24,5);
+\addplot[csch, dashed, line width=0.8pt] table[x=t, y=thsp] {../figdata/sil_hot_front.dat}; \addplot[black, line width=0.8pt] table[x=t, y=th] {../figdata/sil_hot_front.dat}; \addplot[chot, line width=1pt] table[x=t, y=alpha] {../figdata/sil_hot_front.dat}; \panel{b}{}
+\nextgroupplot[ymin=-12, ymax=14]
+\fill[cband!45] (axis cs:0,5) rectangle (axis cs:24,14); \draw[cmpc, dotted, line width=0.8pt] (axis cs:0,5) -- (axis cs:24,5);
+\addplot[csch, dashed, line width=0.8pt] table[x=t, y=thsp] {../figdata/sil_hot_back.dat}; \addplot[black, line width=0.8pt] table[x=t, y=th] {../figdata/sil_hot_back.dat}; \addplot[chot, line width=1pt] table[x=t, y=alpha] {../figdata/sil_hot_back.dat}; \panel{e}{}
+\nextgroupplot[ylabel={thrust cmd.\ [N]}, ymin=-5, ymax=90]
+\addplot[chot, line width=1pt] table[x=t, y=Trc] {../figdata/sil_hot_front.dat}; \addplot[csch, line width=0.9pt] table[x=t, y=Tcc] {../figdata/sil_hot_front.dat};
+\node[font=\tiny, chot, anchor=north east] at (axis cs:23.6,88) {rotors $T^{\mathrm c}_{\mathrm r}$}; \node[font=\tiny, csch, anchor=north east] at (axis cs:23.6,70) {pusher $T^{\mathrm c}_{\mathrm c}$}; \panel{c}{}
+\nextgroupplot[ymin=-5, ymax=90]
+\addplot[chot, line width=1pt] table[x=t, y=Trc] {../figdata/sil_hot_back.dat}; \addplot[csch, line width=0.9pt] table[x=t, y=Tcc] {../figdata/sil_hot_back.dat}; \panel{f}{}
+\end{groupplot}
+\node[anchor=south, inner sep=1pt] at ($(group c1r1.north west)!0.5!(group c2r1.north east)+(0,3.5mm)$) {\pgfplotslegendfromname{silleg2}};
+\end{tikzpicture}
+\end{document}

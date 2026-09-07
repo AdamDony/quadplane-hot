@@ -1,0 +1,13 @@
+{
+ "t_done": 17.544000000000004,
+ "n_upd": 377,
+ "upd_ms_mean": 92.25486086225088,
+ "upd_ms_max": 242.87483301304746,
+ "sim_latency_ms_mean": 0.0,
+ "stats": {
+  "checks": 377,
+  "interventions": 0,
+  "unverified_backup": 0,
+  "steps": 377
+ }
+}

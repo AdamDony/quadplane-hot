@@ -1,0 +1,34 @@
+threshold replay_front  6->15 plant  -1 seed 0: t   3.5 energy 2.96 lf_min 0.84 al_max -0.3 viol 0.0% 
+threshold replay_back 15-> 6 plant  -1 seed 0: t  15.1 energy 2.69 lf_min 0.82 al_max 7.1 viol 15.0% 
+done 2 s
+schedule replay_front  6->15 plant  -1 seed 0: t   6.3 energy 3.71 lf_min 0.96 al_max -0.5 viol 0.0% 
+schedule replay_back 15-> 6 plant  -1 seed 0: t  10.6 energy 3.95 lf_min 0.85 al_max 2.6 viol 0.0% 
+done 2 s
+gspid replay_front  6->15 plant  -1 seed 0: t   4.8 energy 3.54 lf_min 0.90 al_max -0.1 viol 0.0% 
+gspid replay_back 15-> 6 plant  -1 seed 0: t  13.8 energy 3.73 lf_min 0.83 al_max -0.0 viol 0.0% 
+done 2 s
+Traceback (most recent call last):
+  File "/Users/dony/AdamDony/neurocomputing-nn-handoff/code/hot/campaign.py", line 50, in <module>
+    if __name__ == "__main__": main()
+  File "/Users/dony/AdamDony/neurocomputing-nn-handoff/code/hot/campaign.py", line 42, in main
+    ctrl = make(a.ctrl)
+  File "/Users/dony/AdamDony/neurocomputing-nn-handoff/code/hot/campaign.py", line 19, in make
+    model = (PPO if name == "ppo" else SAC).load(os.path.join(RUNS, "ppo_seed1" if name == "ppo" else "sac_seed0")); return C.RLController(model)
+  File "/Users/dony/AdamDony/cep-quadplane-paper/.venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py", line 681, in load
+    data, params, pytorch_variables = load_from_zip_file(
+  File "/Users/dony/AdamDony/cep-quadplane-paper/.venv/lib/python3.10/site-packages/stable_baselines3/common/save_util.py", line 403, in load_from_zip_file
+    file = open_path(load_path, "r", verbose=verbose, suffix="zip")
+  File "/Users/dony/.pyenv/versions/3.10.6/lib/python3.10/functools.py", line 889, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/Users/dony/AdamDony/cep-quadplane-paper/.venv/lib/python3.10/site-packages/stable_baselines3/common/save_util.py", line 240, in open_path_str
+    return open_path_pathlib(pathlib.Path(path), mode, verbose, suffix)
+  File "/Users/dony/AdamDony/cep-quadplane-paper/.venv/lib/python3.10/site-packages/stable_baselines3/common/save_util.py", line 291, in open_path_pathlib
+    return open_path_pathlib(path, mode, verbose, suffix)
+  File "/Users/dony/AdamDony/cep-quadplane-paper/.venv/lib/python3.10/site-packages/stable_baselines3/common/save_util.py", line 272, in open_path_pathlib
+    raise error
+  File "/Users/dony/AdamDony/cep-quadplane-paper/.venv/lib/python3.10/site-packages/stable_baselines3/common/save_util.py", line 264, in open_path_pathlib
+    return open_path(path.open("rb"), mode, verbose, suffix)
+  File "/Users/dony/.pyenv/versions/3.10.6/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/dony/AdamDony/neurocomputing-nn-handoff/code/hot/../runs/ppo_seed1.zip'
+exit 1

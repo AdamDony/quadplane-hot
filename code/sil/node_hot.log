@@ -1,0 +1,55 @@
+waiting for PX4 heartbeat ...
+PX4 system 1 component 0
+  SIH_MASS = 8.0
+  SIH_IXX = 0.8999999761581421
+  SIH_IYY = 1.2000000476837158
+  SIH_IZZ = 1.899999976158142
+  SIH_IXZ = 0.0
+  SIH_T_MAX = 30.0
+  SIH_Q_MAX = 2.5
+  SIH_L_ROLL = 0.44999998807907104
+  SIH_L_PITCH = 0.44999998807907104
+  SIH_KDV = 0.0
+  SIH_KDW = 0.800000011920929
+  SIH_T_TAU = 0.15000000596046448
+  PWM_MAIN_FUNC8 = 301
+  THR_MDL_FAC = 0.0
+  COM_RCL_EXCEPT = 4
+  NAV_RCL_ACT = 0
+  NAV_DLL_ACT = 0
+  COM_OF_LOSS_T = 1.0
+  COM_OBL_RC_ACT = 0
+  MPC_THR_MIN = 0.019999999552965164
+  MC_PITCH_P = 5.0
+  MC_PITCHRATE_P = 0.20000000298023224
+  MC_PITCHRATE_I = 0.10000000149011612
+  MC_PITCHRATE_D = 0.003000000026077032
+  MC_ROLLRATE_P = 0.20000000298023224
+  MC_ROLLRATE_I = 0.10000000149011612
+  MC_ROLLRATE_D = 0.003000000026077032
+  MC_YAWRATE_P = 0.30000001192092896
+  MC_YAWRATE_I = 0.15000000596046448
+  MC_YAW_P = 3.0
+  MC_YAWRATE_MAX = 60.0
+  VT_ARSP_TRANS = 25.0
+  VT_F_TRANS_THR = 0.0
+  VT_FWD_THRUST_EN = 0
+  VT_ELEV_MC_LOCK = 0
+  COM_DISARM_LAND = -1.0
+  CA_FAILURE_MODE = 0
+waiting for estimates ...
+EKF ready after 0.2 s, yaw -0.3 deg
+armed=True mode=393216
+takeoff ...
+  trim 6 m/s: V=6.12 gamma=-2.59 deg theta=-0.16 deg alt=49.9 m, commands Tc=1.6 N Tr=63.2 N, estimates 1.3/63.1 N
+== HOT front transition
+  engage HOT from V=6.12 gamma=-2.59 theta=-0.16 That=1.3/63.1 N, hold input [ 0.    1.55 63.22]
+  done: t_target=17.544000000000004 s, updates=377, wall update time mean 92.3 ms max 242.9 ms, sim-time latency mean 0.0 ms, stats={'checks': 377, 'interventions': 0, 'unverified_backup': 0, 'steps': 377}
+  trim 15 m/s: V=14.69 gamma=0.66 deg theta=-5.68 deg alt=51.4 m, commands Tc=14.4 N Tr=20.1 N, estimates 13.9/20.2 N
+== HOT back transition
+  engage HOT from V=14.69 gamma=0.66 theta=-5.68 That=13.9/20.2 N, hold input [-0.09 14.43 20.13]
+  ! target not reached within 30 s
+  done: t_target=29.200000000000003 s, updates=527, wall update time mean 65.0 ms max 279.3 ms, sim-time latency mean 0.0 ms, stats={'checks': 527, 'interventions': 0, 'unverified_backup': 0, 'steps': 527}
+landing (disarm) ...
+node exit 0
+{'front': {'t_target': 17.544000000000004, 'al_min_deg': -7.159727497401621, 'al_max_deg': 2.5370398894860653, 'gam_abs_max_deg': 3.6046011696734888, 'lf_min': 1.001708544973725, 'n_upd': 377, 'upd_ms': 92.25486086225088, 'interventions': 0, 'unverified': 0}, 'back': {'t_target': 29.200000000000003, 'al_min_deg': -6.561014354550044, 'al_max_deg': -2.7312726558879787, 'gam_abs_max_deg': 3.8997203602855586, 'lf_min': 0.9789576531937032, 'n_upd': 527, 'upd_ms': 64.98073104164162, 'interventions': 0, 'unverified': 0}}

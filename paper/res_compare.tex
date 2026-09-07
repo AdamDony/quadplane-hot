@@ -1,0 +1,16 @@
+Table~\ref{tab:compare} places HOT against the transition controllers and the learned controllers of Section~\ref{sec:related} on the properties that this article set out to combine. The autopilot rule and the gain-scheduled and optimised transitions of the VTOL literature plan nothing online and carry no guarantee on the lift; model predictive transition controllers plan online but on one nominal model; approximate model predictive control and the safety-filter literature certify a learned or a nominal command on one plant; domain-randomised policies generalise across plants but without a constraint guarantee. HOT is the only entry that learns a single policy over a plant family, infers the plant it is flying from its own history, guarantees the lift margin, the angle of attack, the flight path and the sink rate for every plant of the verified set with lagged actuators and the attitude loop inside the plant, and is validated on a flight-identified aircraft with the autopilot firmware in the loop.
+\begin{table}[t]\centering\footnotesize
+\caption{Properties of transition controllers and learned controllers with safety (\checkmark: yes, --: no).}\label{tab:compare}
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{lcccccc}\toprule
+& \rotatebox{90}{learned policy} & \rotatebox{90}{plant family} & \rotatebox{90}{implicit identification} & \rotatebox{90}{lift guarantee} & \rotatebox{90}{lagged actuators} & \rotatebox{90}{flight-identified}\\\midrule
+Threshold rule~\cite{PX4docs} & -- & -- & -- & -- & -- & \checkmark\\
+Gain-scheduled / hierarchical~\cite{Lyu2017,Verling2016} & -- & -- & -- & -- & -- & \checkmark\\
+Optimised manoeuvre~\cite{Maqsood2012} & -- & -- & -- & -- & -- & --\\
+Transition MPC~\cite{Li2018,Allenspach2020,Bauersfeld2021} & -- & -- & -- & -- & -- & \checkmark\\
+Adaptive VTOL control~\cite{Dong2020} & -- & \checkmark & -- & -- & -- & --\\
+Approximate MPC~\cite{Hertneck2018,Karg2020,Chen2018} & \checkmark & -- & -- & -- & -- & --\\
+Predictive / backup safety filters~\cite{Wabersich2021,Gurriet2020} & \checkmark & -- & -- & -- & -- & --\\
+Domain randomisation, adaptation~\cite{Peng2018,Kumar2021} & \checkmark & \checkmark & \checkmark & -- & -- & --\\
+This article & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark\\
+\bottomrule\end{tabular}\end{table}

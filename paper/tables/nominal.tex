@@ -1,0 +1,14 @@
+\begin{tabular}{l|cccc|cccc}\toprule
+& \multicolumn{4}{c|}{front transition ($6\to15$ m/s)} & \multicolumn{4}{c}{back transition ($15\to6$ m/s)}\\
+controller & time [s] & energy [Wh] & min $\lf$ & max $\alpha$ [deg] & time [s] & energy [Wh] & min $\lf$ & max $\alpha$ [deg]\\\midrule
+THR & 4.6 & 2.99 & 0.84 & -0.0 & 12.2 & 3.51 & 0.95 & 3.2\\
+SCH & 7.2 & 3.38 & 0.99 & -0.0 & 11.3 & 3.77 & 0.98 & 0.8\\
+GS-PID & 5.2 & 3.32 & 0.99 & -0.0 & 14.5 & 3.56 & 0.98 & -0.0\\
+MPC & 18.4 & 3.39 & 1.00 & 0.4 & 19.5 & 3.60 & 1.00 & 0.3\\
+MLP & 3.8 & 4.02 & 0.92 & -0.1 & 6.9 & 4.51 & 0.92 & 1.9\\
+LSTM & 6.6 & 4.16 & 0.97 & -0.0 & 5.2 & 4.87 & 0.94 & -0.8\\
+HOT$-$LSM & 4.0 & 4.17 & 0.94 & -0.2 & 4.7 & 4.51 & 0.96 & 0.6\\
+PPO & -- & 8.94 & 0.32 & 1.2 & 8.2 & 4.03 & 0.94 & 3.2\\
+SAC & 7.3 & 3.01 & 0.91 & -0.3 & 4.9 & 4.30 & 0.94 & 4.7\\
+\textbf{HOT} & 4.5 & 4.21 & 0.94 & -0.2 & 4.7 & 4.51 & 0.96 & 0.6\\
+\bottomrule\end{tabular}

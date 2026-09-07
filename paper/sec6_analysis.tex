@@ -1,0 +1,92 @@
+\section{Analysis}\label{sec:analysis}
+Let $\Theta_N$, $m$, $\mathcal C$, $H$ and $\varepsilon$ be as in Section~\ref{sec:lsm}, $\kappa_{\mathrm b}$ the backup law \eqref{eq:backup} and $F$ the one-step map. All proofs are in the main text.
+
+\subsection{The backup law}
+\begin{lemma}[Rotor loop of the backup]\label{lem:corner}
+For a frozen wing state $(V,\alpha)$ with $V\ge V_{\min}$, the loop formed by the rotor lag \eqref{eq:fast}, the flight-path rate \eqref{eq:gam} and the integral law \eqref{eq:bk_r} is exponentially stable for every $(\lambda_{\mathrm r},\beta_{\mathrm r})$ of the box if
+\begin{equation}\label{eq:kr}
+g_{\max}=k_{\mathrm r}\,\frac{\overline\beta_{\mathrm r}\,(1-e^{-\overline\lambda_{\mathrm r}\Delta})}{mV_{\min}}<1,
+\end{equation}
+and, when the lag gap vanishes and the rate limit $\bar\delta_{\mathrm r}$ is inactive, the flight-path rate converges monotonically to the reference $r=\mathrm{sat}_{[\underline r,\overline r]}(-k_\gamma\gamma)$.
+\end{lemma}
+\begin{proof}
+With the wing frozen, $\dot\gamma_k=q\,T_{\mathrm r,k}+\ell$ with $q=\cos\alpha/(mV)$ and a constant $\ell$. Let $e_k=r-\dot\gamma_k$, $a=e^{-\lambda_{\mathrm r}\Delta}$ and $s_k=\beta_{\mathrm r}T^{\mathrm c}_{\mathrm r,k-1}-T_{\mathrm r,k}$ the lag gap. The exact step of the lag and the law \eqref{eq:bk_r}, $T^{\mathrm c}_{\mathrm r,k}=T^{\mathrm c}_{\mathrm r,k-1}+k_{\mathrm r}e_k$, give
+\begin{align}
+T_{\mathrm r,k+1}&=aT_{\mathrm r,k}+(1-a)\beta_{\mathrm r}T^{\mathrm c}_{\mathrm r,k}\nonumber\\ &=T_{\mathrm r,k}+(1-a)\big(s_k+\beta_{\mathrm r}k_{\mathrm r}e_k\big),\\
+e_{k+1}&=e_k-q\,(T_{\mathrm r,k+1}-T_{\mathrm r,k})=(1-g)\,e_k-q(1-a)\,s_k,\nonumber\\
+s_{k+1}&=\beta_{\mathrm r}T^{\mathrm c}_{\mathrm r,k}-T_{\mathrm r,k+1}=a\,s_k+a\beta_{\mathrm r}k_{\mathrm r}\,e_k,
+\end{align}
+with $g=q(1-a)\beta_{\mathrm r}k_{\mathrm r}$, a linear recursion in $(e_k,s_k)$ with matrix $M=\big[\begin{smallmatrix}1-g&-q(1-a)\\ a\beta_{\mathrm r}k_{\mathrm r}&a\end{smallmatrix}\big]$, $\operatorname{tr}M=1-g+a$ and $\det M=a(1-g)+a g=a$. The Jury conditions $|\det M|<1$, $1-\operatorname{tr}M+\det M=g>0$ and $1+\operatorname{tr}M+\det M=2-g+2a>0$ hold for $0<g<1$ and $0<a<1$, so both eigenvalues lie inside the unit disc. Since $q\le1/(mV_{\min})$ and $(1-a)\beta_{\mathrm r}\le(1-e^{-\overline\lambda_{\mathrm r}\Delta})\overline\beta_{\mathrm r}$, $g\le g_{\max}$, and \eqref{eq:kr} gives $0<g<1$ for every plant of the box. With $s_k=0$ the recursion reduces to $e_{k+1}=(1-g)e_k$, monotone convergence.
+\end{proof}
+\noindent With the values of Section~\ref{sec:platform}, $g_{\max}=\numKrGain{}$. The pusher law \eqref{eq:bk_c} has the same structure with $(\lambda_{\mathrm c},\beta_{\mathrm c},k_{\mathrm c})$ and $q=\cos\alpha/m$, so the same recursion and the condition $k_{\mathrm c}\overline\beta_{\mathrm c}(1-e^{-\overline\lambda_{\mathrm c}\Delta})/m<1$ ($=\numKcGain{}$ here) give monotone convergence of the acceleration to its reference. The pitch law \eqref{eq:bk_th} keeps the wing at the trim angle of attack of the current airspeed, so the wing carries what it can and the rotors carry the rest; the pusher law keeps the airspeed in the corridor. Their interaction with the rotor loop is covered by the settling property below.
+
+\begin{assumption}[Settled neighbourhood]\label{ass:settle}
+For every $\vartheta\in\Theta_N$ and every $x\in\mathcal C$ with $c(x;\vartheta)\ge m$, the backup closed loop from $x$ satisfies $c(x^{(j)};\vartheta)\ge0$ for all $j\ge0$.
+\end{assumption}
+\noindent Assumption~\ref{ass:settle} states that the backup keeps level flight once it has reached it. It is verified numerically over $\mathcal C\times\Theta$ by rollouts of \SI{20}{s} from \numSettlePairs{} sampled (state, plant) pairs over the full vertex set and interior samples of the box, all of which keep the constraints with the margin $m$ (\numSettleFail{} failures; the smallest margin of the lift constraint, \numSettleWorst{} in lift-fraction units, is the tightest, Section~\ref{sec:num}); the margin $m$ absorbs the sampling of $\mathcal C$ through the Lipschitz constant of $c$ along the backup flow~\cite{Bobiti2018}.
+
+\subsection{The lift-safety module}
+\begin{lemma}[The true plant is never discarded]\label{lem:cons}
+If $\vartheta\in\Theta_N$ is the true plant and $|e_k|\le\varepsilon$, then $\vartheta\in\Theta'_k$ for all $k$.
+\end{lemma}
+\begin{proof}
+$x_{k+1}=F(x_k,u_k;\vartheta)+e_k$ with $|e_k|\le\varepsilon$, so the test in \eqref{eq:consistent} holds for $\vartheta$ at every step; induction from $\Theta'_0=\Theta_N$.
+\end{proof}
+
+\begin{lemma}[Recursive feasibility]\label{lem:rf}
+Let the true plant $\vartheta\in\Theta_N$, Assumption~\ref{ass:settle} hold, $|e_k|\le\varepsilon$ and $(x_0,u_{-1})\in\mathcal S(\Theta_N)$. Then at every step the command returned by \eqref{eq:filter} is certified on $\{\vartheta\}$ and $(x_{k+1},u_k)\in\mathcal S(\{\vartheta\})$.
+\end{lemma}
+\begin{proof}
+Induction on $k$; suppose $(x_k,u_{k-1})\in\mathcal S(\{\vartheta\})$, i.e.\ the backup rollout $x^{(0)},\dots,x^{(H_j)}$ from $x_k$ with $u_{\mathrm b}$ satisfies \eqref{eq:cert} for $\vartheta$. If the module returns a candidate certified on $\Theta'_k$, then, since $\vartheta\in\Theta'_k$ by Lemma~\ref{lem:cons}, \eqref{eq:cert} holds for $\vartheta$ from $x_{k+1}=x^{(0)}$ of that candidate's rollout, which is $(x_{k+1},u_k)\in\mathcal S(\{\vartheta\})$. If no candidate is certified on $\Theta'_k$ the module returns $u_{\mathrm b}$, so $x_{k+1}=x^{(0)}$ of the rollout verified at step $k$; the backup rollout from $x_{k+1}$ is its tail $x^{(1)},\dots,x^{(H_j)}$, which satisfies $c\ge m$ and ends in $\mathcal C$ by \eqref{eq:cert} (Fact~\ref{fact:shift}), and by Assumption~\ref{ass:settle} the closed loop continues from $x^{(H_j)}\in\mathcal C$ with $c\ge0$; hence $u_{\mathrm b}$ is certified on $\{\vartheta\}$ and $(x_{k+1},u_k)\in\mathcal S(\{\vartheta\})$.
+\end{proof}
+
+\begin{lemma}[Extension to the box]\label{lem:cover}
+Let $\ell_\vartheta$ be a Lipschitz constant of $\vartheta\mapsto\min_jc(x^{(j)};\vartheta)$ over the rollouts of Definition~\ref{def:cert} and $d_N=\max_{\vartheta\in\Theta}\min_i\|\vartheta-\vartheta_i\|$ the covering radius of $\Theta_N$. A candidate certified on $\Theta_N$ with margin $m\ge\ell_\vartheta d_N\mathbf 1$ is certified with margin $0$ on the whole box.
+\end{lemma}
+\begin{proof}
+For $\vartheta\in\Theta$ take $\vartheta_i$ with $\|\vartheta-\vartheta_i\|\le d_N$; then $\min_jc(x^{(j)};\vartheta)\ge\min_jc(x^{(j)};\vartheta_i)-\ell_\vartheta d_N\ge m-\ell_\vartheta d_N\ge0$.
+\end{proof}
+
+\subsection{The policy}
+\begin{lemma}[Lipschitz bound]\label{lem:lip}
+Let each attention block have $H_{\mathrm h}$ heads with matrices $W_Q^h,W_K^h,W_V^h,W_O$, token norms bounded by $r$ on the operating windows, and each feed-forward block weights $W_1,W_2$ with a 1-Lipschitz activation. Then $\pi_\phi$ is Lipschitz on the operating windows with
+\begin{equation}\label{eq:lip}
+\begin{aligned}\ell_\pi\le\|\bar\delta\|_\infty\,\|W_{\mathrm{mlp}}\|_{\mathrm{prod}}\,\|W_{\mathrm{emb}}\|_2\big(1+\|W_2\|_2\|W_1\|_2\big)\\ \cdot\prod_{n=1}^{N}\Big(1+\|W_O\|_2\sum_h\|W_V^h\|_2\big(1+\tfrac{2r^2\|W_Q^h\|_2\|W_K^h\|_2}{\sqrt{d_h}}\big)\Big),\end{aligned}
+\end{equation}
+where $\|\cdot\|_{\mathrm{prod}}$ is the product of the spectral norms of the head's layers.
+\end{lemma}
+\begin{proof}
+A residual block with an $\ell$-Lipschitz branch is $(1+\ell)$-Lipschitz. The feed-forward branch has $\ell\le\|W_2\|_2\|W_1\|_2$. On inputs of norm at most $r$ a self-attention branch is Lipschitz with constant $\|W_O\|_2\sum_h\|W_V^h\|_2(1+2r^2\|W_Q^h\|_2\|W_K^h\|_2/\sqrt{d_h})$, the second term bounding the sensitivity of the softmax weights, whose Jacobian has spectral norm at most $1/2$, to the scores, which are $2r\|W_Q^h\|_2\|W_K^h\|_2r/\sqrt{d_h}$-Lipschitz in the tokens. Layer normalisation is absorbed in $r$; the embedding is linear; $\tanh$ and the saturation are 1-Lipschitz, scaled by the step bounds. Composition multiplies the constants.
+\end{proof}
+
+\begin{definition}[Verified decrease]\label{def:dec}
+With $W(x)=\|x-x^{\mathrm t}(\rho_{\mathrm t})\|_P^2$, $P\succ0$, and $u(x)$ the filtered network command, the trained closed loop satisfies the decrease condition with constants $(c,\beta,d)$ if on a grid $\mathcal G$ of spacing $d$ covering $\{x\in\mathcal X:W(x)\ge\beta\}$ and for every $\vartheta\in\Theta_N$, $W(F(x_i,u(x_i);\vartheta))-W(x_i)\le-cW(x_i)-\ell_Wd$, with $\ell_W$ a Lipschitz constant of $x\mapsto W(F(x,u(x);\vartheta))-W(x)$ obtained from the constants of $F$, $\ell_\pi$ and the filter map.
+\end{definition}
+
+\subsection{Main result}
+\begin{theorem}[Safe generalised hand-off]\label{thm:main}
+Let the true plant $\vartheta\in\Theta_N$, Assumption~\ref{ass:settle} hold, $|e_k|\le\varepsilon$ and $(x_0,u_{-1})\in\mathcal S(\Theta_N)$. Then, for every command sequence of the network,
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+\item (safety) $c(x_k;\vartheta)\ge0$ and $u_k\in\mathcal U_k$ for all $k\ge0$: the lift fraction stays above $1-K_L$, the angle of attack below $\bar\alpha$, the pitch and the flight path in their boxes and the sink rate above $-\dot\gamma_{\lim}$; the module always holds a certified command;
+\item (practical convergence) if Definition~\ref{def:dec} holds with $(c,\beta,d)$ and the disturbance is bounded by $\bar w$, then
+\begin{equation}\label{eq:conv}
+\begin{aligned}&W(x_k)\le\max\{(1-c)^kW(x_0),\ \beta\}\quad(\bar w=0),\\ &\limsup_{k}W(x_k)\le\max\Big\{\beta,\ \frac{2\|P\|_2\bar w\,\overline r+\|P\|_2\bar w^2}{c}\Big\}\quad(\bar w>0),\end{aligned}
+\end{equation}
+with $\overline r=\max_{x\in\mathcal X}\|x-x^{\mathrm t}\|$;
+\item (intervention) $u_k=u^{\mathrm{NN}}_k$ whenever the network command is certified on $\Theta'_k$;
+\item (whole box) if every certificate carries the margin of Lemma~\ref{lem:cover}, (i) holds for every $\vartheta\in\Theta$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(i) By Lemma~\ref{lem:rf} the command is certified on $\{\vartheta\}$ at every step, so $c(x_{k+1};\vartheta)=c(x^{(0)};\vartheta)\ge m>0$ by \eqref{eq:cert}. Both $u^{\mathrm{NN}}_k$, by \eqref{eq:bph}, and the anchor, $u_{k-1}$ trivially and $u_{\mathrm b}$ by the saturations of \eqref{eq:backup}, lie in the convex set $\mathcal U_k$, hence so does the convex combination \eqref{eq:filter}. The module holds $u_{\mathrm b}$ by Lemma~\ref{lem:rf}.
+(ii) On the cell of $x_i\in\mathcal G$, $W(x_{k+1})-W(x_k)\le-cW(x_k)-\ell_Wd+\ell_W\|x_k-x_i\|\le-cW(x_k)$ whenever $W(x_k)\ge\beta$, so $W(x_{k+1})\le(1-c)W(x_k)$ until the level $\beta$ is reached, after which $W(x_{k+1})\le(1-c)\beta\le\beta$; this is the first bound of \eqref{eq:conv}. With disturbances, $W(F+w)-W(F)=2(F-x^{\mathrm t})^{\!\top}Pw+w^{\!\top}Pw\le2\|P\|_2\overline r\bar w+\|P\|_2\bar w^2=:\Delta_w$, so $W(x_{k+1})\le(1-c)W(x_k)+\Delta_w$, whose iterates satisfy $\limsup_kW(x_k)\le\Delta_w/c$ when this exceeds $\beta$, which is the second bound.
+(iii) A certified $u^{\mathrm{NN}}_k$ gives $\lambda^\star=1$ in \eqref{eq:filter}.
+(iv) Lemma~\ref{lem:cover} applied to every certificate used in Lemma~\ref{lem:rf}.
+\end{proof}
+
+\begin{proposition}[Identifiability from the window]\label{prop:id}
+On a window of $L$ samples in which $\alpha$ and $C_L^2$ are not constant, the aerodynamic parameters $(C_{L0},C_{L\alpha},C_{D0},k)$ enter the finite-difference residuals of \eqref{eq:V}--\eqref{eq:gam} linearly through the regressors $\bar qS(1,\alpha)$ and $\bar qS(1,C_L^2)$; the least-squares estimate from the window is unique, and its error is bounded by $\sigma\sqrt L/\sigma_{\min}(\Phi_L)$ for measurement noise of standard deviation $\sigma$ and regressor matrix $\Phi_L$. The attention blocks with the context token can represent this estimator to any accuracy on compact windows, which is the target of the auxiliary head \eqref{eq:aux}.
+\end{proposition}
+\begin{proof}
+Rearranging \eqref{eq:gam} and \eqref{eq:V}, $mV\dot\gamma-T_{\mathrm c}\sin\alpha-T_{\mathrm r}\cos\alpha+mg\cos\gamma=\bar qS(C_{L0}+C_{L\alpha}\alpha)$ and $-m\dot V+T_{\mathrm c}\cos\alpha-T_{\mathrm r}\sin\alpha-mg\sin\gamma=\bar qS(C_{D0}+kC_L^2)$, linear in the parameters with the stated regressors; stacking $L$ samples gives $\Phi_L\vartheta_{\mathrm a}=y_L+e$, whose least-squares solution is unique iff $\mathrm{rank}\,\Phi_L=4$, i.e.\ $\alpha$ and $C_L^2$ vary over the window, and $\|\hat\vartheta_{\mathrm a}-\vartheta_{\mathrm a}\|\le\|\Phi_L^\dagger\|\|e\|\le\sigma\sqrt L/\sigma_{\min}(\Phi_L)$. The representability is Fact~\ref{fact:ua}.
+\end{proof}

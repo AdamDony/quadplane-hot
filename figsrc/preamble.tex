@@ -1,0 +1,26 @@
+\usepackage{times}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{groupplots,fillbetween,colorbrewer}
+\usetikzlibrary{arrows.meta,positioning,calc,fit,backgrounds,shapes.geometric,decorations.pathreplacing,patterns,matrix}
+\graphicspath{{../}{../figures/}}
+\definecolor{cmpc}{HTML}{C0392B}
+\definecolor{csch}{HTML}{1F5FA8}
+\definecolor{cstk}{HTML}{6E6E6E}
+\definecolor{cband}{HTML}{F4C7C3}
+\definecolor{crec}{HTML}{2B2B2B}
+\definecolor{cphase}{HTML}{FBE3C2}
+\newlength{\pw}\newlength{\ph}
+\pgfplotsset{
+  paperaxis/.style={scale only axis, tick label style={font=\scriptsize}, label style={font=\footnotesize}, title style={font=\footnotesize, yshift=-1mm},
+    legend style={font=\scriptsize, draw=black!25, fill=white, legend cell align=left, /tikz/every even column/.append style={column sep=6pt}}, axis line style={black!60}, tick style={black!60}, every axis plot/.append style={line width=0.9pt},
+    grid=major, grid style={black!12}, xlabel near ticks, ylabel near ticks, ylabel shift=-2pt, xlabel shift=-2pt, clip marker paths=true},
+}
+\newcommand{\panel}[2]{\node[anchor=north west, font=\footnotesize\bfseries, inner sep=1.5pt, fill=white, fill opacity=0.85, text opacity=1] at (rel axis cs:0.015,0.985) {(#1)#2};}
+\newcommand{\gth}{g_\theta}
+\newcommand{\thsp}{\theta_{\mathrm{sp}}}
+
+\pgfplotsset{discard if not/.style 2 args={x filter/.append code={\edef\tempa{\thisrow{#1}}\edef\tempb{#2}\ifx\tempa\tempb\else\def\pgfmathresult{inf}\fi}}}

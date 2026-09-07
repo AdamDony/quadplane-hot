@@ -1,0 +1,28 @@
+\documentclass[tikz,border=2pt]{standalone}
+\input{preamble}
+\definecolor{chot}{HTML}{C0392B}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 2, horizontal sep=7mm, vertical sep=3.5mm, xlabels at=edge bottom, xticklabels at=edge bottom, ylabels at=edge left}, paperaxis, width=3.5cm, height=1.7cm, xmin=0, xmax=12, xlabel={time [s]}, tick label style={font=\tiny}]
+\nextgroupplot[title={front}, ylabel={$\alpha$ [deg]}, ymin=-12, ymax=40, legend to name=rpleg, legend columns=2, legend style={font=\scriptsize, draw=none, fill=none}]
+\fill[cband!45] (axis cs:0,5) rectangle (axis cs:12,40); \draw[cmpc, dotted, line width=0.8pt] (axis cs:0,5) -- (axis cs:12,5);
+\addplot[crec, dashed, line width=0.9pt] table[x=t, y=alpha] {../figdata/replay_front_rec.dat}; \addlegendentry{recorded flight (threshold rule)}
+\addplot[chot, line width=1.1pt] table[x=t, y=alpha] {../figdata/traj_hot_replay_front.dat}; \addlegendentry{HOT from the recorded state}
+\panel{a}{}
+\nextgroupplot[title={back}, ymin=-12, ymax=40]
+\fill[cband!45] (axis cs:0,5) rectangle (axis cs:12,40); \draw[cmpc, dotted, line width=0.8pt] (axis cs:0,5) -- (axis cs:12,5);
+\addplot[crec, dashed, line width=0.9pt] table[x=t, y=alpha] {../figdata/replay_back_rec.dat};
+\addplot[chot, line width=1.1pt] table[x=t, y=alpha] {../figdata/traj_hot_replay_back.dat};
+\panel{b}{}
+\nextgroupplot[ylabel={lift fraction}, ymin=0.5, ymax=1.3]
+\fill[cband!45] (axis cs:0,0.5) rectangle (axis cs:12,0.75);
+\addplot[chot, line width=1.1pt] table[x=t, y=lf] {../figdata/traj_hot_replay_front.dat};
+\panel{c}{}
+\nextgroupplot[ymin=0.5, ymax=1.3]
+\fill[cband!45] (axis cs:0,0.5) rectangle (axis cs:12,0.75);
+\addplot[chot, line width=1.1pt] table[x=t, y=lf] {../figdata/traj_hot_replay_back.dat};
+\panel{d}{}
+\end{groupplot}
+\node[anchor=south, inner sep=1pt] at ($(group c1r1.north west)!0.5!(group c2r1.north east)+(0,3.5mm)$) {\pgfplotslegendfromname{rpleg}};
+\end{tikzpicture}
+\end{document}

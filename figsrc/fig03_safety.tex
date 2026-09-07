@@ -1,0 +1,18 @@
+\documentclass[tikz,border=2pt]{standalone}
+\input{preamble}
+\definecolor{cfeas}{HTML}{3C9D6A}\definecolor{cinf}{HTML}{E08A2E}\definecolor{cneg}{HTML}{BDBDBD}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=4 by 1, horizontal sep=5mm, ylabels at=edge left, yticklabels at=edge left}, paperaxis, width=3.3cm, height=3.3cm, xlabel={$\alpha$ [deg]}, ylabel={$V$ [m/s]}, xmin=-10.5, xmax=5.5, ymin=4, ymax=18, colormap={cls}{color(0cm)=(cneg) color(1cm)=(cinf) color(2cm)=(cfeas)}, point meta min=0, point meta max=2, tick label style={font=\tiny}, grid=none]
+\nextgroupplot[title={(a) $T_{\mathrm r}=0$}]
+\addplot[matrix plot*, mesh/cols=16, point meta=explicit] table[x=alpha, y=V, meta=cls] {../figdata/safety_map_Tr0.dat};
+\nextgroupplot[title={(b) $T_{\mathrm r}=\SI{39}{N}$}]
+\addplot[matrix plot*, mesh/cols=16, point meta=explicit] table[x=alpha, y=V, meta=cls] {../figdata/safety_map_Tr39.dat};
+\nextgroupplot[title={(c) $T_{\mathrm r}=\SI{79}{N}$}]
+\addplot[matrix plot*, mesh/cols=16, point meta=explicit] table[x=alpha, y=V, meta=cls] {../figdata/safety_map_Tr79.dat};
+\nextgroupplot[title={(d) $T_{\mathrm r}=\SI{118}{N}$}]
+\addplot[matrix plot*, mesh/cols=16, point meta=explicit] table[x=alpha, y=V, meta=cls] {../figdata/safety_map_Tr118.dat};
+\end{groupplot}
+\node[anchor=north, font=\scriptsize, inner sep=1pt] at ($(group c2r1.south)!0.5!(group c3r1.south)+(0,-9mm)$) {\tikz\fill[cfeas] (0,0) rectangle (0.25,0.16); LSM feasible, $h_1^\Theta\ge0$\quad \tikz\fill[cinf] (0,0) rectangle (0.25,0.16); $h_1^\Theta\ge0$, projection infeasible\quad \tikz\fill[cneg] (0,0) rectangle (0.25,0.16); $h_1^\Theta<0$};
+\end{tikzpicture}
+\end{document}

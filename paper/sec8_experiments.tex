@@ -1,0 +1,51 @@
+\section{Experiments}\label{sec:experiments}
+\subsection{Set-up, baselines, metrics and statistics}
+Every controller runs in the same loop: the plant \eqref{eq:model} with the true parameters, the state delivered with the noise of Table~\ref{tab:noise} scaled by the noise level of the cell, the commands sampled every \SI{50}{ms} and rate-limited, \SI{20}{s} of simulation. Table~\ref{tab:controllers} lists the nine controllers. The threshold rule (THR) reproduces the autopilot logic; the fixed lift-sharing schedule (SCH) follows the nominal trim of the current airspeed with a pusher loop on the airspeed and a rotor loop on the flight-path rate; the gain-scheduled PID (GS-PID) schedules its gains on the airspeed; the model predictive controller (MPC) solves a nominal-model tracking problem on a \SI{4}{s} horizon by sequential conic programming; the feed-forward (MLP) and recurrent (LSTM) policies use the bounded head of HOT and are trained by the same physics-informed procedure; HOT$-$LSM is the transformer without the safety module; PPO~\cite{Schulman2017} and SAC~\cite{Haarnoja2018} are trained with Stable-Baselines3~\cite{Raffin2021} on the same plant family with the negative of \eqref{eq:loss} as the reward. Metrics: the time to the target airspeed (first entry within \SI{0.3}{m/s}), the energy of the identified power model, the minimum lift fraction, the maximum angle of attack, the extreme flight-path angles and the minimum sink rate, the percentage of samples with a violated constraint, the intervention rate of the safety module and the wall time per update. Statistics: mean and standard deviation over plants and seeds, the Wilcoxon signed-rank test at $p<0.05$ against HOT ($+/=/-$ counts of the cells in which HOT is better, equal or worse) and the Friedman mean rank~\cite{Demsar2006}.
+\begin{table}[t]\centering\footnotesize
+\caption{Controllers compared.}\label{tab:controllers}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llcc}\toprule
+label & controller & learned & guarantee\\\midrule
+THR & autopilot threshold rule & -- & --\\
+SCH & fixed lift-sharing schedule & -- & --\\
+GS-PID & gain-scheduled PID & -- & --\\
+MPC & nominal-model MPC, \SI{4}{s} horizon & -- & nominal plant\\
+MLP & feed-forward policy, bounded head & \checkmark & --\\
+LSTM & recurrent policy on the window & \checkmark & --\\
+HOT$-$LSM & transformer without the safety module & \checkmark & --\\
+PPO, SAC & reinforcement learning, same reward & \checkmark & --\\
+HOT & this article & \checkmark & Theorem~\ref{thm:main}\\
+\bottomrule\end{tabular}\end{table}
+
+\subsection{Training}\label{sec:trainres}
+%% Fig: training curves (loss terms, violation rate, reached fraction) for HOT, MLP, LSTM; text with numbers
+\input{res_training}
+
+\subsection{Nominal transitions}\label{sec:nominal}
+%% Fig: nominal front and back transitions, all controllers (V, lift fraction, alpha, commands); Table: metrics
+\input{res_nominal}
+
+\subsection{Generalisation across the plant family}\label{sec:cross}
+%% Fig: box plots per metric over the unseen plants, Friedman ranks; Table: Wilcoxon +/=/-
+\input{res_cross}
+
+\subsection{Outside the box, gusts and noise}\label{sec:robust}
+\input{res_robust}
+
+\subsection{From the states recorded in flight}\label{sec:replay}
+\input{res_replay}
+
+\subsection{PX4 firmware in the loop}\label{sec:sil}
+\input{res_sil}
+
+\subsection{Ablations and parameter analysis}\label{sec:ablation}
+\input{res_ablation}
+
+\subsection{Interpretability: attention and the context token}\label{sec:interp}
+\input{res_interp}
+
+\subsection{Time cost}\label{sec:time}
+\input{res_time}
+
+\subsection{Comparison with previous work}\label{sec:compare}
+\input{res_compare}
